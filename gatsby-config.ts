@@ -26,6 +26,9 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    {
+      resolve: `gatsby-transformer-sharp`,
+    },
   ],
 }
 
