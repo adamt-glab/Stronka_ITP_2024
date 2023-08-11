@@ -6,45 +6,22 @@ import img2_mobile from "../images/mobile_backgrounds/2.jpg";
 import styled from "styled-components";
 import yaml from 'js-yaml';
 
-// const TestBox = styled.div`
-//   color: ${props => props.color};
-//   background-color: ${props => props.backgroundColor};
-//   content: ${props => props.content};
-//   width: ${props => props.width};
-//   height: ${props => props.height};
-//   top: ${props => props.top};
-//   left: ${props => props.left};
-//   font-size: ${props => props.fontSize};
-//   border: ${props => props.border};
-//   padding: ${props => props.padding};
-//   text-align: ${props => props.textAlign};
-//   align-items: ${props => props.alignItems};
-//   justify-content: center;
-//   position: absolute;
-//   display: flexbox;
-//   @media (max-width: 768px) {
-//     width: ${props => props.mediaWidth};
-//     left: ${props => props.mediaLeft};
-//     top: ${props => props.mediaTop};
-//     height: ${props => props.mediaHeight};
-//     font-size: ${props => props.mediaFontSize};
-//   } ;
-// `;
-
-function TestBox(props: any){
+function TestBox(props: any) {
   return (
-      <div style={{...props, 
-        justifyContent:"center", 
-        position:"absolute", 
-        display:"flexbox"}}>{props.content}</div>
-    )
+    <div style={{
+      ...props,
+      justifyContent: "center",
+      position: "absolute",
+      display: "flexbox"
+    }}>{props.content}</div>
+  )
 }
 
-function MyText(props: any) { 
+function MyText(props: any) {
   return (
-  <div>
-    <p style={{...props}}>{props.content}</p>
-  </div>
+    <div>
+      <p style={{ ...props }}>{props.content}</p>
+    </div>
   )
 }
 
@@ -112,29 +89,30 @@ function chooseComponent(blockConfig: any) {
   switch (blockConfig.type) {
     case "text": {
       return <>
-        <TestBox {...blockConfig}/>
+        <TestBox {...blockConfig} />
       </>
-      // return <MyText content={blockConfig.content} color={blockConfig.color} backgroundColor={blockConfig.backgroundColor}/>
     }
     case "image": {
       return <>
-        <TestImg {...blockConfig} src = {blockConfig.src} />
+        <TestImg {...blockConfig} src={blockConfig.src} />
       </>
     }
 
     //Array.isArray(blockConfig.composite)
-
-    case "container": {
-      return <>
-      <TestContainer {...blockConfig}>
-        <picture>
-          <source srcSet={blockConfig.backgroundDesktop} media="(min-width: 769px)"/>
-          <source srcSet={blockConfig.backgroundMobile} media="(min-width: 768px)"/>
-          <TestImg src={blockConfig.fallbackBackground} alt="text page"/>
-        </picture>
-        asdf
-      </TestContainer>
-    </>
+    case "composite": {
+      return (
+        // <TestContainer {...blockConfig}>
+        //   <picture>
+        //     <source srcSet={blockConfig.backgroundDesktop} media="(min-width: 769px)" />
+        //     <source srcSet={blockConfig.backgroundMobile} media="(min-width: 768px)" />
+        //     <TestImg src={blockConfig.fallbackBackground} alt="text page" />
+        //   </picture>
+        //   asdf
+        // </TestContainer>
+        <div  style={{position: 'relative'}}>
+          {blockConfig.blocks.map((block: any) => chooseComponent(block))}
+        </div>
+      );
     }
   }
 };
@@ -149,59 +127,6 @@ const Container = styled.div`
   position: relative;
   display: grid;
   top: 2rem;
-`;
-
-const TextBox1 = styled.div`
-  width: 38%;
-  height: 12%;
-  position: absolute;
-  top: 18%;
-  left: 4%;
-  background-color: #e8d9cb;
-  font-size: 1.3vw;
-  color: #d2764a;
-  border: 0.15rem solid;
-  padding: 0.3rem;
-  display: flexbox;
-  text-align: justify;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 768px) {
-    width: 80%;
-    left: 10%;
-    top: 7%;
-    height: 8%;
-    font-size: 3vw;
-  } ;
-`;
-
-const TextBox2 = styled(TextBox1)`
-  height: 5%;
-  top: 33%;
-  @media (max-width: 768px) {
-    height: 4%;
-    top: 19%;
-  }
-`;
-
-const TextBox3 = styled(TextBox1)`
-  top: 54%;
-  left: 56%;
-  @media (max-width: 768px) {
-    height: 8.4%;
-    top: 73.5%;
-    left: 10%;
-  }
-`;
-
-const TextBox4 = styled(TextBox3)`
-  top: 69%;
-  height: 6.5%;
-  @media (max-width: 768px) {
-    height: 6%;
-    top: 86%;
-    left: 10%;
-  }
 `;
 
 const TextPage: React.FC = () => {

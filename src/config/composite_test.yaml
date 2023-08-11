@@ -1,0 +1,8 @@
+- type: composite
+  blocks:
+  - type: text
+    color: "#d2764a"
+    content: "Hello World"
+  - type: text
+    color: "#d2764a"
+    content: "Goodbye World"
