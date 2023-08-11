@@ -1,0 +1,21 @@
+{
+    "title" : "O to jest to",
+    "description" : "odpowiada za to",
+    "div": [
+        {
+            "background-color": "#e5c9ad",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "space-between",
+            "z-index": 5,
+            "height": "6vh",
+            "padding": "0.5em 0"
+        }
+    ],
+    "a": [
+        {
+            "text-decoration": "none",
+            "color": "#cd5e28"
+        }
+    ]
+}

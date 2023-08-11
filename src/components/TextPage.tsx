@@ -1,14 +1,148 @@
-import React from "react";
+import React, { useState } from "react";
 //@ts-ignore
 import img2_desktop from "../images/desktop_backgrounds/2.svg";
 //@ts-ignore
 import img2_mobile from "../images/mobile_backgrounds/2.jpg";
 import styled from "styled-components";
+import yaml from 'js-yaml';
+
+// const TestBox = styled.div`
+//   color: ${props => props.color};
+//   background-color: ${props => props.backgroundColor};
+//   content: ${props => props.content};
+//   width: ${props => props.width};
+//   height: ${props => props.height};
+//   top: ${props => props.top};
+//   left: ${props => props.left};
+//   font-size: ${props => props.fontSize};
+//   border: ${props => props.border};
+//   padding: ${props => props.padding};
+//   text-align: ${props => props.textAlign};
+//   align-items: ${props => props.alignItems};
+//   justify-content: center;
+//   position: absolute;
+//   display: flexbox;
+//   @media (max-width: 768px) {
+//     width: ${props => props.mediaWidth};
+//     left: ${props => props.mediaLeft};
+//     top: ${props => props.mediaTop};
+//     height: ${props => props.mediaHeight};
+//     font-size: ${props => props.mediaFontSize};
+//   } ;
+// `;
+
+function TestBox(props: any){
+  return (
+      <div style={{...props, 
+        justifyContent:"center", 
+        position:"absolute", 
+        display:"flexbox"}}>{props.content}</div>
+    )
+}
+
+function MyText(props: any) { 
+  return (
+  <div>
+    <p style={{...props}}>{props.content}</p>
+  </div>
+  )
+}
+
+const TestImg = styled.img`
+width: ${props => props.width};
+height: ${props => props.height};
+position: relative;
+`;
+
+const TestContainer = styled.div`
+top: ${props => props.top};
+position: relative;
+display: grid;
+`;
+
+function ReadFile() {
+  const [selectedFile, setSelectedFile] = useState();
+  const [fileContent, setFileContent] = useState([]);
+
+  // handle file selection
+  const fileChangedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  // handle file read
+  const handleFileRead = () => {
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      const content = fileReader.result;
+
+      try {
+        const doc = yaml.load(content);
+        setFileContent(doc);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    if (selectedFile) {
+      fileReader.readAsText(selectedFile);
+    } else {
+      console.warn("No file selected");
+    }
+  };
+
+  return (
+    <div>
+      {/* File input */}
+      <input type="file" onChange={fileChangedHandler} />
+      <button onClick={handleFileRead}>Read File</button>
+
+      {/* Render HelloWorld component for each 'comp' property in the config */}
+      {fileContent.map((blockConfig: any) =>
+        chooseComponent(blockConfig)
+      )}
+
+      {/* Debug */}
+      {/* NIE ODKOMENTOWYWAĆ */}
+      {/* <pre>{JSON.stringify(fileContent, null, 2)}</pre> */}
+    </div>
+  );
+}
+
+function chooseComponent(blockConfig: any) {
+  switch (blockConfig.type) {
+    case "text": {
+      return <>
+        <TestBox {...blockConfig}/>
+      </>
+      // return <MyText content={blockConfig.content} color={blockConfig.color} backgroundColor={blockConfig.backgroundColor}/>
+    }
+    case "image": {
+      return <>
+        <TestImg {...blockConfig} src = {blockConfig.src} />
+      </>
+    }
+
+    //Array.isArray(blockConfig.composite)
+
+    case "container": {
+      return <>
+      <TestContainer {...blockConfig}>
+        <picture>
+          <source srcSet={blockConfig.backgroundDesktop} media="(min-width: 769px)"/>
+          <source srcSet={blockConfig.backgroundMobile} media="(min-width: 768px)"/>
+          <TestImg src={blockConfig.fallbackBackground} alt="text page"/>
+        </picture>
+        asdf
+      </TestContainer>
+    </>
+    }
+  }
+};
 
 const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  position: relative;
+width: 100%;
+height: 100%;
+position: relative;
 `;
 
 const Container = styled.div`
@@ -79,29 +213,7 @@ const TextPage: React.FC = () => {
           <source srcSet={img2_mobile} media="(max-width: 768px)" />
           <Img src={img2_desktop} alt="text page" />
         </picture>
-        <TextBox1>
-          Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów
-          BEST AGH Kraków to projekt, który już od 25 lat łączy środowisko
-          akademickie i biznesowe. Naszym celem jest zapewnienie wszystkim
-          uczestnikom Targów, jak największej jakości wydarzenia oraz pełnej
-          satysfakcji.
-        </TextBox1>
-        <TextBox2>
-          Aby to zrealizować, w tym roku zaprosiliśmy 50 firm, które są
-          wiodącymi markami w swoich branżach.
-        </TextBox2>
-        <TextBox3>
-          W dniu 8 marca spotkają się pracodawcy szukający idealnych pracowników
-          oraz studenci starający się o wymarzoną pracę lub staż. Na naszej
-          stronie internetowej znajdziecie informacje nie tylko o naszych
-          wystawcach i ich ofertach pracy, ale także o konkursach oraz
-          warsztatach.
-        </TextBox3>
-        <TextBox4>
-          Istnieje również możliwość przesłania swojego CV do naszej bazy,
-          dzięki której nasi wystawcy poznają Was jeszcze lepiej pod kątem
-          waszego doświadczenia i umiejętności.
-        </TextBox4>
+        <ReadFile></ReadFile>
       </Container>
     </>
   );

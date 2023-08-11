@@ -12,20 +12,26 @@ import ig_icon from "../images/navbar/ig-01.svg";
 // @ts-ignore
 import li_icon from "../images/navbar/li-01.svg";
 
-import {ILink, links, socialLinks} from "../context/Links";
+import { ILink, links, socialLinks } from "../context/Links";
+import navstyle from "../styles/component-styles/Navigation.json";
+import yaml from 'js-yaml';
+
+const navyaml = yaml.load("../styles/component-styles/Navigation.yaml");
+console.log("ddd ", navyaml);
+
 
 const Nav = styled.nav`
-  background-color: #e5c9ad;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 5;
-  height: 6vh;
-  padding: 0.5em 0;
+  background-color: ${navstyle.div[0]["background-color"]};
+  display: ${navstyle.div[0]["display"]};
+  align-items: ${navstyle.div[0]["align-items"]};
+  justify-content: ${navstyle.div[0]["justify-content"]};
+  z-index: ${navstyle.div[0]["z-index"]};
+  height: ${navstyle.div[0]["height"]};
+  padding: ${navstyle.div[0]["padding"]};
 
   a {
-    text-decoration: none;
-    color: #cd5e28;
+    text-decoration: ${navstyle.a[0]["text-decoration"]};
+    color: ${navstyle.a[0]["color"]};
   }
 
   @media (max-width: 768px) {
@@ -179,15 +185,15 @@ const Navigation: React.FC = () => {
   const linkStyle =
     width > breakpoint
       ? {
-          fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
-          fontFamily: "Calibri, Helvetica, sans-serif",
-          fontWeight: "bold",
-          flexBasis: "100%",
-          alignSelf: "center",
-        }
+        fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
+        fontFamily: "Calibri, Helvetica, sans-serif",
+        fontWeight: "bold",
+        flexBasis: "100%",
+        alignSelf: "center",
+      }
       : {
-          fontSize: "clamp(2rem, 5vw, 3rem)",
-        };
+        fontSize: "clamp(2rem, 5vw, 3rem)",
+      };
 
   return (
     <>

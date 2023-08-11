@@ -4,7 +4,7 @@ interface ILink {
 }
 
 const links: ILink[] = [
-    { name: "Home", path: "/" },
+    { name: "Strona główna", path: "/" },
     { name: "Mapa", path: "/#map" },
     { name: "Sponsorzy", path: "/#sponsors" },
     { name: "Patroni", path: "/#patrons" },
