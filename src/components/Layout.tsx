@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Navigation from "./Navigation";
+import TextPage from "./TextPage";
 
 interface IProps {
    children?: ReactNode
@@ -10,7 +11,7 @@ const Layout: React.FC<IProps> = ({children}) => {
        <>
            <Navigation />
            <main>
-               {children}
+               <TextPage/>
            </main>
        </>
    )
