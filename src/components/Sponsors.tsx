@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import useMediaQuery from "../utils/UseMediaQuery";
 import MovingGears from "./MovingGears";
 import yaml from 'js-yaml';

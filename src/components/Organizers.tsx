@@ -3,120 +3,163 @@ import React from "react";
 import img8_desktop from "../images/desktop_backgrounds/8.svg";
 //@ts-ignore
 import img6_mobile from "../images/mobile_backgrounds/6.jpg";
-import styled from "styled-components";
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`;
+import yaml from 'js-yaml';
+import { css } from '@emotion/css';
 
-const Container = styled.div`
-  position: relative;
-  display: grid;
+var yamlFile = `
+page:
+  styles:
+  background:
+  media:
+  blocks:
 `;
+var loadedYaml = yaml.load(yamlFile);
 
-const ContactBoxTitle = styled.h2`
-  position: absolute;
-  padding-inline: 2em;
-  padding-block: 1.5em;
-  top: 19%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  background-color: #e8d9cb;
-  border: 0.15rem solid;
-  border-radius: 3rem 3rem 0 0;
-  font-size: clamp(1rem, 2vw, 2.4rem);
-  font-family: "Unica One", sans-serif;
-  text-align: center;
-  line-height: 1.2;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
+function Container(props: any) {
+  return (
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}
+      style={{
+        position: 'relative',
+        display: 'grid'
+      }} />
+  )
+}
+
+function TextBox(props: any) {
+  return (
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}
+      style={{
+        justifyContent: "center",
+        position: "absolute",
+        display: "flexbox",
+        textAlign: 'center',
+        alignItems: 'center'
+      }}>{props.content}</div>
+  )
+}
+
+function OrganizerName(props: any) {
+  return (
+    <span className={css(
+      {
+        fontSize: { ...props.styles.nameFontSize },
+        fontWeight: { ...props.styles.nameFontWeight },
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}>{props.organizerName}</span>
+  )
+}
+
+function Picture(props: any) {
+  return (
+    <picture style={{ position: "relative", ...props.page.background.top }} />
+  )
+}
+
+function Img(props: any) {
+  return (
+    <image
+      style={{
+        width: '100%',
+        height: '100%',
+        position: "relative"
+      }} />
+  )
+}
+
+function H2(props: any) {
+  return (
+    <h2 className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}
+      style={{
+        fontFamily: "Unica One, sans-serif", 
+        position: "absolute",
+        textAlign: 'center'
+      }}>{props.content}</h2>
+  )
+}
+
+function Page() {
+  return (
+    <>
+      <Container>
+        <Picture {...loadedYaml}>
+          <source srcSet={loadedYaml.page.background.desktopBackground} media="(min-width: 769px)" />
+          <source srcSet={loadedYaml.page.background.mobileBackground} media="(max-width: 768px)" />
+          <Img src={loadedYaml.page.background.fallbackBackground} alt="page" />
+        </Picture>
+        {
+          loadedYaml.page.blocks.map((blockConfig: any) =>
+            chooseComponent(blockConfig)
+          )
+        }
+      </Container>
+    </>
+  )
+}
+
+function chooseComponent(blockConfig: any) {
+  // Read block type and generate a block of given type accordingly
+  switch (blockConfig.type) {
+    case "text": {
+      return (
+        <TextBox {...blockConfig} />
+      )
+    }
+    case "image": {
+      return (
+        <Img {...blockConfig} src={blockConfig.src} />
+      )
+    }
+    case "header2": {
+      return (
+        <H2 {...blockConfig} />
+      )
+    }
+    case "organizer":{
+      return (
+        <TextBox {...blockConfig}>
+          <OrganizerName {...blockConfig} />
+          {blockConfig.content}
+        </TextBox>
+      )
+    }
+    case "composite": {
+      return (
+        <div {...blockConfig}>
+          {blockConfig.blocks.map((block: any) => chooseComponent(block))}
+        </div>
+      );
+    }
+  }
 };
-`;
-
-const TextBox = styled.div`
-  position: absolute;
-  background-color: #e8d9cb;
-  width: 17%;
-  height: 10%;
-  bottom: 8%;
-  font-size: 0.9vw;
-  color: #d2764a;
-  text-align: center;
-  border: 0.1rem solid;
-  border-radius: 2rem;
-  align-items: center;
-  display: flexbox;
-  justify-content: center;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
-`;
-
-const Picture = styled.picture`
-  position: relative;
-  top: 1.75rem;
-};
-`;
-
-const NameText = styled.span`
-  font-size: 120%;
-  font-weight: 600;
-`;
-
-const TextBoxMikolaj = styled(TextBox)`
-  left: 9.9%;
-  top: 85%;
-`;
-
-const TextBoxPaulina = styled(TextBox)`
-  left: 41.6%;
-  top: 85%;
-`;
-
-const TextBoxMateusz = styled(TextBox)`
-  left: 72.9%;
-  top: 85%;
-`;
 
 const Organizers: React.FC = () => {
   return (
     <>
-      <Container>
-        <Picture>
-          <source srcSet={img8_desktop} media="(min-width: 769px)" />
-          <source srcSet={img6_mobile} media="(max-width: 768px)" />
-          <Img src={img8_desktop} alt="last page" />
-        </Picture>
-        <ContactBoxTitle>
-          KONTAKT <br /> Z ORGANIZATORAMI
-        </ContactBoxTitle>
-        <TextBoxMikolaj>
-          <NameText>
-            MIKOŁAJ ŻUCHOWSKI <br />{" "}
-          </NameText>
-          KOODRYNATOR DS. LOGISTYKI <br />
-          508 411 959 <br />
-          MIKOLAJ.ZUCHOWSKI@BEST.KRAKOW.PL <br />
-        </TextBoxMikolaj>
-        <TextBoxPaulina>
-          <NameText>
-            PAULINA SKRZYPCZAK <br />{" "}
-          </NameText>
-          GŁÓWNY KOORDYNATOR <br />
-          516 321 234 <br />
-          PAULINA.SKRZYPCZAK@BEST.KRAKOW.PL <br />
-        </TextBoxPaulina>
-        <TextBoxMateusz>
-          <NameText>
-            MATEUSZ WIRKIJOWSKI <br />{" "}
-          </NameText>
-          KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
-          530 397 519 <br />
-          MATEUSZ.WIRKIJOWSKI@BEST.KRAKOW.PL <br />
-        </TextBoxMateusz>
-      </Container>
+      <Page />
     </>
   );
 };

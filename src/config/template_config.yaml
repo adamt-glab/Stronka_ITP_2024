@@ -1,0 +1,71 @@
+# Base page structure
+page:
+  styles:
+  media:
+  background:
+  blocks:
+# TextBox template config
+# <div />
+- type: text
+  styles:
+    backgroundColor: ""
+    border:
+    borderRadius:
+    color: ""
+    fontSize:
+    transform:
+    width:
+    height:
+    right:
+    left:
+    top:
+    bottom:
+    padding: 0.3rem
+    content: ""
+  media:
+# Heading template config
+# <header />
+- type: header
+  styles:
+    backgroundColor: ""
+    border:
+    borderRadius:
+    color:
+    fontSize:
+    lineHeight:
+    transform:
+    width:
+    height:
+    right:
+    left:
+    top:
+    bottom:
+    padding:
+    content:
+  media:
+# Image template config
+# <image />
+- type: image
+  styles:
+    border:
+    borderRadius:
+    height:
+    width:
+    right:
+    left:
+    top:
+    bottom:
+    padding:
+    src: ""
+  media:
+# Link template config
+# <a />
+- type: link
+  styles:
+    height:
+    width:
+    right:
+    left:
+    top:
+    bottom:
+    link: ""

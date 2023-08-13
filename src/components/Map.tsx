@@ -5,6 +5,8 @@ import img3_desktop from "../images/desktop_backgrounds/3.svg";
 import img3_mobile from "../images/mobile_backgrounds/3.png";
 //@ts-ignore
 import styled from "styled-components";
+import yaml from 'js-yaml';
+import { css } from '@emotion/css';
 
 function importAll(r: any) {
   return r.keys().map(r);

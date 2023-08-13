@@ -27,11 +27,11 @@ page:
         textAlign: justify
         alignItems: center
         media:
-        width: 80%
-        left: 10%
-        top: 7%
-        height: 8%
-        font-size: 3vw
+          width: 80%
+          left: 10%
+          top: 7%
+          height: 8%
+          fontSize: 3vw
     # Pole tekstowe no. 2
     - type: text
       styles:

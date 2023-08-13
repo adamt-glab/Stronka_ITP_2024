@@ -13,7 +13,6 @@ import ig_icon from "../images/navbar/ig-01.svg";
 import li_icon from "../images/navbar/li-01.svg";
 
 import { ILink, links, socialLinks } from "../context/Links";
-import navstyle from "../styles/component-styles/Navigation.json";
 import yaml from 'js-yaml';
 
 

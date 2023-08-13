@@ -1,0 +1,81 @@
+page:
+  styles:
+  media:
+  background:
+    top: 1.75rem
+    desktopBackground: img8_desktop
+    mobileBackground: img6_mobile
+    fallbackBackground: img8_desktop
+  blocks:
+  - type: header2
+    styles:
+      backgroundColor: "#e8d9cb"
+      border: 0.15rem solid
+      borderRadius: 3rem 3rem 0 0
+      fontSize: clamp(1rem, 2vw, 2.4rem)
+      lineHeight: 1.2
+      transform: translate(-50%, -50%) scale(0.9)
+      width:
+      height:
+      right:
+      left: 50%
+      top: 19%
+      bottom:
+      paddingInline: 2em
+      paddingBlock: 1.5em
+      content: "KONTAKT <br /> Z ORGANIZATORAMI"
+    media:
+    - type: organizer
+    styles:
+      backgroundColor: "#e8d9cb"
+      border: 0.1rem solid
+      borderRadius: 2rem
+      color: "#d2764a"
+      fontSize: 0.9vw
+      width: 17%
+      height: 10%
+      right:
+      left: 9.9%
+      top: 85%
+      bottom: 8%
+      name: "MIKOŁAJ ŻUCHOWSKI <br />{" "}"
+      content: "KOODRYNATOR DS. LOGISTYKI <br />
+          508 411 959 <br />
+          MIKOLAJ.ZUCHOWSKI@BEST.KRAKOW.PL <br />"
+    media:
+    - type: organizer
+    styles:
+      backgroundColor: "#e8d9cb"
+      border: 0.1rem solid
+      borderRadius: 2rem
+      color: "#d2764a"
+      font-size: 0.9vw
+      width: 17%
+      height: 10%
+      right:
+      left: 41.6%
+      top: 85%
+      bottom: 8%
+      name: "PAULINA SKRZYPCZAK <br />{" "}"
+      content: "GŁÓWNY KOORDYNATOR <br />
+          516 321 234 <br />
+          PAULINA.SKRZYPCZAK@BEST.KRAKOW.PL <br />"
+    media:
+    - type: organizer
+    styles:
+      backgroundColor: "#e8d9cb"
+      border: 0.1rem solid
+      borderRadius: 2rem
+      color: "#d2764a"
+      fontSize: 0.9vw
+      width: 17%
+      height: 10%
+      right:
+      left: 72.9%
+      top: 85%
+      bottom: 8%
+      name: "MATEUSZ WIRKIJOWSKI <br />{" "}"
+      content: "KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
+          530 397 519 <br />
+          MATEUSZ.WIRKIJOWSKI@BEST.KRAKOW.PL <br />"
+    media:
