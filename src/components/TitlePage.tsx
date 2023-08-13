@@ -8,8 +8,9 @@ import tlo_pc_1 from "../images/landing_page/1.svg";
 import styled from "styled-components";
 import Wave from "./Wave";
 import yaml from 'js-yaml';
+import { css } from '@emotion/css';
 
-var yamlFile=`
+var yamlFile = `
 page:
   styles:
   background:
@@ -20,7 +21,14 @@ var loadedYaml = yaml.load(yamlFile);
 
 function H2(props: any) {
   return (
-    <h2 style={{ ...props }}>
+    <h2 className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}>
       {props.content}
     </h2>
   )
@@ -28,19 +36,42 @@ function H2(props: any) {
 
 function Container(props: any) {
   return (
-    <div style={{ ...props }}></div>
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}></div>
   )
 }
 
 function TextBox(props: any) {
   return (
-    <div style={{ ...props, zIndex:2 }}>{props.content}</div>
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )} style={{ zIndex: 2 }}>
+      {props.content}
+    </div>
   )
 }
 
 function Img(props: any) {
   return (
-    <image style={{ ...props }} />
+    <image className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )} />
   )
 }
 
@@ -62,29 +93,23 @@ function chooseComponent(blockConfig: any) {
   // Read block type and generate a block of given type accordingly
   switch (blockConfig.type) {
     case "text": {
-      return <>
+      return (
         <TextBox {...blockConfig} />
-      </>
+      )
     }
     case "image": {
-      return <>
+      return (
         <Img {...blockConfig} src={blockConfig.src} />
-      </>
+      )
     }
     case "header2": {
-      return <>
-        <H2 {...blockConfig}>{blockConfig.content}</H2>
-      </>
+      return (
+        <H2 {...blockConfig} />
+      )
     }
     case "composite": {
-      const blockStyle = {
-        ...blockConfig.style,
-        '@media (max-width: 768px)': {
-          ...blockConfig.media
-        }
-      }
       return (
-        <div style={{...blockStyle}}>
+        <div {...blockConfig}>
           {blockConfig.blocks.map((block: any) => chooseComponent(block))}
         </div>
       );
