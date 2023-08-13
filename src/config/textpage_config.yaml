@@ -26,12 +26,12 @@ page:
         padding: 0.3rem
         textAlign: justify
         alignItems: center
-        media:
-          width: 80%
-          left: 10%
-          top: 7%
-          height: 8%
-          fontSize: 3vw
+      media:
+        width: 80%
+        left: 10%
+        top: 7%
+        height: 8%
+        fontSize: 3vw
     # Pole tekstowe no. 2
     - type: text
       styles:
@@ -57,8 +57,8 @@ page:
     # Pole tekstowe no. 3
     - type: text
       styles:
-      color: "#d2764a"
-      backgroundColor: "#e8d9cb"
+        color: "#d2764a"
+        backgroundColor: "#e8d9cb"
         content: "W dniu 8 marca spotkają się pracodawcy szukający idealnych pracowników
                 oraz studenci starający się o wymarzoną pracę lub staż. Na naszej
                 stronie internetowej znajdziecie informacje nie tylko o naszych

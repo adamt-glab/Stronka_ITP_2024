@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // @ts-ignore
 import BEST_logo from "../images/landing_page/BEST_logo.png";
 // @ts-ignore
@@ -10,14 +10,65 @@ import Wave from "./Wave";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-var yamlFile = `
-page:
-  styles:
-  background:
-  media:
-  blocks:
-`;
-var loadedYaml = yaml.load(yamlFile);
+// var yamlFile = `
+// page:
+//   styles:
+//   background:
+//   media:
+//   blocks:
+// `;
+// var loadedYaml = yaml.load(yamlFile);
+
+function ReadFile() {
+  const [selectedFile, setSelectedFile] = useState();
+  const [fileContent, setFileContent] = useState([]);
+
+  // handle file selection
+  const fileChangedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  // handle file read
+  const handleFileRead = () => {
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      const content = fileReader.result;
+
+      try {
+        const doc = yaml.load(content);
+        setFileContent(doc);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    if (selectedFile) {
+      fileReader.readAsText(selectedFile);
+      GeneratePage(fileContent);
+    } else {
+      console.warn("No file selected");
+    }
+  };
+
+  return (
+    <div>
+      {/* File input */}
+      <input type="file" onChange={fileChangedHandler} />
+      <button onClick={handleFileRead}>Read File</button>
+
+      {/* Render HelloWorld component for each 'comp' property in the config */}
+      {/* {GeneratePage(fileContent)} */}
+      {/* {
+        fileContent.map((blockConfig: any) =>
+          chooseComponent(blockConfig)
+        )} */}
+
+      {/* Debug */}
+      {/* NIE ODKOMENTOWYWAĆ */}
+      <pre>{JSON.stringify(fileContent, null, 2)}</pre>
+    </div>
+  );
+}
 
 function H2(props: any) {
   return (
@@ -75,17 +126,23 @@ function Img(props: any) {
   )
 }
 
-function Page() {
+function Page(loadedYaml:any) {
   return (
     <>
       <Container {...loadedYaml}>
         {
-          loadedYaml.page.blocks.map((blockConfig: any) =>
+          loadedYaml.blocks.map((blockConfig: any) =>
             chooseComponent(blockConfig)
           )
         }
       </Container>
     </>
+  )
+}
+
+function GeneratePage(loadedYaml:any){
+  return (
+    <Page {...loadedYaml}/>
   )
 }
 
@@ -121,7 +178,7 @@ const TitlePage: React.FC = () => {
   return (
     <>
       {/*<Wave />*/}
-      <Page />
+      <ReadFile/>
     </>
   );
 };

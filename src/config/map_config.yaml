@@ -19,7 +19,7 @@ page:
       top: 12%
       bottom:
       padding:
-      src: "..\images\map\map.svg"
+      src: "../images/map/map.svg"
     media:
       height:
       width: 95%
@@ -39,7 +39,7 @@ page:
       top: 74%
       bottom:
       padding:
-      src: "..\images\map\opis1.svg"
+      src: "../images/map/opis1.svg"
     media:
       height:
       width: 40%
@@ -59,7 +59,7 @@ page:
       top: 74%
       bottom:
       padding:
-      src: "..\images\map\opis2.svg"
+      src: "../images/map/opis2.svg"
     media:
       height:
       width: 25%
@@ -79,7 +79,7 @@ page:
       top: 72.25%
       bottom:
       padding:
-      src: "..\images\map\opis3.svg"
+      src: "../images/map/opis3.svg"
     media:
       height:
       width: 28%
@@ -99,7 +99,7 @@ page:
       top: 74%
       bottom:
       padding:
-      src: "..\images\map\opis3.svg"
+      src: "../images/map/opis3.svg"
     media:
       height:
       width: 25%

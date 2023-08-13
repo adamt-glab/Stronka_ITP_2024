@@ -59,15 +59,15 @@ page:
           media:
             fontSize: clamp(1.5rem, 2.2vw, 2.2rem)
             lineHeight: 1.2
-      - type: image
-        styles:
-          position: absolute
-          width: clamp(8rem, 24vw, 20rem)
-          right: 0
-          marginTop: 4vh
-          marginRight: 6vw
-          userSelect: none
-          src: "BEST_logo"
-        media:
-          marginTop: 2vh
-          marginRight: 4vw
+        - type: image
+          styles:
+            position: absolute
+            width: clamp(8rem, 24vw, 20rem)
+            right: 0
+            marginTop: 4vh
+            marginRight: 6vw
+            userSelect: none
+            src: "BEST_logo"
+          media:
+            marginTop: 2vh
+            marginRight: 4vw

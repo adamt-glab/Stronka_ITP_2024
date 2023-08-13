@@ -25,7 +25,7 @@ page:
       paddingBlock: 1.5em
       content: "KONTAKT <br /> Z ORGANIZATORAMI"
     media:
-    - type: organizer
+  - type: organizer
     styles:
       backgroundColor: "#e8d9cb"
       border: 0.1rem solid
@@ -38,12 +38,12 @@ page:
       left: 9.9%
       top: 85%
       bottom: 8%
-      name: "MIKOŁAJ ŻUCHOWSKI <br />{" "}"
+      name: "MIKOŁAJ ŻUCHOWSKI <br />"
       content: "KOODRYNATOR DS. LOGISTYKI <br />
           508 411 959 <br />
           MIKOLAJ.ZUCHOWSKI@BEST.KRAKOW.PL <br />"
     media:
-    - type: organizer
+  - type: organizer
     styles:
       backgroundColor: "#e8d9cb"
       border: 0.1rem solid
@@ -56,12 +56,12 @@ page:
       left: 41.6%
       top: 85%
       bottom: 8%
-      name: "PAULINA SKRZYPCZAK <br />{" "}"
+      name: "PAULINA SKRZYPCZAK <br />"
       content: "GŁÓWNY KOORDYNATOR <br />
           516 321 234 <br />
           PAULINA.SKRZYPCZAK@BEST.KRAKOW.PL <br />"
     media:
-    - type: organizer
+  - type: organizer
     styles:
       backgroundColor: "#e8d9cb"
       border: 0.1rem solid
@@ -74,7 +74,7 @@ page:
       left: 72.9%
       top: 85%
       bottom: 8%
-      name: "MATEUSZ WIRKIJOWSKI <br />{" "}"
+      name: "MATEUSZ WIRKIJOWSKI <br />"
       content: "KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
           530 397 519 <br />
           MATEUSZ.WIRKIJOWSKI@BEST.KRAKOW.PL <br />"

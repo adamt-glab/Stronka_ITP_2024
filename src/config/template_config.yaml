@@ -1,9 +1,9 @@
 # Base page structure
-page:
-  styles:
-  media:
-  background:
-  blocks:
+# page:
+#   styles:
+#   media:
+#   background:
+#   blocks:
 # TextBox template config
 # <div />
 - type: text

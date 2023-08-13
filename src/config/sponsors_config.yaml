@@ -17,7 +17,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "..\images\desktop_backgrounds\3.svg"
+      src: "../images/desktop_backgrounds/3.svg"
     media:
   # background no. 2
   - type: image
@@ -30,7 +30,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "..\images\desktop_backgrounds\4.svg"      
+      src: "../images/desktop_backgrounds/4.svg"      
     media:
   # partners
   - type: image
@@ -43,7 +43,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "..\images\desktop_backgrounds\5.svg"
+      src: "../images/desktop_backgrounds/5.svg"
     media:
   # patrons
   - type: image
@@ -56,7 +56,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "..\images\desktop_backgrounds\6.svg"
+      src: "../images/desktop_backgrounds/6.svg"
     media:
     # Tytul: Sponsor Glowny
   - type: title
@@ -108,7 +108,7 @@ page:
       fontSize: 2.7vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "PARTNER <br /> MERYTORYCZNY{" "}"
+      content: "PARTNER <br /> MERYTORYCZNY"
     media:
     # Tytul: Partner Techniczny
   - type: title
@@ -121,7 +121,7 @@ page:
       fontSize: 2.7vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "{" "}PARTNER <br /> TECHNICZNY{" "}"
+      content: "PARTNER <br /> TECHNICZNY"
     media:
     # Tytul: Partnerzy Medialni
   - type: title
@@ -134,7 +134,7 @@ page:
       fontSize: 2.4vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "{" "}PARTNERZY <br /> MEDIALNI{" "}"
+      content: "PARTNERZY <br /> MEDIALNI"
     media:
   # sponsor glowny - Sabre
   - type: partner
@@ -144,7 +144,7 @@ page:
       left:
       top: 16%
       link: "https://www.sabre.com/locations/poland/"
-      src: "..\images\logos\00_SG_Sabre.png"
+      src: "../images/logos/00_SG_Sabre.png"
       alt: "Sabre"
       position: absolute
     media:
@@ -160,7 +160,7 @@ page:
       left: 8.8%
       top: 36.6%
       link: "https://www.woodward.com/"
-      src: "..\images\logos\01_S_Woodward.png"
+      src: "../images/logos/01_S_Woodward.png"
       alt: "Woodward"
       position: absolute
     media:
@@ -176,7 +176,7 @@ page:
       left: 45.6%
       top: 36%
       link: "https://www.pega.com/"
-      src: "..\images\logos\02_S_Pega.png"
+      src: "../images/logos/02_S_Pega.png"
       alt: "Pega"
       position: absolute
     media:
@@ -192,7 +192,7 @@ page:
       left:
       top: 36.6%
       link: "https://www.mars.com/"
-      src: "..\images\logos\03_S_Mars.png"
+      src: "../images/logos/03_S_Mars.png"
       alt: "Mars"
       position: absolute
     media:
@@ -208,7 +208,7 @@ page:
       left: 10.5%
       top: 44%
       link: "https://www.aptiv.com/"
-      src: "..\images\logos\04_S_Aptiv.png"
+      src: "../images/logos/04_S_Aptiv.png"
       alt: "aptiv"
       position: absolute
     media:
@@ -224,7 +224,7 @@ page:
       left: 45.8%
       top: 43%
       link: "https://www.motorolasolutions.com/en_us/home.html"
-      src: "..\images\logos\05_S_Motorola.png"
+      src: "../images/logos/05_S_Motorola.png"
       alt: "Motorola"
       position: absolute
     media:
@@ -240,7 +240,7 @@ page:
       left:
       top: 44.1%
       link: "https://www.autodesk.com/"
-      src: "..\images\logos\06_S_Autodesk.png"
+      src: "../images/logos/06_S_Autodesk.png"
       alt: "Autodesk"
       position: absolute
     media:
@@ -256,7 +256,7 @@ page:
       left:
       top: 65.4%
       link: "https://www.ge.com/"
-      src: "..\images\logos\07_PSS_GE_Healthcare.png"
+      src: "../images/logos/07_PSS_GE_Healthcare.png"
       alt: "GE"
       position: absolute
     media:
@@ -272,7 +272,7 @@ page:
       left:
       top: 65.3%
       link: "https://www.adecco.pl/"
-      src: "..\images\logos\08_PMT_Adecco.png"
+      src: "../images/logos/08_PMT_Adecco.png"
       alt: "Adecco"
       position: absolute
     media:
@@ -288,7 +288,7 @@ page:
       left:
       top: 65.5%
       link: "https://www.fujijama.pl/"
-      src: "..\images\logos\15_PT_Fujijama.svg"
+      src: "../images/logos/15_PT_Fujijama.svg"
       alt: "Fujijama"
       position: absolute
     media:
@@ -304,7 +304,7 @@ page:
       left: 13%
       top: 86.2%
       link: "https://www.eska.pl/"
-      src: "..\images\logos\09_PMD_Eska.png"
+      src: "../images/logos/09_PMD_Eska.png"
       alt: "Eska"
       position: absolute
     media:
@@ -320,7 +320,7 @@ page:
       left:
       top: 86.2%
       link: "http://www.podajdalej.info.pl/"
-      src: "..\images\logos\10_PMD_Podaj_Dalej.png"
+      src: "../images/logos/10_PMD_Podaj_Dalej.png"
       alt: "Podaj Dalej"
       position: absolute
     media:
@@ -336,7 +336,7 @@ page:
       left:
       top: 86.4%
       link: "https://www.dlastudenta.pl/"
-      src: "..\images\logos\11_PMD_Dla_Studenta.png"
+      src: "../images/logos/11_PMD_Dla_Studenta.png"
       alt: "Dla Studenta"
       position: absolute
     media:
@@ -352,7 +352,7 @@ page:
       left: 11.7%
       top: 93.2%
       link: "https://eurostudent.pl/"
-      src: "..\images\logos\12_PMD_Eurostudent.png"
+      src: "../images/logos/12_PMD_Eurostudent.png"
       alt: "Eurostudent"
       position: absolute
     media:
@@ -368,7 +368,7 @@ page:
       left:
       top: 93.4%
       link: "https://kms.org.pl/"
-      src: "..\images\logos\13_PMD_KMS.png"
+      src: "../images/logos/13_PMD_KMS.png"
       alt: "KMS"
       position: absolute
     media:
@@ -384,7 +384,7 @@ page:
       left:
       top: 93.4%
       link: "https://fxmag.pl/"
-      src: "..\images\logos\14_PMD_FXMAG.png"
+      src: "../images/logos/14_PMD_FXMAG.png"
       alt: "FXMAG"
       position: absolute
     media:
