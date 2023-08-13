@@ -2,23 +2,29 @@ page:
   styles:
     top: 2em
   background:
-    minWidth: 769px
-    maxWidth: 768px
-    backgroundDesktop: img2_desktop
-    backgroundMobile: img2_mobile
-    fallbackBackground: img2_desktop
+  media:
   blocks:
     - type: text
-      color: "yellow"
-      content: "I'm Text One!"
+      styles:
+        color: "yellow"
+        content: "I'm Text One!"
+      media:
     - type: text
-      color: "blue"
-      content: "I'm Text Two!"
+      styles:
+        color: "blue"
+        content: "I'm Text Two!"
+      media:
     - type: composite
+      styles:
+      media:
       blocks:
         - type: text
-          color: "#d2764a"
-          content: "Hello World!"
+          styles:
+            color: "#d2764a"
+            content: "Hello World!"
+          media:
         - type: text
-          color: "#d2764a"
-          content: "Goodbye World..."
+          styles:
+            color: "#d2764a"
+            content: "Goodbye World..."
+          media:
