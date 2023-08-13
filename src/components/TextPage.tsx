@@ -73,7 +73,6 @@ function TextBox(props: any) {
       }
     )}
     style={{
-      ...props,
       justifyContent: "center",
       position: "absolute",
       display: "flexbox"
