@@ -1,0 +1,109 @@
+page:
+  styles:
+    top: 1.75rem
+  media:
+  background:
+    desktopBackground: img3_desktop
+    mobileBackground: img3_mobile
+    fallbackBackground: img3_desktop
+  blocks:
+  # Main Map
+  - type: image
+    styles:
+      border:
+      borderRadius:
+      height:
+      width: 94%
+      right:
+      left: 3%
+      top: 12%
+      bottom:
+      padding:
+      src: "..\images\map\map.svg"
+    media:
+      height:
+      width: 95%
+      right:
+      left:
+      top: 15%
+      bottom:
+    # List no. 1
+  - type: image
+    styles:
+      border:
+      borderRadius:
+      height:
+      width: 18%
+      right:
+      left: 9%
+      top: 74%
+      bottom:
+      padding:
+      src: "..\images\map\opis1.svg"
+    media:
+      height:
+      width: 40%
+      right:
+      left: 4%
+      top: 36%
+      bottom:
+    # List no. 2
+  - type: image
+    styles:
+      border:
+      borderRadius:
+      height:
+      width: 18%
+      right:
+      left: 30.4%
+      top: 74%
+      bottom:
+      padding:
+      src: "..\images\map\opis2.svg"
+    media:
+      height:
+      width: 25%
+      right:
+      left: 25%
+      top: 48%
+      bottom:
+    # List no. 3
+  - type: image
+    styles:
+      border:
+      borderRadius:
+      height:
+      width: 19%
+      right:
+      left: 50%
+      top: 72.25%
+      bottom:
+      padding:
+      src: "..\images\map\opis3.svg"
+    media:
+      height:
+      width: 28%
+      right:
+      left: 70%
+      top: 47%
+      bottom:
+    # List no. 4
+  - type: image
+    styles:
+      border:
+      borderRadius:
+      height:
+      width: 18%
+      right:
+      left: 72.5%
+      top: 74%
+      bottom:
+      padding:
+      src: "..\images\map\opis3.svg"
+    media:
+      height:
+      width: 25%
+      right:
+      left: 48%
+      top: 36%
+      bottom:

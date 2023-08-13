@@ -74,7 +74,7 @@ function Picture(props: any) {
 
 function Img(props: any) {
   return (
-    <image
+    <img
       style={{
         width: '100%',
         height: '100%',

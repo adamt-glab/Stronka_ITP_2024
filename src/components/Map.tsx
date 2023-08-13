@@ -4,112 +4,130 @@ import img3_desktop from "../images/desktop_backgrounds/3.svg";
 //@ts-ignore
 import img3_mobile from "../images/mobile_backgrounds/3.png";
 //@ts-ignore
-import styled from "styled-components";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-function importAll(r: any) {
-  return r.keys().map(r);
+var yamlFile = `
+page:
+  styles:
+  background:
+  media:
+  blocks:
+`;
+var loadedYaml = yaml.load(yamlFile);
+
+function Container(props: any) {
+  return (
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}
+      style={{
+        position: 'relative',
+        display: 'grid'
+      }} />
+  )
 }
 
-const mapImages = importAll(
-  require.context("../images/map", false, /\.(png|jpe?g|svg)$/)
-);
+function Img(props: any) {
+  return (
+    <img
+      style={{
+        width: '100%',
+        height: '100%',
+        position: "relative"
+      }} />
+  )
+}
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`;
+function Image(props: any){
+  return (
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 769px)': {
+          ...props.media
+        }
+      }
+    )}
+      style={{
+        position: 'absolute',
+        zIndex: 2
+      }} />
+  )
+}
 
-const Container = styled.div`
-  position: relative;
-  display: grid;
-  top: 1.75rem;
-`;
+function TextBox(props: any) {
+  return (
+    <div className={css(
+      {
+        ...props.style,
+        '@media (max-width: 768px)': {
+          ...props.media
+        }
+      }
+    )}
+      style={{
+        justifyContent: "center",
+        position: "absolute",
+        display: "flexbox",
+        textAlign: 'center',
+        alignItems: 'center'
+      }}>{props.content}</div>
+  )
+}
 
-const MapImg = styled.img`
-  position: absolute;
-  top: 12%;
-  left: 3%;
-  width: 94%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    width: 95%;
-    top: 15%;
+function Page(){
+  return(
+  <>
+    <Container>
+      <picture>
+        <source srcSet={loadedYaml.page.background.desktopBackground} media="(min-width: 769px)" />
+        <source srcSet={loadedYaml.page.background.mobileBackground} media="(max-width: 768px)" />
+        <Img src={loadedYaml.page.background.fallbackBackground} />
+      </picture>
+      {
+        loadedYaml.page.blocks.map((blockConfig: any) =>
+          chooseComponent(blockConfig)
+        )
+      }
+    </Container>
+  </>
+  )
+}
+
+function chooseComponent(blockConfig: any) {
+  // Read block type and generate a block of given type accordingly
+  switch (blockConfig.type) {
+    case "text": {
+      return (
+        <TextBox {...blockConfig} />
+      )
+    }
+    case "image": {
+      return (
+        <Image {...blockConfig} src={blockConfig.src} />
+      )
+    }
+    case "composite": {
+      return (
+        <div {...blockConfig}>
+          {blockConfig.blocks.map((block: any) => chooseComponent(block))}
+        </div>
+      );
+    }
   }
-`;
-
-const List = styled.img`
-  position: absolute;
-  top: 74%;
-  width: 18%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    top: 40%;
-    width: 25%;
-  }
-`;
-
-const List1 = styled(List)`
-  left: 9%;
-  top: 74%;
-  width: 18%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    top: 36%;
-    left: 4%;
-  }
-`;
-
-const List2 = styled(List)`
-  left: 30.4%;
-  top: 74%;
-  width: 18%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    left: 25%;
-    top: 48%;
-    width: 25%;
-  }
-`;
-
-const List3 = styled(List2)`
-  left: 50%;
-  top: 72.25%;
-  width: 19%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    left: 70%;
-    width: 28%;
-    top: 47%;
-  }
-`;
-
-const List4 = styled(List1)`
-  left: 72.5%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    left: 48%;
-  }
-`;
+};
 
 const Map: React.FC = () => {
   return (
-    <>
-      <Container id="map">
-        <picture>
-          <source srcSet={img3_desktop} media="(min-width: 769px)" />
-          <source srcSet={img3_mobile} media="(max-width: 768px)" />
-          <Img src={img3_desktop} alt="last page" />
-        </picture>
-        <MapImg src={mapImages[0].default} alt="map" />
-        <List1 src={mapImages[1].default} alt="list1" />
-        <List2 src={mapImages[2].default} alt="list2" />
-        <List3 src={mapImages[4].default} alt="list3" />
-        <List4 src={mapImages[3].default} alt="list4" />
-      </Container>
-    </>
+    <div id="map">
+      <Page />
+    </div>
   );
 };
 
