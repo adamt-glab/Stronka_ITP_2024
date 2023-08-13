@@ -10,61 +10,40 @@ import Wave from "./Wave";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-// var yamlFile = `
-// page:
-//   styles:
-//   background:
-//   media:
-//   blocks:
-// `;
-// var loadedYaml = yaml.load(yamlFile);
-
 function ReadFile() {
-  const [selectedFile, setSelectedFile] = useState();
-  const [fileContent, setFileContent] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileContent, setFileContent] = useState(null);
 
-  // handle file selection
   const fileChangedHandler = (event) => {
     setSelectedFile(event.target.files[0]);
+    setFileContent(null); // Reset file content when a new file is selected
   };
 
-  // handle file read
-  const handleFileRead = () => {
-    const fileReader = new FileReader();
-    fileReader.onloadend = () => {
-      const content = fileReader.result;
-
-      try {
-        const doc = yaml.load(content);
-        setFileContent(doc);
-      } catch (e) {
-        console.error(e);
-      }
-    };
-
-    if (selectedFile) {
-      fileReader.readAsText(selectedFile);
-      GeneratePage(fileContent);
-    } else {
+  const handleFileRead = async () => {
+    if (!selectedFile) {
       console.warn("No file selected");
+      return;
+    }
+
+    try {
+      const content = await selectedFile.text();
+      const doc = yaml.load(content);
+      setFileContent(doc);
+    } catch (e) {
+      console.error(e);
     }
   };
 
   return (
     <div>
-      {/* File input */}
       <input type="file" onChange={fileChangedHandler} />
       <button onClick={handleFileRead}>Read File</button>
 
-      {/* Render HelloWorld component for each 'comp' property in the config */}
-      {/* {GeneratePage(fileContent)} */}
-      {/* {
-        fileContent.map((blockConfig: any) =>
-          chooseComponent(blockConfig)
-        )} */}
+      {fileContent && (
+        // Assuming 'Page' component takes 'loadedYaml' as prop
+        <Page loadedYaml={fileContent} />
+      )}
 
-      {/* Debug */}
-      {/* NIE ODKOMENTOWYWAĆ */}
       <pre>{JSON.stringify(fileContent, null, 2)}</pre>
     </div>
   );
@@ -126,24 +105,20 @@ function Img(props: any) {
   )
 }
 
-function Page(loadedYaml:any) {
+// Outermost component
+// page:
+//  styles:
+//  ...
+//  blocks:
+//    - type: ...
+function Page({ loadedYaml }) {
   return (
-    <>
-      <Container {...loadedYaml}>
-        {
-          loadedYaml.blocks.map((blockConfig: any) =>
-            chooseComponent(blockConfig)
-          )
-        }
-      </Container>
-    </>
-  )
-}
-
-function GeneratePage(loadedYaml:any){
-  return (
-    <Page {...loadedYaml}/>
-  )
+    <Container style={loadedYaml.page.styles}>
+      {loadedYaml.page.blocks.map((blockConfig) => (
+        chooseComponent(blockConfig)
+      ))}
+    </Container>
+  );
 }
 
 function chooseComponent(blockConfig: any) {
