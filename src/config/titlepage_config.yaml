@@ -7,7 +7,7 @@ page:
     background-position: bottom
     position: relative
   media:
-    height: "calc(100vh - 6vh - 1em)"
+    height: calc(100vh - 6vh - 1em)
   background:
   blocks:
     - type: composite

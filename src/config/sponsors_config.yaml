@@ -1,8 +1,8 @@
 page:
   styles:
-    position: relative;
-    display: grid;
-    top: 1.75rem;
+    position: relative
+    display: grid
+    top: 1.75rem
   background:
   media:
   blocks:
