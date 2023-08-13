@@ -4,9 +4,18 @@ import img2_desktop from "../images/desktop_backgrounds/2.svg";
 //@ts-ignore
 import img2_mobile from "../images/mobile_backgrounds/2.jpg";
 import yaml from 'js-yaml';
-import fs from 'fs';
 
-var yamlFile = fs.readFileSync("../config/page_test.yaml", "utf8");
+var yamlFile = `
+page:
+  styles:
+    top: 2rem
+  background:
+    backgroundDesktop: img2_desktop
+    backgroundMobile: img2_mobile
+    fallbackBackground: img2_desktop
+  media:
+  blocks:
+`;
 var loadedYaml = yaml.load(yamlFile);
 
 // function ReadBlock() {
@@ -17,15 +26,7 @@ var loadedYaml = yaml.load(yamlFile);
 //   } catch (e) {
 //     console.error(e);
 //   };
-//   return (
-//     <div>
-//       {
-//         fileContent.map((blockConfig: any) =>
-//           chooseComponent(blockConfig)
-//         )
-//       }
-//     </div>
-//   );
+//   return fileContent;
 // }
 
 // function ReadFile() {
@@ -79,17 +80,16 @@ var loadedYaml = yaml.load(yamlFile);
 
 function Page() {
    // Blocks
-   const doc = loadedYaml;
    return (
      <>
-       <Container top={doc.page.styles.top}>
+       <Container top={loadedYaml.page.styles.top}>
          <picture>
-           <source srcSet={doc.page.background.backgroundDesktop} media={doc.page.background.minWidth} />
-           <source srcSet={doc.page.background.backgroundMobile} media={doc.page.background.maxWidth} />
-           <Img src={doc.page.background.fallbackBackgroundackground} alt="page" />
+           <source srcSet={loadedYaml.page.background.backgroundDesktop} media={loadedYaml.page.background.minWidth} />
+           <source srcSet={loadedYaml.page.background.backgroundMobile} media={loadedYaml.page.background.maxWidth} />
+           <Img src={loadedYaml.page.background.fallbackBackgroundackground} alt="page" />
          </picture>
          {
-           doc.page.blocks.map((blockConfig: any) =>
+           loadedYaml.page.blocks.map((blockConfig: any) =>
              chooseComponent(blockConfig)
            )
          }

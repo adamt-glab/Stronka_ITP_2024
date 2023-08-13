@@ -11,7 +11,7 @@ const Layout: React.FC<IProps> = ({children}) => {
        <>
            <Navigation />
            <main>
-               <TextPage/>
+               {children}
            </main>
        </>
    )

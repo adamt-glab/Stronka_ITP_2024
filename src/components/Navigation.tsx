@@ -16,22 +16,19 @@ import { ILink, links, socialLinks } from "../context/Links";
 import navstyle from "../styles/component-styles/Navigation.json";
 import yaml from 'js-yaml';
 
-const navyaml = yaml.load("../styles/component-styles/Navigation.yaml");
-console.log("ddd ", navyaml);
-
 
 const Nav = styled.nav`
-  background-color: ${navstyle.div[0]["background-color"]};
-  display: ${navstyle.div[0]["display"]};
-  align-items: ${navstyle.div[0]["align-items"]};
-  justify-content: ${navstyle.div[0]["justify-content"]};
-  z-index: ${navstyle.div[0]["z-index"]};
-  height: ${navstyle.div[0]["height"]};
-  padding: ${navstyle.div[0]["padding"]};
+  background-color: #e5c9ad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+  height: 6vh;
+  padding: 0.5em 0;
 
   a {
-    text-decoration: ${navstyle.a[0]["text-decoration"]};
-    color: ${navstyle.a[0]["color"]};
+    text-decoration: none;
+    color: #cd5e28;
   }
 
   @media (max-width: 768px) {
