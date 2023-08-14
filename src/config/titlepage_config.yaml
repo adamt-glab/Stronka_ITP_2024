@@ -2,7 +2,7 @@ page:
   styles:
     width: 100%
     height: 100vh
-    background: '#efd7bf url("../images/landing_page/1.svg")'
+    background: '#efd7bf'
     backgroundSize: cover
     backgroundPosition: bottom
     position: relative
@@ -10,64 +10,72 @@ page:
     height: calc(100vh - 6vh - 1em)
   background:
   blocks:
-    - type: composite
-      styles:
-        position: absolute
-        top: 32%
-        left: 50%
-        transform: translate(-50%, -50%)
-        width: clamp(12rem, 80vw, 36rem)
-        textAlign: center
+  - type: header2
+    styles:
+      fontSize: clamp(0.8rem, 5vw, 2.5rem)
+      lineHeight: 1.15
+      content: "8 marca 2023"
       media:
-        width: clamp(12rem, 50vw, 36rem)
-        transform: none
-        top: 10%
-        left: 7%
-        textAlign: left
-      blocks:
-        - type: image
-          styles:
-            width: 100%
-            display: block
-            marginBlock: 1.6rem
-            marginInline: auto
-            src: "../images/landing_page/ITP_logo.png"
-          media:
-            width: 98%
-            marginInline: 0
-        - type: header2
-          styles:
-            fontSize: clamp(0.8rem, 5vw, 2.5rem)
-            lineHeight: 1.15
-            content: "8 marca 2023"
-          media:
-            fontSize: clamp(1.7rem, 2.5vw, 2.5rem)
-            lineHeight: 1.2
-        - type: header2
-          styles:
-            fontSize: clamp(0.8rem, 5vw, 2.5rem)
-            lineHeight: 1.15
-            content: "10:00-16:00"
-          media:
-            fontSize: clamp(1.7rem, 2.5vw, 2.5rem)
-            lineHeight: 1.2
-        - type: header2
-          styles:
-            fontSize: clamp(0.8rem, 4.6vw, 2rem)
-            lineHeight: 1.15
-            content: "stadion miejski im. Henryka Reymana"
-          media:
-            fontSize: clamp(1.5rem, 2.2vw, 2.2rem)
-            lineHeight: 1.2
-        - type: image
-          styles:
-            position: absolute
-            width: clamp(8rem, 24vw, 20rem)
-            right: 0
-            marginTop: 4vh
-            marginRight: 6vw
-            userSelect: none
-            src: "../images/landing_page/BEST_logo.png"
-          media:
-            marginTop: 2vh
-            marginRight: 4vw
+        fontSize: clamp(1.7rem, 2.5vw, 2.5rem)
+        lineHeight: 1.2
+  # - type: composite
+  #   styles:
+  #     position: absolute
+  #     top: 32%
+  #     left: 50%
+  #     transform: translate(-50%, -50%)
+  #     width: clamp(12rem, 80vw, 36rem)
+  #     textAlign: center
+  #   media:
+  #     width: clamp(12rem, 50vw, 36rem)
+  #     transform: none
+  #     top: 10%
+  #     left: 7%
+  #     textAlign: left
+  #   blocks:
+  #     - type: image
+  #       styles:
+  #         width: 100%
+  #         display: block
+  #         marginBlock: 1.6rem
+  #         marginInline: auto
+  #         src: "../images/landing_page/ITP_logo.png"
+  #       media:
+  #         width: 98%
+  #         marginInline: 0
+  #     - type: header2
+  #       styles:
+  #         fontSize: clamp(0.8rem, 5vw, 2.5rem)
+  #         lineHeight: 1.15
+  #         content: "8 marca 2023"
+  #       media:
+  #         fontSize: clamp(1.7rem, 2.5vw, 2.5rem)
+  #         lineHeight: 1.2
+  #     - type: header2
+  #       styles:
+  #         fontSize: clamp(0.8rem, 5vw, 2.5rem)
+  #         lineHeight: 1.15
+  #         content: "10:00-16:00"
+  #       media:
+  #         fontSize: clamp(1.7rem, 2.5vw, 2.5rem)
+  #         lineHeight: 1.2
+  #     - type: header2
+  #       styles:
+  #         fontSize: clamp(0.8rem, 4.6vw, 2rem)
+  #         lineHeight: 1.15
+  #         content: "stadion miejski im. Henryka Reymana"
+  #       media:
+  #         fontSize: clamp(1.5rem, 2.2vw, 2.2rem)
+  #         lineHeight: 1.2
+  #     - type: image
+  #       styles:
+  #         position: absolute
+  #         width: clamp(8rem, 24vw, 20rem)
+  #         right: 0
+  #         marginTop: 4vh
+  #         marginRight: 6vw
+  #         userSelect: none
+  #         src: "../images/landing_page/BEST_logo.png"
+  #       media:
+  #         marginTop: 2vh
+  #         marginRight: 4vw
