@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-// @ts-ignore
-import BEST_logo from "../images/landing_page/BEST_logo.png";
-// @ts-ignore
-import ITP_logo from "../images/landing_page/ITP_logo.png";
-// @ts-ignore
-import tlo_pc_1 from "../images/landing_page/1.svg";
-import Wave from "./Wave";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
+import Wave from "./Wave";
 
 function ReadFile() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -37,103 +31,69 @@ function ReadFile() {
     <div>
       <input type="file" onChange={fileChangedHandler} />
       <button onClick={handleFileRead}>Read File</button>
-
-      {fileContent && (
-        // Assuming 'Page' component takes 'loadedYaml' as prop
-        <Container  {...fileContent}>
-          {fileContent.page.blocks.map((blockConfig) => (
-            chooseComponent(blockConfig)
-          ))}
-          {console.log("filecontent:...", {...fileContent})}
-          {console.log(fileContent.page.styles)}
-          {console.log(fileContent.page.media)}
-        </Container>
-      )}
-
-      <pre>{JSON.stringify(fileContent, null, 2)}</pre>
+      {
+        fileContent &&
+        (
+          <div className={css({
+            ...fileContent.page.styles,
+            '@media (min-width: 768px)': {
+              ...fileContent.page.media
+            }
+          })}>
+            {fileContent.page.blocks.map((blockConfig) => (
+              chooseComponent(blockConfig)
+            ))}
+          </div>
+        )
+      }
+      {/* <pre>{JSON.stringify(fileContent, null, 2)}</pre> */}
     </div>
   );
 }
 
 function H2(props: any) {
+  const { styles, media } = props;
   const h2Style = css({
-    ...props.page.styles,
-    '@media (max-width: 768px)': {
-      ...props.page.media
+    ...styles,
+    '@media (min-width: 768px)': {
+      ...media
     }
   })
-  console.log("entering container...");
-  console.log("inside container:", props.styles);
-  console.log("inside container:", props.media);
-  console.log("inside container:", ...h2Style)
   return (
-    <h2 className={h2Style}> {props.content} </h2>
-  )
-}
-
-function Container(props:any) {
-  const containerStyle = css({
-    ...props.page.styles,
-    '@media (max-width: 768px)': {
-      ...props.page.media
-    }
-  })
-  console.log("entering container...");
-  console.log("inside container:", props.page.styles);
-  console.log("inside container:", props.page.media);
-  console.log("inside container:", ...containerStyle)
-  return (
-    <div className={containerStyle}></div>
+    <h2 className={h2Style}> {styles.textContent} </h2>
   )
 }
 
 function TextBox(props: any) {
+  const { styles, media } = props;
+  const textBoxStyle = css({
+    ...styles,
+    '@media (min-width: 768px)': {
+      ...media
+    }
+  })
   return (
-    <div className={css(
-      {
-        ...props.styles,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
-      }
-    )} style={{ zIndex: 2 }}>
-      {props.content}
+    <div className={textBoxStyle} style={{ zIndex: 2 }}>
+      {styles.content}
     </div>
   )
 }
 
 function Img(props: any) {
+  const { styles, media } = props;
+  const imageStyle = css({
+    ...styles,
+    '@media (min-width: 768px)': {
+      ...media
+    }
+  });
   return (
-    <image className={css(
-      {
-        ...props.styles,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
-      }
-    )} />
+    <img className={imageStyle} src={styles.src} />
   )
 }
 
-// Outermost component
-// page:
-//  styles:
-//  ...
-//  blocks:
-//    - type: ...
-// function Page({ loadedYaml }) {
-//   return (
-//     <Container style={loadedYaml.page.styles}>
-//       {loadedYaml.page.blocks.map((blockConfig) => (
-//         chooseComponent(blockConfig)
-//       ))}
-//     </Container>
-//   );
-// }
-
 function chooseComponent(blockConfig: any) {
   // Read block type and generate a block of given type accordingly
-  console.log("entering chooseComponent..");
   switch (blockConfig.type) {
     case "text": {
       console.log("TEXT case..");
@@ -142,21 +102,28 @@ function chooseComponent(blockConfig: any) {
       )
     }
     case "image": {
-      console.log("IMAGE case..");
       return (
-        <Img {...blockConfig} src={blockConfig.src} />
+        <Img {...blockConfig} />
       )
     }
     case "header2": {
-      console.log("H2 case..");
       return (
-        <H2 {...blockConfig}/>
+        <H2 {...blockConfig} />
+      )
+    }
+    case "wave": {
+      return (
+        <Wave />
       )
     }
     case "composite": {
-      console.log("COMPOSITE case..");
       return (
-        <div {...blockConfig}>
+        <div className={css({
+          ...blockConfig.styles,
+          '@media (min-width: 768px)': {
+            ...blockConfig.media
+          }
+        })}>
           {blockConfig.blocks.map((block: any) => chooseComponent(block))}
         </div>
       );
