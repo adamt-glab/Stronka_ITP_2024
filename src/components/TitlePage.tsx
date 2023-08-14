@@ -53,27 +53,25 @@ function ReadFile() {
 
 function H2(props: any) {
   const { styles, media } = props;
-  const h2Style = css({
-    ...styles,
-    '@media (min-width: 768px)': {
-      ...media
-    }
-  })
   return (
-    <h2 className={h2Style}> {styles.textContent} </h2>
+    <h2 className={css({
+      ...styles,
+      '@media (min-width: 768px)': {
+        ...media
+      }
+    })}> {styles.textContent} </h2>
   )
 }
 
 function TextBox(props: any) {
   const { styles, media } = props;
-  const textBoxStyle = css({
-    ...styles,
-    '@media (min-width: 768px)': {
-      ...media
-    }
-  })
   return (
-    <div className={textBoxStyle} style={{ zIndex: 2 }}>
+    <div className={css({
+      ...styles,
+      '@media (min-width: 768px)': {
+        ...media
+      }
+    })} style={{ zIndex: 2 }}>
       {styles.content}
     </div>
   )
@@ -81,14 +79,13 @@ function TextBox(props: any) {
 
 function Img(props: any) {
   const { styles, media } = props;
-  const imageStyle = css({
-    ...styles,
-    '@media (min-width: 768px)': {
-      ...media
-    }
-  });
   return (
-    <img className={imageStyle} src={styles.src} />
+    <img className={css({
+      ...styles,
+      '@media (min-width: 768px)': {
+        ...media
+      }
+    })} src={styles.src} />
   )
 }
 
@@ -96,7 +93,6 @@ function chooseComponent(blockConfig: any) {
   // Read block type and generate a block of given type accordingly
   switch (blockConfig.type) {
     case "text": {
-      console.log("TEXT case..");
       return (
         <TextBox {...blockConfig} />
       )
@@ -134,7 +130,6 @@ function chooseComponent(blockConfig: any) {
 const TitlePage: React.FC = () => {
   return (
     <>
-      {/*<Wave />*/}
       <ReadFile />
     </>
   );
