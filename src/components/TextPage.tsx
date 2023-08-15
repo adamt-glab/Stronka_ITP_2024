@@ -1,60 +1,81 @@
 import React, { useState } from "react";
-//@ts-ignore
-import img2_desktop from "../images/desktop_backgrounds/2.svg";
-//@ts-ignore
-import img2_mobile from "../images/mobile_backgrounds/2.jpg";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-var yamlFile = `
-page:
-  styles:
-    top: 2rem
-  background:
-    backgroundDesktop: img2_desktop
-    backgroundMobile: img2_mobile
-    fallbackBackground: img2_desktop
-  media:
-  blocks:
-`;
-var loadedYaml = yaml.load(yamlFile);
+function ReadFile() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileContent, setFileContent] = useState(null);
 
-function Page() {
-   // Blocks
-   return (
-     <>
-       <Container top={loadedYaml.page.styles.top}>
-         <picture>
-           <source srcSet={loadedYaml.page.background.backgroundDesktop} media={loadedYaml.page.background.minWidth} />
-           <source srcSet={loadedYaml.page.background.backgroundMobile} media={loadedYaml.page.background.maxWidth} />
-           <Img src={loadedYaml.page.background.fallbackBackgroundackground} alt="page" />
-         </picture>
-         {
-           loadedYaml.page.blocks.map((blockConfig: any) =>
-             chooseComponent(blockConfig)
-           )
-         }
-       </Container>
-     </>
-   );
+  const fileChangedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setFileContent(null); // Reset file content when a new file is selected
+  };
+
+  const handleFileRead = async () => {
+    if (!selectedFile) {
+      console.warn("No file selected");
+      return;
+    }
+
+    try {
+      const content = await selectedFile.text();
+      const doc = yaml.load(content);
+      setFileContent(doc);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
+    <div>
+      <input type="file" onChange={fileChangedHandler} />
+      <button onClick={handleFileRead}>Read File</button>
+      {
+        fileContent &&
+        (
+          <div className={css({
+            ...fileContent.page.styles,
+            '@media (min-width: 768px)': {
+              ...fileContent.page.media
+            }
+          })} style={{ position: "relative", display: "grid" }}>
+            <picture>
+              <source srcSet={fileContent.page.background.backgroundDesktop} media="(min-width: 769px)" />
+              <source srcSet={fileContent.page.background.backgroundMobile} media="(max-width: 768px)" />
+              <Img src={fileContent.page.background.fallbackBackgroundackground} alt="page" />
+            </picture>
+            {fileContent.page.blocks.map((blockConfig) => (
+              chooseComponent(blockConfig)
+            ))}
+          </div>
+        )
+      }
+      {/* <pre>{JSON.stringify(fileContent, null, 2)}</pre> */}
+    </div>
+  );
 }
 
 function chooseComponent(blockConfig: any) {
   // Read block type and generate a block of given type accordingly
   switch (blockConfig.type) {
     case "text": {
-      return <>
+      return (
         <TextBox {...blockConfig} />
-      </>
+      )
     }
     case "image": {
-      return <>
-        <Img {...blockConfig} src={blockConfig.src} />
-      </>
+      return (
+        <Img {...blockConfig} />
+      )
     }
     case "composite": {
       return (
-        <div {...blockConfig} style={{ position: 'relative' }}>
+        <div className={css({
+          ...blockConfig.styles,
+          '@media (min-width: 768px)': {
+            ...blockConfig.media
+          }
+        })} style={{ position: 'relative' }}>
           {blockConfig.blocks.map((block: any) => chooseComponent(block))}
         </div>
       );
@@ -63,55 +84,39 @@ function chooseComponent(blockConfig: any) {
 };
 
 function TextBox(props: any) {
+  const { styles, media } = props;
   return (
     <div className={css(
       {
-        ...props.style,
+        ...styles,
         '@media (max-width: 768px)': {
-          ...props.media
+          ...media
         }
-      }
-    )}
-    style={{
-      justifyContent: "center",
-      position: "absolute",
-      display: "flexbox"
-    }}>{props.content}</div>
+      })}
+      style={{ justifyContent: "center", position: "absolute", display: "flexbox" }}>
+      {styles.textContent}
+    </div>
   )
 }
 
 function Img(props: any) {
+  const { styles, media } = props;
   return (
-    <image className={css(
-      {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+    <img className={css({
+      ...styles,
+      '@media (max-width: 768px)': {
+        ...media
       }
-    )}
-    style={{ width: "100%", height: "100%", position: "relative" }} />
-  )
-}
-
-function Container(props: any) {
-  return (
-    <div className={css(
-      {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
-      }
-    )}
-    style={{ top: "2rem", position: "relative", display: "grid" }} />
+    })
+    }
+    style={{ width: "100%", height: "100%", position: "relative" }}/>
   )
 }
 
 const TextPage: React.FC = () => {
   return (
     <>
-      <Page />
+      <ReadFile />
     </>
   );
 };

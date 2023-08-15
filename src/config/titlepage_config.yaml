@@ -71,6 +71,6 @@ page:
     media:
       marginTop: 2vh
       marginRight: 4vw
-  - type: wave
-    styles:
-    media:
+  # - type: wave
+  #   styles:
+  #   media:

@@ -4,17 +4,18 @@ import TextPage from "./TextPage";
 import TitlePage from "./TitlePage";
 
 interface IProps {
-   children?: ReactNode
+    children?: ReactNode
 }
 
-const Layout: React.FC<IProps> = ({children}) => {
-   return (
-       <>
-           <Navigation />
-           <main>
-               <TitlePage />
-           </main>
-       </>
-   )
+const Layout: React.FC<IProps> = ({ children }) => {
+    return (
+        <>
+            <Navigation />
+            <main>
+                <TitlePage />
+                <TextPage />
+            </main>
+        </>
+    )
 }
 export default Layout;

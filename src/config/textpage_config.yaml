@@ -2,103 +2,103 @@ page:
   styles:
     top: 2rem
   background:
-    backgroundDesktop: img2_desktop
-    backgroundMobile: img2_mobile
-    fallbackBackground: img2_desktop
+    backgroundDesktop: "/static/2-bd3663a96fa2a85390d2f41902317011.svg"
+    backgroundMobile: "/static/2-0a18a81c62c15e8c5348b07f9e356644.jpg"
+    fallbackBackground: "/static/2-bd3663a96fa2a85390d2f41902317011.svg"
   media:
   blocks:
-    # Pole tekstowe no. 1
-    - type: text
-      styles:
-        color: "#d2764a"
-        backgroundColor: "#e8d9cb"
-        content: "Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów
-                BEST AGH Kraków to projekt, który już od 25 lat łączy środowisko
-                akademickie i biznesowe. Naszym celem jest zapewnienie wszystkim
-                uczestnikom Targów, jak największej jakości wydarzenia oraz pełnej
-                satysfakcji."
-        width: 38%
-        height: 12%
-        top: 18%
-        left: 4%
-        fontSize: 1.3vw
-        border: 0.15rem solid
-        padding: 0.3rem
-        textAlign: justify
-        alignItems: center
-      media:
-        width: 80%
-        left: 10%
-        top: 7%
-        height: 8%
-        fontSize: 3vw
-    # Pole tekstowe no. 2
-    - type: text
-      styles:
-        color: "#d2764a"
-        backgroundColor: "#e8d9cb"
-        content: "Aby to zrealizować, w tym roku zaprosiliśmy 50 firm, które są
-                wiodącymi markami w swoich branżach"
-        width: 38%
-        height: 5%
-        top: 33%
-        left: 4%
-        fontSize: 1.3vw
-        border: 0.15rem solid
-        padding: 0.3rem
-        textAlign: justify
-        alignItems: center
-      media:
-        width: 80%
-        left: 10%
-        top: 19%
-        height: 4%
-        fontSize: 3vw
-    # Pole tekstowe no. 3
-    - type: text
-      styles:
-        color: "#d2764a"
-        backgroundColor: "#e8d9cb"
-        content: "W dniu 8 marca spotkają się pracodawcy szukający idealnych pracowników
-                oraz studenci starający się o wymarzoną pracę lub staż. Na naszej
-                stronie internetowej znajdziecie informacje nie tylko o naszych
-                wystawcach i ich ofertach pracy, ale także o konkursach oraz
-                warsztatach."
-        width: 38%
-        height: 12%
-        top: 54%
-        left: 56%
-        fontSize: 1.3vw
-        border: 0.15rem solid
-        padding: 0.3rem
-        textAlign: justify
-        alignItems: center
-      media:
-        width: 80%
-        left: 10%
-        top: 73.5%
-        height: 8.4%
-        fontSize: 3vw
-    # Pole tekstowe no. 4
-    - type: text
-      styles:
-        color: "#d2764a"
-        backgroundColor: "#e8d9cb"
-        content: "Istnieje również możliwość przesłania swojego CV do naszej bazy,
-                dzięki której nasi wystawcy poznają Was jeszcze lepiej pod kątem
-                waszego doświadczenia i umiejętności."
-        width: 38%
-        height: 6.5%
-        top: 69%
-        left: 56%
-        fontSize: 1.3vw
-        border: 0.15rem solid
-        padding: 0.3rem
-        textAlign: justify
-        alignItems: center
-      media:
-        width: 80%
-        left: 10%
-        top: 86%
-        height: 6%
-        fontSize: 3vw
+  # Pole tekstowe no. 1
+  - type: text
+    styles:
+      color: "#d2764a"
+      backgroundColor: "#e8d9cb"
+      textContent: "Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów
+              BEST AGH Kraków to projekt, który już od 25 lat łączy środowisko
+              akademickie i biznesowe. Naszym celem jest zapewnienie wszystkim
+              uczestnikom Targów, jak największej jakości wydarzenia oraz pełnej
+              satysfakcji."
+      width: 38%
+      height: 12%
+      top: 18%
+      left: 4%
+      fontSize: 1.3vw
+      border: 0.15rem solid
+      padding: 0.3rem
+      textAlign: justify
+      alignItems: center
+    media:
+      width: 80%
+      left: 10%
+      top: 7%
+      height: 8%
+      fontSize: 3vw
+  # Pole tekstowe no. 2
+  - type: text
+    styles:
+      color: "#d2764a"
+      backgroundColor: "#e8d9cb"
+      textContent: "Aby to zrealizować, w tym roku zaprosiliśmy 50 firm, które są
+              wiodącymi markami w swoich branżach."
+      width: 38%
+      height: 5%
+      top: 33%
+      left: 4%
+      fontSize: 1.3vw
+      border: 0.15rem solid
+      padding: 0.3rem
+      textAlign: justify
+      alignItems: center
+    media:
+      width: 80%
+      left: 10%
+      top: 19%
+      height: 4%
+      fontSize: 3vw
+  # Pole tekstowe no. 3
+  - type: text
+    styles:
+      color: "#d2764a"
+      backgroundColor: "#e8d9cb"
+      textContent: "W dniu 8 marca spotkają się pracodawcy szukający idealnych pracowników
+              oraz studenci starający się o wymarzoną pracę lub staż. Na naszej
+              stronie internetowej znajdziecie informacje nie tylko o naszych
+              wystawcach i ich ofertach pracy, ale także o konkursach oraz
+              warsztatach."
+      width: 38%
+      height: 12%
+      top: 54%
+      left: 56%
+      fontSize: 1.3vw
+      border: 0.15rem solid
+      padding: 0.3rem
+      textAlign: justify
+      alignItems: center
+    media:
+      width: 80%
+      left: 10%
+      top: 73.5%
+      height: 8.4%
+      fontSize: 3vw
+  # Pole tekstowe no. 4
+  - type: text
+    styles:
+      color: "#d2764a"
+      backgroundColor: "#e8d9cb"
+      textContent: "Istnieje również możliwość przesłania swojego CV do naszej bazy,
+              dzięki której nasi wystawcy poznają Was jeszcze lepiej pod kątem
+              waszego doświadczenia i umiejętności."
+      width: 38%
+      height: 6.5%
+      top: 69%
+      left: 56%
+      fontSize: 1.3vw
+      border: 0.15rem solid
+      padding: 0.3rem
+      textAlign: justify
+      alignItems: center
+    media:
+      width: 80%
+      left: 10%
+      top: 86%
+      height: 6%
+      fontSize: 3vw

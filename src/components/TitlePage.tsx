@@ -72,7 +72,7 @@ function TextBox(props: any) {
         ...media
       }
     })} style={{ zIndex: 2 }}>
-      {styles.content}
+      {styles.textContent}
     </div>
   )
 }
