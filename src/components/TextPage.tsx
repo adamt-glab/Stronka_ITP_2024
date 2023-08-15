@@ -29,7 +29,7 @@ function ReadFile() {
   return (
     <div>
       <input type="file" onChange={fileChangedHandler} />
-      <button onClick={handleFileRead}>Read File</button>
+      <button onClick={handleFileRead}>Read Text</button>
       {
         fileContent &&
         (
@@ -40,9 +40,9 @@ function ReadFile() {
             }
           })} style={{ position: "relative", display: "grid" }}>
             <picture>
-              <source srcSet={fileContent.page.background.backgroundDesktop} media="(min-width: 769px)" />
-              <source srcSet={fileContent.page.background.backgroundMobile} media="(max-width: 768px)" />
-              <Img src={fileContent.page.background.fallbackBackgroundackground} alt="page" />
+              <source srcSet={fileContent.page.background.desktopBackground} media="(min-width: 769px)" />
+              <source srcSet={fileContent.page.background.mobileBackground} media="(max-width: 768px)" />
+              <Img src={fileContent.page.background.fallbackBackground} alt="page" />
             </picture>
             {fileContent.page.blocks.map((blockConfig) => (
               chooseComponent(blockConfig)

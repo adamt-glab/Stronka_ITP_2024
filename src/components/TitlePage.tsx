@@ -30,7 +30,7 @@ function ReadFile() {
   return (
     <div>
       <input type="file" onChange={fileChangedHandler} />
-      <button onClick={handleFileRead}>Read File</button>
+      <button onClick={handleFileRead}>Read Title</button>
       {
         fileContent &&
         (

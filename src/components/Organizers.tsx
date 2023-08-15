@@ -1,19 +1,6 @@
-import React from "react";
-//@ts-ignore
-import img8_desktop from "../images/desktop_backgrounds/8.svg";
-//@ts-ignore
-import img6_mobile from "../images/mobile_backgrounds/6.jpg";
+import React, { useState } from "react";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
-
-var yamlFile = `
-page:
-  styles:
-  background:
-  media:
-  blocks:
-`;
-var loadedYaml = yaml.load(yamlFile);
 
 function Container(props: any) {
   return (

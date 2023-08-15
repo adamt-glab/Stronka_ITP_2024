@@ -2,8 +2,8 @@ page:
   styles:
     top: 2rem
   background:
-    backgroundDesktop: "/static/2-bd3663a96fa2a85390d2f41902317011.svg"
-    backgroundMobile: "/static/2-0a18a81c62c15e8c5348b07f9e356644.jpg"
+    desktopBackground: "/static/2-bd3663a96fa2a85390d2f41902317011.svg"
+    mobileBackground: "/static/2-0a18a81c62c15e8c5348b07f9e356644.jpg"
     fallbackBackground: "/static/2-bd3663a96fa2a85390d2f41902317011.svg"
   media:
   blocks:

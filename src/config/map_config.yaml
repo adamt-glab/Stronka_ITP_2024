@@ -3,9 +3,9 @@ page:
     top: 1.75rem
   media:
   background:
-    desktopBackground: img3_desktop
-    mobileBackground: img3_mobile
-    fallbackBackground: img3_desktop
+    desktopBackground: "/static/3-c2b53f5e8928a2ffce5be10c8206a31f.svg"
+    mobileBackground: "/static/3-988d9b76a38712ba1137c0e9f8102d47.png"
+    fallbackBackground: "/static/3-c2b53f5e8928a2ffce5be10c8206a31f.svg"
   blocks:
   # Main Map
   - type: image
@@ -19,7 +19,7 @@ page:
       top: 12%
       bottom:
       padding:
-      src: "../images/map/map.svg"
+      src: "/static/map-c7cfc1b8a37d0fb660c0314ad6148839.svg"
     media:
       height:
       width: 95%
@@ -39,7 +39,7 @@ page:
       top: 74%
       bottom:
       padding:
-      src: "../images/map/opis1.svg"
+      src: "/static/opis1-b7ce1d540535c57ad9dc21efab99c623.svg"
     media:
       height:
       width: 40%
@@ -59,7 +59,7 @@ page:
       top: 74%
       bottom:
       padding:
-      src: "../images/map/opis2.svg"
+      src: "/static/opis2-bc2f3af1de070cf41bb137d46c142980.svg"
     media:
       height:
       width: 25%
@@ -79,7 +79,7 @@ page:
       top: 72.25%
       bottom:
       padding:
-      src: "../images/map/opis3.svg"
+      src: "/static/opis4-3d4f43543f030d2c8f5a2f5b8f7b2291.svg"
     media:
       height:
       width: 28%
@@ -99,7 +99,7 @@ page:
       top: 74%
       bottom:
       padding:
-      src: "../images/map/opis3.svg"
+      src: "/static/opis3-865c7642ba49cae33c72e3cbb671258a.svg"
     media:
       height:
       width: 25%

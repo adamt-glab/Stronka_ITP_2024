@@ -1,102 +1,109 @@
-import React from "react";
-//@ts-ignore
-import img3_desktop from "../images/desktop_backgrounds/3.svg";
-//@ts-ignore
-import img3_mobile from "../images/mobile_backgrounds/3.png";
-//@ts-ignore
+import React, { useState } from "react";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-var yamlFile = `
-page:
-  styles:
-  background:
-  media:
-  blocks:
-`;
-var loadedYaml = yaml.load(yamlFile);
+function ReadFile() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileContent, setFileContent] = useState(null);
 
-function Container(props: any) {
+  const fileChangedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setFileContent(null); // Reset file content when a new file is selected
+  };
+
+  const handleFileRead = async () => {
+    if (!selectedFile) {
+      console.warn("No file selected");
+      return;
+    }
+
+    try {
+      const content = await selectedFile.text();
+      const doc = yaml.load(content);
+      setFileContent(doc);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <div className={css(
+    <div>
+      <input type="file" onChange={fileChangedHandler} />
+      <button onClick={handleFileRead}>Read Map</button>
       {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+        fileContent &&
+        (
+          <div className={css({
+            ...fileContent.page.styles,
+            '@media (max-width: 769px)': {
+              ...fileContent.page.media
+            }
+          })} style={{ position: "relative", display: "grid" }}>
+            <picture>
+              <source srcSet={fileContent.page.background.desktopBackground} media="(min-width: 769px)" />
+              <source srcSet={fileContent.page.background.mobileBackground} media="(max-width: 768px)" />
+              <Img src={fileContent.page.background.fallbackBackground} alt="page" />
+            </picture>
+            {fileContent.page.blocks.map((blockConfig) => (
+              chooseComponent(blockConfig)
+            ))}
+          </div>
+        )
       }
-    )}
-      style={{
-        position: 'relative',
-        display: 'grid'
-      }} />
-  )
+      {/* <pre>{JSON.stringify(fileContent, null, 2)}</pre> */}
+    </div>
+  );
 }
 
 function Img(props: any) {
+  const { styles, media } = props;
   return (
-    <img
-      style={{
-        width: '100%',
-        height: '100%',
-        position: "relative"
-      }} />
+    <img className={css({
+      ...styles,
+      '@media (max-width: 769px)': {
+        ...media
+      }
+    })
+    }
+      style={{ width: "100%", height: "100%", position: "relative" }} />
   )
 }
 
-function Image(props: any){
+function Image(props: any) {
+  const { styles, media } = props;
   return (
-    <div className={css(
-      {
-        ...props.style,
-        '@media (max-width: 769px)': {
-          ...props.media
-        }
+    <img className={css({
+      ...styles,
+      '@media (max-width: 769px)': {
+        ...media
       }
-    )}
+    })}
       style={{
         position: 'absolute',
         zIndex: 2
-      }} />
+      }} 
+      src={styles.src}/>
   )
 }
 
 function TextBox(props: any) {
+  const { styles, media } = props;
   return (
     <div className={css(
       {
-        ...props.style,
+        ...styles,
         '@media (max-width: 768px)': {
-          ...props.media
+          ...media
         }
-      }
-    )}
+      })}
       style={{
         justifyContent: "center",
         position: "absolute",
         display: "flexbox",
         textAlign: 'center',
         alignItems: 'center'
-      }}>{props.content}</div>
-  )
-}
-
-function Page(){
-  return(
-  <>
-    <Container>
-      <picture>
-        <source srcSet={loadedYaml.page.background.desktopBackground} media="(min-width: 769px)" />
-        <source srcSet={loadedYaml.page.background.mobileBackground} media="(max-width: 768px)" />
-        <Img src={loadedYaml.page.background.fallbackBackground} />
-      </picture>
-      {
-        loadedYaml.page.blocks.map((blockConfig: any) =>
-          chooseComponent(blockConfig)
-        )
-      }
-    </Container>
-  </>
+      }}>{styles.textContent}
+    </div>
   )
 }
 
@@ -110,12 +117,17 @@ function chooseComponent(blockConfig: any) {
     }
     case "image": {
       return (
-        <Image {...blockConfig} src={blockConfig.src} />
+        <Image {...blockConfig}/>
       )
     }
     case "composite": {
       return (
-        <div {...blockConfig}>
+        <div className={css({
+          ...blockConfig.styles,
+          '@media (max-width: 769px)': {
+            ...blockConfig.media
+          }
+        })}>
           {blockConfig.blocks.map((block: any) => chooseComponent(block))}
         </div>
       );
@@ -126,7 +138,7 @@ function chooseComponent(blockConfig: any) {
 const Map: React.FC = () => {
   return (
     <div id="map">
-      <Page />
+      <ReadFile/>
     </div>
   );
 };
