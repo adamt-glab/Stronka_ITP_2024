@@ -17,7 +17,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "../images/desktop_backgrounds/3.svg"
+      src: "/static/4-c6113b019a83f17193bc0e9d71d014f4.svg"
     media:
   # background no. 2
   - type: image
@@ -30,7 +30,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "../images/desktop_backgrounds/4.svg"      
+      src: "/static/5-b8745e4832fdf012b7ce706360f91f92.svg"      
     media:
   # partners
   - type: image
@@ -43,7 +43,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "../images/desktop_backgrounds/5.svg"
+      src: "/static/6-f09b81d7c73981fcc9bd9a4e0eefc571.svg"
     media:
   # patrons
   - type: image
@@ -56,7 +56,7 @@ page:
       padding:
       transform:
       position: relative
-      src: "../images/desktop_backgrounds/6.svg"
+      src: "/static/7-b4c57100f42d5d2532040a8264b8e0c5.svg"
     media:
     # Tytul: Sponsor Glowny
   - type: title
@@ -69,7 +69,7 @@ page:
       fontSize: 2.4vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "SPONSOR GŁÓWNY"
+      textContent: "SPONSOR GŁÓWNY"
     media:
     # Tytul: Sponsorzy
   - type: title
@@ -82,7 +82,7 @@ page:
       fontSize: 2.4vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "SPONSORZY"
+      textContent: "SPONSORZY"
     media:
     # Tytul: Partner Strefy Studenta
   - type: title
@@ -95,7 +95,7 @@ page:
       fontSize: 2.7vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "PARTNER <br /> STREFY <br /> STUDENTA"
+      textContent: "PARTNER <br /> STREFY <br /> STUDENTA"
     media:
     # Tytul: Partner Merytoryczny
   - type: title
@@ -108,7 +108,7 @@ page:
       fontSize: 2.7vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "PARTNER <br /> MERYTORYCZNY"
+      textContent: "PARTNER <br /> MERYTORYCZNY"
     media:
     # Tytul: Partner Techniczny
   - type: title
@@ -121,7 +121,7 @@ page:
       fontSize: 2.7vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "PARTNER <br /> TECHNICZNY"
+      textContent: "PARTNER <br /> TECHNICZNY"
     media:
     # Tytul: Partnerzy Medialni
   - type: title
@@ -134,7 +134,7 @@ page:
       fontSize: 2.4vw
       backgroundColor: "#ead8ce"
       color: "#d2764a"
-      content: "PARTNERZY <br /> MEDIALNI"
+      textContent: "PARTNERZY <br /> MEDIALNI"
     media:
   # sponsor glowny - Sabre
   - type: partner
@@ -144,7 +144,7 @@ page:
       left:
       top: 16%
       link: "https://www.sabre.com/locations/poland/"
-      src: "../images/logos/00_SG_Sabre.png"
+      src: "/static/00_SG_Sabre-f55087bee8afedc3cbcd7418d677a8e6.png"
       alt: "Sabre"
       position: absolute
     media:
@@ -160,7 +160,7 @@ page:
       left: 8.8%
       top: 36.6%
       link: "https://www.woodward.com/"
-      src: "../images/logos/01_S_Woodward.png"
+      src: "/static/01_S_Woodward-0c8e9bb3dc96045c806977324ceeaaf3.png"
       alt: "Woodward"
       position: absolute
     media:
@@ -176,7 +176,7 @@ page:
       left: 45.6%
       top: 36%
       link: "https://www.pega.com/"
-      src: "../images/logos/02_S_Pega.png"
+      src: "/static/02_S_Pega-8b846115dc448c260d76f83142668cb3.png"
       alt: "Pega"
       position: absolute
     media:
@@ -192,7 +192,7 @@ page:
       left:
       top: 36.6%
       link: "https://www.mars.com/"
-      src: "../images/logos/03_S_Mars.png"
+      src: "/static/03_S_Mars-c79a4842bca018ea364eee5b17809037.png"
       alt: "Mars"
       position: absolute
     media:
@@ -208,7 +208,7 @@ page:
       left: 10.5%
       top: 44%
       link: "https://www.aptiv.com/"
-      src: "../images/logos/04_S_Aptiv.png"
+      src: "/static/3-595de51e8d57d44ec2ed50be019c7c22.png"
       alt: "aptiv"
       position: absolute
     media:
@@ -224,7 +224,7 @@ page:
       left: 45.8%
       top: 43%
       link: "https://www.motorolasolutions.com/en_us/home.html"
-      src: "../images/logos/05_S_Motorola.png"
+      src: "/static/05_S_Motorola-f6e1e5251a69a3e9fe51224d6a79744d.png"
       alt: "Motorola"
       position: absolute
     media:
@@ -240,7 +240,7 @@ page:
       left:
       top: 44.1%
       link: "https://www.autodesk.com/"
-      src: "../images/logos/06_S_Autodesk.png"
+      src: "/static/06_S_Autodesk-d97eed74844c737fb8352773110a145c.png"
       alt: "Autodesk"
       position: absolute
     media:
@@ -256,7 +256,7 @@ page:
       left:
       top: 65.4%
       link: "https://www.ge.com/"
-      src: "../images/logos/07_PSS_GE_Healthcare.png"
+      src: "/static/07_PSS_GE_Healthcare-c5a2ab6c49564ad25746ded871fb876d.png"
       alt: "GE"
       position: absolute
     media:
@@ -272,7 +272,7 @@ page:
       left:
       top: 65.3%
       link: "https://www.adecco.pl/"
-      src: "../images/logos/08_PMT_Adecco.png"
+      src: "/static/08_PMT_Adecco-67f9b229b807ea4c8010d63dbe6bae37.png"
       alt: "Adecco"
       position: absolute
     media:
@@ -288,7 +288,7 @@ page:
       left:
       top: 65.5%
       link: "https://www.fujijama.pl/"
-      src: "../images/logos/15_PT_Fujijama.svg"
+      src: "/static/15_PT_Fujijama-01df48daafadf4924e22f81621255bcc.svg"
       alt: "Fujijama"
       position: absolute
     media:
@@ -304,7 +304,7 @@ page:
       left: 13%
       top: 86.2%
       link: "https://www.eska.pl/"
-      src: "../images/logos/09_PMD_Eska.png"
+      src: "/static/09_PMD_Eska-a9ca97313f2d6be0dcaec96462779031.png"
       alt: "Eska"
       position: absolute
     media:
@@ -320,7 +320,7 @@ page:
       left:
       top: 86.2%
       link: "http://www.podajdalej.info.pl/"
-      src: "../images/logos/10_PMD_Podaj_Dalej.png"
+      src: "/static/10_PMD_Podaj_Dalej-6acb54c0258c16d46e774fbe25d6ae64.png"
       alt: "Podaj Dalej"
       position: absolute
     media:
@@ -336,7 +336,7 @@ page:
       left:
       top: 86.4%
       link: "https://www.dlastudenta.pl/"
-      src: "../images/logos/11_PMD_Dla_Studenta.png"
+      src: "/static/11_PMD_Dla_Studenta-bdfc53e6c6f8aad93fba88b210d62993.png"
       alt: "Dla Studenta"
       position: absolute
     media:
@@ -352,7 +352,7 @@ page:
       left: 11.7%
       top: 93.2%
       link: "https://eurostudent.pl/"
-      src: "../images/logos/12_PMD_Eurostudent.png"
+      src: "/static/12_PMD_Eurostudent-a7592c006038c30c87605d9ad2b992e4.png"
       alt: "Eurostudent"
       position: absolute
     media:
@@ -368,7 +368,7 @@ page:
       left:
       top: 93.4%
       link: "https://kms.org.pl/"
-      src: "../images/logos/13_PMD_KMS.png"
+      src: "/static/13_PMD_KMS-5db955400e5ee60c36b192b17f5f9cb6.png"
       alt: "KMS"
       position: absolute
     media:
@@ -384,7 +384,7 @@ page:
       left:
       top: 93.4%
       link: "https://fxmag.pl/"
-      src: "../images/logos/14_PMD_FXMAG.png"
+      src: "/static/3-595de51e8d57d44ec2ed50be019c7c22.png"
       alt: "FXMAG"
       position: absolute
     media:

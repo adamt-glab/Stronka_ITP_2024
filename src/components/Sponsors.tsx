@@ -1,106 +1,114 @@
-import React from "react";
-import useMediaQuery from "../utils/UseMediaQuery";
-import MovingGears from "./MovingGears";
+import React, { useState } from "react";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-var yamlFile = `
-page:
-  styles:
-  background:
-  media:
-  blocks:
-`;
-var loadedYaml = yaml.load(yamlFile);
+function ReadFile() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileContent, setFileContent] = useState(null);
 
-function Container(props: any) {
+  const fileChangedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setFileContent(null); // Reset file content when a new file is selected
+  };
+
+  const handleFileRead = async () => {
+    if (!selectedFile) {
+      console.warn("No file selected");
+      return;
+    }
+
+    try {
+      const content = await selectedFile.text();
+      const doc = yaml.load(content);
+      setFileContent(doc);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <div className={css(
+    <div>
+      <input type="file" onChange={fileChangedHandler} />
+      <button onClick={handleFileRead}>Read Sponsors</button>
       {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+        fileContent &&
+        (
+          <div className={css({
+            ...fileContent.page.styles,
+            '@media (min-width: 768px)': {
+              ...fileContent.page.media
+            }
+          })}>
+            {fileContent.page.blocks.map((blockConfig) => (
+              chooseComponent(blockConfig)
+            ))}
+          </div>
+        )
       }
-    )} />
-  )
+      {/* <pre>{JSON.stringify(fileContent, null, 2)}</pre> */}
+    </div>
+  );
 }
 
-function Img(props: any) {
+function Image(props: any) {
+  const { styles, media } = props;
   return (
-    <image className={css(
+    <img className={css(
       {
-        ...props.style,
+        ...styles,
         '@media (max-width: 768px)': {
-          ...props.media
+          ...media
         }
       }
-    )} />
+    )} src={styles.src} alt={styles.alt}/>
   )
 }
 
 function PartnerTitle(props: any) {
+  const { styles, media } = props;
   return (
-    <div className={css(
-      {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+    <div className={css({
+      ...styles,
+      '@media (max-width: 768px)': {
+        ...media
       }
-    )}
+    })}
       style={{
         position: 'absolute',
         textAlign: 'center',
         alignItems: 'center',
         display: 'flex',
         justifyContent: 'center',
-      }}>{props.content} </div>
+      }} dangerouslySetInnerHTML={{ __html: styles.textContent }} />
   )
 }
 
 function PartnerLinkWrapper(props: any) {
+  const { styles, media } = props;
   return (
-    <a className={css(
-      {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+    <a className={css({
+      ...styles,
+      '@media (min-width: 768px)': {
+        ...media
       }
-    )} />
+    })} href={styles.link} target="_blank"/>
   )
 }
 
 function TextBox(props: any) {
+  const { styles, media } = props;
   return (
-    <div className={css(
-      {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+    <div className={css({
+      ...styles,
+      '@media (min-width: 768px)': {
+        ...media
       }
-    )}
+    })}
       style={{
         justifyContent: "center",
         position: "absolute",
         display: "flexbox"
-      }}>{props.content}</div>
-  )
-}
-
-function Page() {
-  return (
-    <>
-      <Container {...loadedYaml}>
-        {
-          loadedYaml.page.blocks.map((blockConfig: any) =>
-            chooseComponent(blockConfig)
-          )
-        }
-      </Container>
-    </>
+      }}>{styles.textContent}</div>
   )
 }
 
@@ -119,13 +127,13 @@ function chooseComponent(blockConfig: any) {
     }
     case "image": {
       return (
-        <Img {...blockConfig} src={blockConfig.src} />
+        <Image {...blockConfig} />
       )
     }
     case "partner": {
       return (
-        <PartnerLinkWrapper {...blockConfig} href={blockConfig.link} target="_blank">
-          <Img className={
+        <PartnerLinkWrapper {...blockConfig}>
+          <Image {...blockConfig} className={
             css({
               width: '100%',
               height: '100%',
@@ -135,14 +143,18 @@ function chooseComponent(blockConfig: any) {
                 padding: '1.5rem',
                 transform: 'translate(-1.5rem, -1.5rem)',
               }
-            })} 
-            src={blockConfig.src} alt={blockConfig.alt} />
+            })}/>
         </PartnerLinkWrapper>
       )
     }
     case "composite": {
       return (
-        <div {...blockConfig}>
+        <div className={css({
+          ...blockConfig.styles,
+          '@media (min-width: 768px)': {
+            ...blockConfig.media
+          }
+        })}>
           {blockConfig.blocks.map((block: any) => chooseComponent(block))}
         </div>
       );
@@ -175,7 +187,7 @@ const Sponsors: React.FC = () => {
   // TODO: missing id-s of partners
   return (
     <div id="sponsors">
-      <Page />
+      <ReadFile />
     </div>
   );
 };
