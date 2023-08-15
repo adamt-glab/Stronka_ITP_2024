@@ -3,9 +3,9 @@ page:
   media:
   background:
     top: 1.75rem
-    desktopBackground: img8_desktop
-    mobileBackground: img6_mobile
-    fallbackBackground: img8_desktop
+    desktopBackground: "/static/8-bb59fe4c695f616c31441294275e2a79.svg"
+    mobileBackground: "/static/6-0f2ac2394e64c8eef84ee5bd259ab4c2.jpg"
+    fallbackBackground: "/static/8-bb59fe4c695f616c31441294275e2a79.svg"
   blocks:
   - type: header2
     styles:
@@ -23,7 +23,7 @@ page:
       bottom:
       paddingInline: 2em
       paddingBlock: 1.5em
-      content: "KONTAKT <br /> Z ORGANIZATORAMI"
+      textContent: "KONTAKT <br/> Z ORGANIZATORAMI"
     media:
   - type: organizer
     styles:
@@ -38,8 +38,10 @@ page:
       left: 9.9%
       top: 85%
       bottom: 8%
-      name: "MIKOŁAJ ŻUCHOWSKI <br />"
-      content: "KOODRYNATOR DS. LOGISTYKI <br />
+      organizerName: 'MIKOŁAJ ŻUCHOWSKI <br />{" "}'
+      nameFontSize: 120%
+      nameFontWeight: 600
+      textContent: "KOODRYNATOR DS. LOGISTYKI <br />
           508 411 959 <br />
           MIKOLAJ.ZUCHOWSKI@BEST.KRAKOW.PL <br />"
     media:
@@ -49,15 +51,17 @@ page:
       border: 0.1rem solid
       borderRadius: 2rem
       color: "#d2764a"
-      font-size: 0.9vw
+      fontSize: 0.9vw
       width: 17%
       height: 10%
       right:
       left: 41.6%
       top: 85%
       bottom: 8%
-      name: "PAULINA SKRZYPCZAK <br />"
-      content: "GŁÓWNY KOORDYNATOR <br />
+      organizerName: 'PAULINA SKRZYPCZAK <br /> {" "}'
+      nameFontSize: 120%
+      nameFontWeight: 600
+      textContent: "GŁÓWNY KOORDYNATOR <br />
           516 321 234 <br />
           PAULINA.SKRZYPCZAK@BEST.KRAKOW.PL <br />"
     media:
@@ -74,8 +78,10 @@ page:
       left: 72.9%
       top: 85%
       bottom: 8%
-      name: "MATEUSZ WIRKIJOWSKI <br />"
-      content: "KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
+      organizerName: 'MATEUSZ WIRKIJOWSKI <br />{" "}'
+      nameFontSize: 120%
+      nameFontWeight: 600
+      textContent: "KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
           530 397 519 <br />
           MATEUSZ.WIRKIJOWSKI@BEST.KRAKOW.PL <br />"
     media:

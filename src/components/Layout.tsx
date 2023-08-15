@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import TextPage from "./TextPage";
 import TitlePage from "./TitlePage";
 import Map from "./Map";
+import Organizers from "./Organizers";
 
 interface IProps {
     children?: ReactNode
@@ -16,6 +17,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
                 <TitlePage />
                 <TextPage />
                 <Map />
+                <Organizers />
             </main>
         </>
     )

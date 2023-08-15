@@ -2,60 +2,76 @@ import React, { useState } from "react";
 import yaml from 'js-yaml';
 import { css } from '@emotion/css';
 
-function Container(props: any) {
+function ReadFile() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileContent, setFileContent] = useState(null);
+
+  const fileChangedHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setFileContent(null); // Reset file content when a new file is selected
+  };
+
+  const handleFileRead = async () => {
+    if (!selectedFile) {
+      console.warn("No file selected");
+      return;
+    }
+
+    try {
+      const content = await selectedFile.text();
+      const doc = yaml.load(content);
+      setFileContent(doc);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <div className={css(
+    <div>
+      <input type="file" onChange={fileChangedHandler} />
+      <button onClick={handleFileRead}>Read Orgs</button>
       {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+        fileContent &&
+        (
+          <div className={css({
+            ...fileContent.page.styles,
+            '@media (max-width: 768px)': {
+              ...fileContent.page.media
+            }
+          })} style={{ position: "relative", display: "grid" }}>
+            <picture style={{ position: "relative", top: fileContent.page.background.top }}>
+              <source srcSet={fileContent.page.background.desktopBackground} media="(min-width: 769px)" />
+              <source srcSet={fileContent.page.background.mobileBackground} media="(max-width: 768px)" />
+              <Img src={fileContent.page.background.fallbackBackground} alt="page" />
+            </picture>
+            {fileContent.page.blocks.map((blockConfig) => (
+              chooseComponent(blockConfig)
+            ))}
+          </div>
+        )
       }
-    )}
-      style={{
-        position: 'relative',
-        display: 'grid'
-      }} />
-  )
+      {/* <pre>{JSON.stringify(fileContent, null, 2)}</pre> */}
+    </div>
+  );
 }
 
 function TextBox(props: any) {
+  const { styles, media } = props;
   return (
     <div className={css(
       {
-        ...props.style,
+        ...styles,
         '@media (max-width: 768px)': {
-          ...props.media
+          ...media
         }
-      }
-    )}
+      })}
       style={{
         justifyContent: "center",
         position: "absolute",
         display: "flexbox",
         textAlign: 'center',
         alignItems: 'center'
-      }}>{props.content}</div>
-  )
-}
-
-function OrganizerName(props: any) {
-  return (
-    <span className={css(
-      {
-        fontSize: { ...props.styles.nameFontSize },
-        fontWeight: { ...props.styles.nameFontWeight },
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
-      }
-    )}>{props.organizerName}</span>
-  )
-}
-
-function Picture(props: any) {
-  return (
-    <picture style={{ position: "relative", ...props.page.background.top }} />
+      }} dangerouslySetInnerHTML={{ __html: styles.textContent }}/>
   )
 }
 
@@ -70,40 +86,34 @@ function Img(props: any) {
   )
 }
 
-function H2(props: any) {
+function Image(props: any) {
+  const { styles, media } = props;
   return (
-    <h2 className={css(
-      {
-        ...props.style,
-        '@media (max-width: 768px)': {
-          ...props.media
-        }
+    <img className={css({
+      ...styles,
+      '@media (max-width: 768px)': {
+        ...media
       }
-    )}
-      style={{
-        fontFamily: "Unica One, sans-serif", 
-        position: "absolute",
-        textAlign: 'center'
-      }}>{props.content}</h2>
+    })}
+      src={styles.src} />
   )
 }
 
-function Page() {
+function H2(props: any) {
+  const { styles, media } = props;
   return (
-    <>
-      <Container>
-        <Picture {...loadedYaml}>
-          <source srcSet={loadedYaml.page.background.desktopBackground} media="(min-width: 769px)" />
-          <source srcSet={loadedYaml.page.background.mobileBackground} media="(max-width: 768px)" />
-          <Img src={loadedYaml.page.background.fallbackBackground} alt="page" />
-        </Picture>
-        {
-          loadedYaml.page.blocks.map((blockConfig: any) =>
-            chooseComponent(blockConfig)
-          )
+    <h2 className={css(
+      {
+        ...styles,
+        '@media (max-width: 768px)': {
+          ...media
         }
-      </Container>
-    </>
+      })}
+      style={{
+        fontFamily: "Unica One, sans-serif",
+        position: "absolute",
+        textAlign: 'center'
+      }}dangerouslySetInnerHTML={{ __html: styles.textContent }}/>
   )
 }
 
@@ -117,7 +127,7 @@ function chooseComponent(blockConfig: any) {
     }
     case "image": {
       return (
-        <Img {...blockConfig} src={blockConfig.src} />
+        <Image {...blockConfig} />
       )
     }
     case "header2": {
@@ -125,17 +135,33 @@ function chooseComponent(blockConfig: any) {
         <H2 {...blockConfig} />
       )
     }
-    case "organizer":{
+    // TODO:
+    // when taking InnerHTML an element may not have children
+    // this component is essentialy textbox with additional span
+    // a workaround would be creating a composite styled as a textbox
+    case "organizer": {
       return (
         <TextBox {...blockConfig}>
-          <OrganizerName {...blockConfig} />
-          {blockConfig.content}
+          <span className={css(
+            {
+              fontSize: blockConfig.styles.nameFontSize,
+              fontWeight: blockConfig.styles.nameFontWeight,
+              '@media (max-width: 768px)': {
+                ...blockConfig.media
+              }
+            }
+          )}>{blockConfig.styles.organizerName}</span>
         </TextBox>
       )
     }
     case "composite": {
       return (
-        <div {...blockConfig}>
+        <div className={css({
+          ...blockConfig.styles,
+          '@media (min-width: 768px)': {
+            ...blockConfig.media
+          }
+        })} style={{ position: 'relative' }}>
           {blockConfig.blocks.map((block: any) => chooseComponent(block))}
         </div>
       );
@@ -146,7 +172,7 @@ function chooseComponent(blockConfig: any) {
 const Organizers: React.FC = () => {
   return (
     <>
-      <Page />
+      <ReadFile />
     </>
   );
 };
