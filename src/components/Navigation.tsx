@@ -79,13 +79,9 @@ const LinkContainer = styled.div`
   width: 70%;
   display: flex;
   justify-content: center;
-  gap: 0.2rem;
+  gap: .8rem;
   flex-direction: inherit;
   text-align: center;
-
-  @media (min-width: 768px) {
-    gap: 0;
-  }
 `;
 
 const SocialsContainer = styled.div`
