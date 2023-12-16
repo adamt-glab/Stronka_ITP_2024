@@ -1,8 +1,8 @@
 import React from "react";
 //@ts-ignore
-import img8_desktop from "../images/desktop_backgrounds/8.svg";
+import img8_desktop from "../images/desktop_backgrounds/8-popr.svg";
 //@ts-ignore
-import img6_mobile from "../images/mobile_backgrounds/6.jpg";
+import img6_mobile from "../images/mobile_backgrounds/6_fix.jpg";
 import styled from "styled-components";
 const Img = styled.img`
   width: 100%;
@@ -83,7 +83,7 @@ const TextBoxMateusz = styled(TextBox)`
 const Organizers: React.FC = () => {
   return (
     <>
-      <Container>
+      <Container id="organizers">
         <Picture>
           <source srcSet={img8_desktop} media="(min-width: 769px)" />
           <source srcSet={img6_mobile} media="(max-width: 768px)" />
@@ -94,27 +94,27 @@ const Organizers: React.FC = () => {
         </ContactBoxTitle>
         <TextBoxMikolaj>
           <NameText>
-            MIKOŁAJ ŻUCHOWSKI <br />{" "}
+            SZYMON LIPKOWSKI <br />{" "}
           </NameText>
           KOODRYNATOR DS. LOGISTYKI <br />
-          508 411 959 <br />
-          MIKOLAJ.ZUCHOWSKI@BEST.KRAKOW.PL <br />
+          513 809 540 <br />
+          SZYMON.LIPKOWSKI@BEST.KRAKOW.PL <br />
         </TextBoxMikolaj>
         <TextBoxPaulina>
           <NameText>
-            PAULINA SKRZYPCZAK <br />{" "}
+            ROZALIA STĘPIEŃ <br />{" "}
           </NameText>
           GŁÓWNY KOORDYNATOR <br />
-          516 321 234 <br />
-          PAULINA.SKRZYPCZAK@BEST.KRAKOW.PL <br />
+          783 871 850 <br />
+          ROZALIA.STEPIEN@BEST.KRAKOW.PL <br />
         </TextBoxPaulina>
         <TextBoxMateusz>
           <NameText>
-            MATEUSZ WIRKIJOWSKI <br />{" "}
+            TOMASZ PORĘBA <br />{" "}
           </NameText>
           KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
-          530 397 519 <br />
-          MATEUSZ.WIRKIJOWSKI@BEST.KRAKOW.PL <br />
+          513 800 812 <br />
+          TOMASZ.POREBA@BEST.KRAKOW.PL <br />
         </TextBoxMateusz>
       </Container>
     </>

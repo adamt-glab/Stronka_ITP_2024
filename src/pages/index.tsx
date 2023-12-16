@@ -15,7 +15,7 @@ const MainPage: React.FC<PageProps> = () => {
       <TitlePage />
       <TextPage />
       <Map />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <Organizers />
     </Layout>
   );
@@ -25,7 +25,7 @@ export default MainPage;
 
 export const Head: HeadFC = () => (
   <>
-    <title>Inżynierskie Targi Pracy BEST KRAKÓW</title>
+    <title>Inżynierskie Targi Pracy BEST AGH KRAKÓW</title>
     <link rel="icon" href="/favicon.ico" />
   </>
 );

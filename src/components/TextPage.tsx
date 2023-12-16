@@ -81,21 +81,20 @@ const TextPage: React.FC = () => {
         </picture>
         <TextBox1>
           Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów
-          BEST AGH Kraków to projekt, który już od 25 lat łączy środowisko
+          BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko
           akademickie i biznesowe. Naszym celem jest zapewnienie wszystkim
           uczestnikom Targów, jak największej jakości wydarzenia oraz pełnej
           satysfakcji.
         </TextBox1>
         <TextBox2>
-          Aby to zrealizować, w tym roku zaprosiliśmy 50 firm, które są
+          Aby to zrealizować, na wydarzenie zapraszamy firmy, które są
           wiodącymi markami w swoich branżach.
         </TextBox2>
         <TextBox3>
-          W dniu 8 marca spotkają się pracodawcy szukający idealnych pracowników
+          W marcu spotkają się pracodawcy szukający idealnych pracowników
           oraz studenci starający się o wymarzoną pracę lub staż. Na naszej
           stronie internetowej znajdziecie informacje nie tylko o naszych
-          wystawcach i ich ofertach pracy, ale także o konkursach oraz
-          warsztatach.
+          wystawcach i ich ofertach pracy, ale także o konkursach.
         </TextBox3>
         <TextBox4>
           Istnieje również możliwość przesłania swojego CV do naszej bazy,
