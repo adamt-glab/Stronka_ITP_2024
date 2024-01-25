@@ -46,6 +46,16 @@ const Nav = styled.nav`
   }
 `;
 
+const LinkContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  flex-direction: inherit;
+  text-align: center;
+  text-transform: none;
+`;
+
 const LogoContainer = styled.div`
   min-width: 10%;
   width: 15%;
@@ -65,23 +75,19 @@ const LogoContainer = styled.div`
   }
 `;
 
-const LinkContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: .8rem;
-  flex-direction: inherit;
-  text-align: center;
-  text-transform: none;
-`;
-
 const SocialsContainer = styled.div`
+  position: absolute;
+  
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 12em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 12%;
-  margin-right: 1%;
+  width: 10%;
+  margin-right: 15%;
 
   a {
     height: 80%;
@@ -180,13 +186,13 @@ const Navigation: React.FC = () => {
   }, []);
 
   const linkStyle =
-    {
-      fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
-      // fontWeight: "bold",
-      flexBasis: "100%",
-      alignSelf: "center",
-      whiteSpace: "nowrap",
-    };
+  {
+    fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
+    // fontWeight: "bold",
+    flexBasis: "100%",
+    alignSelf: "center",
+    whiteSpace: "nowrap"
+  };
 
   return (
     <>
@@ -196,7 +202,7 @@ const Navigation: React.FC = () => {
         </LogoContainer>
         <LogoContainer>
           <img src={itp_logo} alt="XXVI Inżynierskie Targi Pracy" />
-        </LogoContainer>
+        </LogoContainer> */}
         <SocialsContainer>
           <a href={socialLinks["facebook"]}>
             <img src={fb_icon} alt="facebook" />
@@ -207,7 +213,7 @@ const Navigation: React.FC = () => {
           <a href={socialLinks["linkedin"]}>
             <img src={li_icon} alt="linkedin" />
           </a>
-        </SocialsContainer> */}
+        </SocialsContainer>
 
         <Nav className={"navigation " + navClass}>
           <LinkContainer className="links">
