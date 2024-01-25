@@ -18,41 +18,31 @@ const socialLinks = {
   linkedin: "https://www.linkedin.com/company/in%C5%BCynierskie-targi-pracy/",
 };
 
+const NavContainer = styled.div`
+  position: relative;
+  height: 60vh;
+`;
+
 const Nav = styled.nav`
-  background-color: #e5c9ad;
+  position: absolute;
+  
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #e5821a;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   z-index: 5;
-  height: 6vh;
-  padding: 0.5em 0;
+  height: 4vh;
+  padding: 0.5em;
+  border-radius: 20vh;
+  margin: 0em 4em;
 
   a {
     text-decoration: none;
-    color: #cd5e28;
-  }
-
-  @media (max-width: 768px) {
-    height: calc(99vh - calc(100vh - 100%));
-    width: 100vw;
-    max-width: 100vw;
-    flex-direction: column;
-    position: fixed;
-    transition: max-width 0.5s ease-in-out;
-    font-size: xx-large;
-    overflow: hidden;
-
-    &.hidden {
-      max-width: 0;
-    }
-
-    a {
-      font-size: 2.5rem;
-    }
-
-    .links {
-      min-width: 100vw;
-    }
+    color: #ffffff;
   }
 `;
 
@@ -76,12 +66,13 @@ const LogoContainer = styled.div`
 `;
 
 const LinkContainer = styled.div`
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: .8rem;
   flex-direction: inherit;
   text-align: center;
+  text-transform: none;
 `;
 
 const SocialsContainer = styled.div`
@@ -119,29 +110,6 @@ const SocialsContainer = styled.div`
   }
 `;
 
-const NavControlButton = styled.button`
-  position: fixed;
-  z-index: 10;
-  display: none;
-  @media (max-width: 768px) {
-    display: block;
-  }
-  width: 65px;
-  height: 65px;
-  border: none;
-  background: none;
-  transition: transform 0.6s ease-in-out;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  &.opened {
-    transform: rotate(360deg);
-  }
-`;
-
 interface ILink {
   name: String;
   path: string;
@@ -149,7 +117,7 @@ interface ILink {
 
 const links: ILink[] = [
   { name: "Home", path: "/" },
-  { name: "Mapa", path: "/#map" },
+  { name: "Mapa Stoisk", path: "/#map" },
   { name: "Organizatorzy", path: "/#organizers" },
   // { name: "Sponsorzy", path: "/#sponsors" },
   // { name: "Patroni", path: "/#patrons" },
@@ -212,36 +180,23 @@ const Navigation: React.FC = () => {
   }, []);
 
   const linkStyle =
-    width > breakpoint
-      ? {
-          fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
-          fontFamily: "Calibri, Helvetica, sans-serif",
-          fontWeight: "bold",
-          flexBasis: "100%",
-          alignSelf: "center",
-        }
-      : {
-          fontSize: "clamp(2rem, 5vw, 3rem)",
-        };
+    {
+      fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
+      // fontWeight: "bold",
+      flexBasis: "100%",
+      alignSelf: "center",
+      whiteSpace: "nowrap",
+    };
 
   return (
     <>
-      <Nav className={"navigation " + navClass}>
-        <LogoContainer>
-          <img src={itp_logo} alt="XXV Inżynierskie Targi Pracy" />
+      <NavContainer>
+        {/* <LogoContainer>
+          <img src={itp_logo} alt="XXVI Inżynierskie Targi Pracy" />
         </LogoContainer>
-        <LinkContainer className="links">
-          {links.map((link, i) => (
-            <Link
-              style={linkStyle}
-              to={link.path}
-              key={i}
-              onClick={() => toggleNav()}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </LinkContainer>
+        <LogoContainer>
+          <img src={itp_logo} alt="XXVI Inżynierskie Targi Pracy" />
+        </LogoContainer>
         <SocialsContainer>
           <a href={socialLinks["facebook"]}>
             <img src={fb_icon} alt="facebook" />
@@ -252,11 +207,23 @@ const Navigation: React.FC = () => {
           <a href={socialLinks["linkedin"]}>
             <img src={li_icon} alt="linkedin" />
           </a>
-        </SocialsContainer>
-      </Nav>
-      <NavControlButton onClick={() => toggleNav(true)} className={buttonClass}>
-        <img src={gear_icon} alt="menu" />
-      </NavControlButton>
+        </SocialsContainer> */}
+
+        <Nav className={"navigation " + navClass}>
+          <LinkContainer className="links">
+            {links.map((link, i) => (
+              <Link
+                style={linkStyle}
+                to={link.path}
+                key={i}
+                onClick={() => toggleNav()}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </LinkContainer>
+        </Nav>
+      </NavContainer>
     </>
   );
 };

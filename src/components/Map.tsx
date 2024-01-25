@@ -4,9 +4,9 @@ import img3_desktop from "../images/desktop_backgrounds/3.svg";
 //@ts-ignore
 import img3_mobile from "../images/mobile_backgrounds/3_fix.png";
 //@ts-ignore
-import map_24 from "../images/map/map-24_fix.svg";
+import map_24 from "../images/map/map-24_new.svg";
 //@ts-ignore
-import legend_24 from "../images/map/legend-24_fix.svg";
+import legend_24 from "../images/map/legend-24_new.svg";
 //@ts-ignore
 import styled from "styled-components";
 
@@ -38,7 +38,7 @@ const MapImg = styled.img`
   z-index: 2;
   @media (max-width: 769px) {
     height: 40%;
-    width: 80%;
+    width: 85%;
     top: 20%;
   }
 `;
@@ -55,7 +55,7 @@ const List = styled.img`
 `;
 
 const List1 = styled(List)`
-  left: 15%;
+  left: 8%;
   top: 70%;
   height: 15%;
   width: 22%;
@@ -67,9 +67,13 @@ const List1 = styled(List)`
   border-radius: 2rem;
   @media (max-width: 769px) {
     top: 60%;
-    height: 7%;
+    height: 12%;
     width: 33%;
     left: 7%;
+    padding-inline: 1em;
+    padding-block: 1em;
+    border: 0.1rem solid;
+    border-radius: 2rem;
   }
 `;
 
