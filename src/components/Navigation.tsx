@@ -6,6 +6,8 @@ import gear_icon from "../images/gear.svg";
 // @ts-ignore
 import itp_logo from "../images/navbar/itp-01.svg";
 // @ts-ignore
+import BEST_logo from "../images/landing_page/BEST_logo.png";
+// @ts-ignore
 import fb_icon from "../images/navbar/fb-01.svg";
 // @ts-ignore
 import ig_icon from "../images/navbar/ig-01.svg";
@@ -56,10 +58,15 @@ const LinkContainer = styled.div`
   text-transform: none;
 `;
 
-const LogoContainer = styled.div`
-  min-width: 10%;
-  width: 15%;
-
+const ITPLogoContainer = styled.div`
+  position: absolute;
+  min-width: 15%;
+  width: 30%;
+  top: 8vh;
+  margin: 0vh 6vh;
+  left: 0;
+  right: 0;
+  
   img {
     display: block;
     height: 100%;
@@ -71,7 +78,22 @@ const LogoContainer = styled.div`
       width: 50%;
       display: flex;
       justify-content: center;
+      margin 0vh 3vh;
     }
+  }
+`;
+
+//1d1d1b
+const BESTLogoContainer = styled.img`
+  position: absolute;
+  width: clamp(8rem, 24vw, 20rem);
+  right: 3vh;
+  margin-top: 4vh;
+  margin-right: 10vw;
+  user-select: none;
+  @media (max-width: 768px) {
+    margin-top: 2vh;
+    margin-right: 5vw;
   }
 `;
 
@@ -81,13 +103,13 @@ const SocialsContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  top: 12em;
+  top: 35vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 50px;
   width: 10%;
-  margin-right: 15%;
+  margin: 0em 3.75em;
 
   a {
     height: 80%;
@@ -101,9 +123,9 @@ const SocialsContainer = styled.div`
 
   @media (max-width: 768px) {
     & {
-      height: 15%;
-      min-width: 40vw;
-      margin-right: 0;
+      height: 20vh;
+      min-width: 30vw;
+      margin: 0em 4em;
 
       a {
         max-width: 33%;
@@ -197,12 +219,10 @@ const Navigation: React.FC = () => {
   return (
     <>
       <NavContainer>
-        {/* <LogoContainer>
+        <ITPLogoContainer>
           <img src={itp_logo} alt="XXVI Inżynierskie Targi Pracy" />
-        </LogoContainer>
-        <LogoContainer>
-          <img src={itp_logo} alt="XXVI Inżynierskie Targi Pracy" />
-        </LogoContainer> */}
+        </ITPLogoContainer>
+        <BESTLogoContainer src={BEST_logo} alt="BEST" />
         <SocialsContainer>
           <a href={socialLinks["facebook"]}>
             <img src={fb_icon} alt="facebook" />
