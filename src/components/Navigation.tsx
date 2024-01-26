@@ -58,38 +58,26 @@ const LinkContainer = styled.div`
   text-transform: none;
 `;
 
-const ITPLogoContainer = styled.div`
+//1d1d1b
+const ITPLogo = styled.img`
   position: absolute;
-  min-width: 15%;
-  width: 30%;
-  top: 8vh;
-  margin: 0vh 6vh;
-  left: 0;
-  right: 0;
-  
-  img {
-    display: block;
-    height: 100%;
-  }
-
+  width: clamp(12rem, 36vw, 32rem);
+  left: 3vh;
+  margin-top: 4vh;
+  margin-left: 1vw;
+  user-select: none;
   @media (max-width: 768px) {
-    & {
-      height: 15vh;
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      margin 0vh 3vh;
-    }
+    margin-top: 2vh;
+    margin-left: 5vw;
   }
 `;
 
-//1d1d1b
 const BESTLogoContainer = styled.img`
   position: absolute;
-  width: clamp(8rem, 24vw, 20rem);
+  width: clamp(10rem, 24vw, 22rem);
   right: 3vh;
-  margin-top: 4vh;
-  margin-right: 10vw;
+  margin-top: 5vh;
+  margin-right: 4vw;
   user-select: none;
   @media (max-width: 768px) {
     margin-top: 2vh;
@@ -219,9 +207,7 @@ const Navigation: React.FC = () => {
   return (
     <>
       <NavContainer>
-        <ITPLogoContainer>
-          <img src={itp_logo} alt="XXVI Inżynierskie Targi Pracy" />
-        </ITPLogoContainer>
+        <ITPLogo src={itp_logo} alt="XXVI ITP" />
         <BESTLogoContainer src={BEST_logo} alt="BEST" />
         <SocialsContainer>
           <a href={socialLinks["facebook"]}>
