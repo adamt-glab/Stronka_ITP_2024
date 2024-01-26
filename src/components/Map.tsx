@@ -24,7 +24,19 @@ const Img = styled.img`
   position: relative;
 `;
 
+const MapText = styled.p`
+  position: absolute;
+  top: 10%;
+  right: 9%;
+  color: #ffffff;
+  font-size: 3vw;
+  @media (max-width: 769px) {
+    right: 10%;
+  }
+`;
+
 const Container = styled.div`
+  background-color: #e5821a; 
   position: relative;
   display: grid;
   top: 1.75rem;
@@ -37,7 +49,7 @@ const MapImg = styled.img`
   width: 86%;
   z-index: 2;
   @media (max-width: 769px) {
-    height: 40%;
+    height: 50%;
     width: 85%;
     top: 20%;
   }
@@ -109,17 +121,33 @@ const List4 = styled(List1)`
   }
 `;
 
+const MapLegend = styled(List)`
+  position: absolute;
+  left: 6%;
+  top: 70%;
+  height: 15%;
+  width: 33%;
+  z-index: 2;
+  @media (max-width: 769px) {
+    top: 73%;
+    height: 16%;
+    width: 50%;
+    left: -1%;
+}
+`;
+
 const Map: React.FC = () => {
   return (
     <>
       <Container id="map">
         <picture>
           <source srcSet={img3_desktop} media="(min-width: 769px)" />
-          <source srcSet={img3_mobile} media="(max-width: 768px)" />
+          {/* <source srcSet={img3_mobile} media="(max-width: 768px)" /> */}
           <Img src={img3_desktop} alt="last page" />
         </picture>
+        <MapText>Mapa wydarzenia</MapText>
         <MapImg src={map_24} alt="map" />
-        <List1 src={legend_24} alt="list1" />
+        <MapLegend src={legend_24} alt="list1" />
         {/* <List2 src={mapImages[2].default} alt="list2" />
         <List3 src={mapImages[4].default} alt="list3" />
         <List4 src={mapImages[3].default} alt="list4" /> */}
