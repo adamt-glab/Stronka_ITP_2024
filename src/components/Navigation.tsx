@@ -159,39 +159,6 @@ const links: ILink[] = [
 ];
 
 const Navigation: React.FC = () => {
-  const [showNav, setShowNav] = useState(false);
-  const toggleNav = (toggleScroll = false) => {
-    if (!showNav && toggleScroll) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    setShowNav(!showNav);
-  };
-
-  const navClass = showNav ? "" : "hidden";
-  const buttonClass = showNav ? "opened" : "";
-
-  // media query
-  const [width, setWidth] = useState(0);
-  const breakpoint = 768;
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setWidth(window.innerWidth);
-    }
-
-    const handleWindowResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
   const linkStyle =
   {
     fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
@@ -218,15 +185,13 @@ const Navigation: React.FC = () => {
           </a>
         </SocialsContainer>
 
-        <Nav className={"navigation " + navClass}>
+        <Nav>
           <LinkContainer className="links">
             {links.map((link, i) => (
               <Link
                 style={linkStyle}
                 to={link.path}
-                key={i}
-                onClick={() => toggleNav()}
-              >
+                key={i}>
                 {link.name}
               </Link>
             ))}
