@@ -67,7 +67,7 @@ const ITPLogo = styled.img`
   margin-left: 1vw;
   user-select: none;
   @media (max-width: 768px) {
-    margin-top: 2vh;
+    margin-top: 10vh;
     margin-left: 5vw;
   }
 `;
@@ -80,27 +80,24 @@ const BESTLogoContainer = styled.img`
   margin-right: 4vw;
   user-select: none;
   @media (max-width: 768px) {
-    margin-top: 2vh;
-    margin-right: 5vw;
+    margin-top: 9vh;
+    margin-right: 6vw;
   }
 `;
 
 const SocialsContainer = styled.div`
   position: absolute;
   
-  left: 0;
-  right: 0;
-  bottom: 0;
   top: 35vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
-  width: 10%;
+  width: 14vw;
   margin: 0em 3.75em;
 
   a {
-    height: 80%;
+    height: 8vh;
   }
 
   img {
@@ -111,7 +108,7 @@ const SocialsContainer = styled.div`
 
   @media (max-width: 768px) {
     & {
-      height: 20vh;
+      height: 8vh;
       min-width: 30vw;
       margin: 0em 4em;
 
