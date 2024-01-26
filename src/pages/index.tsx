@@ -12,7 +12,6 @@ import TextPage from "../components/TextPage";
 const MainPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <TitlePage />
       <TextPage />
       <Map />
       {/* <Sponsors /> */}

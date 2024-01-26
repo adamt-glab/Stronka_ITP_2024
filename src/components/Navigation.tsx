@@ -37,7 +37,7 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: center;
   z-index: 5;
-  height: 4vh;
+  height: 5vh;
   padding: 0.5em;
   border-radius: 20vh;
   margin: 0em 4em;

@@ -86,8 +86,6 @@ const TitlePage: React.FC = () => {
       <Section>
         <HeroTextContainer>
           <ITPLogo src={ITP_logo} alt="ITP_logo" />
-          {/* <H2>ZAPRASZAMY!</H2> */}
-          {/* <H2>10:00-16:00</H2> */}
           <H2_smaller>Zapraszamy na kolejną edycję</H2_smaller>
           <H2_smaller>w marcu 2024 r.</H2_smaller>
         </HeroTextContainer>
