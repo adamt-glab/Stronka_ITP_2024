@@ -1,6 +1,6 @@
 import React from "react";
 //@ts-ignore
-import img8_desktop from "../images/desktop_backgrounds/CT_small.jpg";
+import img8_desktop from "../images/desktop_backgrounds/CT_bg.jpg";
 //@ts-ignore
 import img6_mobile from "../images/mobile_backgrounds/6_fix.jpg";
 import styled from "styled-components";
@@ -76,13 +76,13 @@ const TextBoxFR = styled(TextBox)`
 const Organizers: React.FC = () => {
   return (
     <>
-      <Container id="organizers">
+      <Container>
         <Picture>
           <source srcSet={img8_desktop} media="(min-width: 769px)" />
           <source srcSet={img6_mobile} media="(max-width: 768px)" />
           <Img src={img8_desktop} alt="last page" />
         </Picture>
-        <ContactBoxTitle>
+        <ContactBoxTitle id="organizers">
           Kontakt z organizatorami
         </ContactBoxTitle>
         <TextBoxLG>
