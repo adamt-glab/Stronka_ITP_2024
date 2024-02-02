@@ -1,6 +1,6 @@
 import React from "react";
 //@ts-ignore
-import img8_desktop from "../images/desktop_backgrounds/8-popr.svg";
+import img8_desktop from "../images/desktop_backgrounds/CT_small.jpg";
 //@ts-ignore
 import img6_mobile from "../images/mobile_backgrounds/6_fix.jpg";
 import styled from "styled-components";
@@ -17,14 +17,9 @@ const Container = styled.div`
 
 const ContactBoxTitle = styled.h2`
   position: absolute;
-  padding-inline: 2em;
-  padding-block: 1.5em;
-  top: 19%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  background-color: #e8d9cb;
-  border: 0.15rem solid;
-  border-radius: 3rem 3rem 0 0;
+  transform: translate(-50%, -50%);
   font-size: clamp(1rem, 2vw, 2.4rem);
   font-family: "Unica One", sans-serif;
   text-align: center;
@@ -37,15 +32,13 @@ const ContactBoxTitle = styled.h2`
 
 const TextBox = styled.div`
   position: absolute;
-  background-color: #e8d9cb;
   width: 17%;
   height: 10%;
-  bottom: 8%;
-  font-size: 0.9vw;
+  // bottom: 8%;
+  font-size: 1vw;
+  line-height: 130%;
   color: #d2764a;
   text-align: center;
-  border: 0.1rem solid;
-  border-radius: 2rem;
   align-items: center;
   display: flexbox;
   justify-content: center;
@@ -65,19 +58,19 @@ const NameText = styled.span`
   font-weight: 600;
 `;
 
-const TextBoxMikolaj = styled(TextBox)`
-  left: 9.9%;
-  top: 85%;
+const TextBoxLG = styled(TextBox)`
+  left: 23%;
+  top: 73%;
 `;
 
-const TextBoxPaulina = styled(TextBox)`
-  left: 41.6%;
-  top: 85%;
+const TextBoxMO = styled(TextBox)`
+  left: 39.75%;
+  top: 69%;
 `;
 
-const TextBoxMateusz = styled(TextBox)`
-  left: 72.9%;
-  top: 85%;
+const TextBoxFR = styled(TextBox)`
+  left: 56.75%;
+  top: 73%;
 `;
 
 const Organizers: React.FC = () => {
@@ -90,32 +83,32 @@ const Organizers: React.FC = () => {
           <Img src={img8_desktop} alt="last page" />
         </Picture>
         <ContactBoxTitle>
-          KONTAKT <br /> Z ORGANIZATORAMI
+          Kontakt z organizatorami
         </ContactBoxTitle>
-        <TextBoxMikolaj>
+        <TextBoxLG>
           <NameText>
             SZYMON LIPKOWSKI <br />{" "}
           </NameText>
           KOODRYNATOR DS. LOGISTYKI <br />
           513 809 540 <br />
           SZYMON.LIPKOWSKI@BEST.KRAKOW.PL <br />
-        </TextBoxMikolaj>
-        <TextBoxPaulina>
+        </TextBoxLG>
+        <TextBoxMO>
           <NameText>
             ROZALIA STĘPIEŃ <br />{" "}
           </NameText>
           GŁÓWNY KOORDYNATOR <br />
           783 871 850 <br />
           ROZALIA.STEPIEN@BEST.KRAKOW.PL <br />
-        </TextBoxPaulina>
-        <TextBoxMateusz>
+        </TextBoxMO>
+        <TextBoxFR>
           <NameText>
             TOMASZ PORĘBA <br />{" "}
           </NameText>
           KOODRYNATOR DS. KONTAKTU Z FIRMAMI <br />
           513 800 812 <br />
           TOMASZ.POREBA@BEST.KRAKOW.PL <br />
-        </TextBoxMateusz>
+        </TextBoxFR>
       </Container>
     </>
   );
