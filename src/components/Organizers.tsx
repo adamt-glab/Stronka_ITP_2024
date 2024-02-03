@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const ContactBoxTitle = styled.h2`
   position: absolute;
-  top: 40%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: clamp(1rem, 2vw, 2.4rem);
@@ -34,7 +34,6 @@ const TextBox = styled.div`
   position: absolute;
   width: 17%;
   height: 10%;
-  // bottom: 8%;
   font-size: 1vw;
   line-height: 130%;
   color: #d2764a;
@@ -59,18 +58,21 @@ const NameText = styled.span`
 `;
 
 const TextBoxLG = styled(TextBox)`
-  left: 23%;
-  top: 73%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  top: 79%;
 `;
 
 const TextBoxMO = styled(TextBox)`
-  left: 39.75%;
-  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 75%;
 `;
 
 const TextBoxFR = styled(TextBox)`
-  left: 56.75%;
-  top: 73%;
+  left: 66.66%;
+  transform: translate(-50%, -50%);
+  top: 79%;
 `;
 
 const Organizers: React.FC = () => {

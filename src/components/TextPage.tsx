@@ -20,18 +20,18 @@ const Container = styled.div`
 const TextBox1 = styled.div`
   width: 38%;
   height: 12%;
-  position: absolute;
   top: 18%;
   left: 4%;
-  // background-color: #e8d9cb;
-  font-size: 1.3vw;
-  color: #d2764a;
-  // border: 0.15rem solid;
-  // padding: 0.3rem;
+
+  position: absolute;
   display: flexbox;
   text-align: justify;
   align-items: center;
   justify-content: center;
+
+  font-size: 1.3vw;
+  color: #d2764a;
+
   @media (max-width: 768px) {
     width: 80%;
     left: 10%;
@@ -70,6 +70,19 @@ const TextBox4 = styled(TextBox3)`
   }
 `;
 
+const TextBoxTitle = styled(TextBox1)`
+  font-size: 200%;
+  font-weight: 600;
+  top: 5%;
+  height: 6.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media (max-width: 768px) {
+    height: 6%;
+    top: 5%;
+  }
+`;
+
 const TextPage: React.FC = () => {
   return (
     <>
@@ -79,6 +92,10 @@ const TextPage: React.FC = () => {
           <source srcSet={img2_mobile} media="(max-width: 768px)" />
           <Img src={img2_desktop} alt="text page" />
         </picture>
+
+        <TextBoxTitle>
+          6 marca 2024 r.
+        </TextBoxTitle>
 
         <TextBox1>
           Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe.
@@ -91,10 +108,10 @@ const TextPage: React.FC = () => {
         </TextBox2>
 
         <TextBox3>
-          W dniu 6 marca spotkają się pracodawcy szukający 
-          przyszłych pracowników oraz studenci starający się 
+          W dniu 6 marca spotkają się pracodawcy szukający
+          przyszłych pracowników oraz studenci starający się
           o wymarzoną pracę lub staż.
-          Na naszej stronie internetowej znajdziecie informacje 
+          Na naszej stronie internetowej znajdziecie informacje
           o naszych wystawcach i ich ofertach pracy.
         </TextBox3>
 
