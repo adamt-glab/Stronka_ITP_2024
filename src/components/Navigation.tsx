@@ -24,7 +24,7 @@ const NavContainer = styled.div`
   position: relative;
   height: 60vh;
 
-  min-height: 10em;
+  min-height: 12em;
 
   @media (max-width: 768px) {
     height: 30vh;
@@ -83,7 +83,7 @@ const ITPLogo = styled.img`
 
 const BESTLogoContainer = styled.img`
   position: absolute;
-  width: clamp(8rem, 24vw, 22rem);
+  width: clamp(8rem, 24vw, 20rem);
   right: 6%;
   top: 6%;
   user-select: none;

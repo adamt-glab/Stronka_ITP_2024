@@ -10,10 +10,10 @@ const Container = styled.div`
   position: relative;
   display: grid;
   top: 2rem;
-  height: 125vh;
+  height: 200vh;
+  min-height: 30em;
   @media (max-width: 768px) {
-    min-height: 50em;
-    max-height: 80em;
+    height: 40em;
   }
 `;
 
@@ -51,7 +51,7 @@ const TextBox2 = styled(TextBox1)`
 `;
 
 const TextBox3 = styled(TextBox1)`
-  top: 54%;
+  top: 70%;
   left: 56%;
   @media (max-width: 768px) {
     height: 8.4%;
@@ -61,7 +61,7 @@ const TextBox3 = styled(TextBox1)`
 `;
 
 const TextBox4 = styled(TextBox3)`
-  top: 69%;
+  top: 85%;
   height: 6.5%;
   @media (max-width: 768px) {
     height: 6%;
