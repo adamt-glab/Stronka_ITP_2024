@@ -6,11 +6,6 @@ const Container = styled.div`
   position: relative;
   display: grid;
   top: 2rem;
-
-  @media (max-width: 768px) {
-    // min-height: 53em;
-    // height: 24vh;
-  }
 `;
 
 const TextBox1 = styled.div`
@@ -125,31 +120,7 @@ const TextPage: React.FC = () => {
           pod kątem waszego doświadczenia i umiejętności.
         </TextBox4>
 
-        <Gears>
-          {/* <TextBox1>
-            Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe.
-            Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji.
-          </TextBox1>
-
-          <TextBox2>
-            Aby to zrealizować, w tym roku zaprosiliśmy X firm, które są wiodącymi markami w swoich branżach.
-            Z naszym wydarzeniem współpracuje także X firm medialnych.
-          </TextBox2>
-
-          <TextBox3>
-            W dniu 6 marca spotkają się pracodawcy szukający
-            przyszłych pracowników oraz studenci starający się
-            o wymarzoną pracę lub staż.
-            Na naszej stronie internetowej znajdziecie informacje
-            o naszych wystawcach i ich ofertach pracy.
-          </TextBox3>
-
-          <TextBox4>
-            Istnieje również możliwość przesłania swojego CV do naszej bazy,
-            dzięki której nasi wystawcy poznają Was jeszcze lepiej
-            pod kątem waszego doświadczenia i umiejętności.
-          </TextBox4> */}
-        </Gears>
+        <Gears />
       </Container>
     </>
   );

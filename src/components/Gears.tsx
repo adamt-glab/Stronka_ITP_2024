@@ -40,7 +40,7 @@ import gear_12 from "../images/gears/d12.svg";
 
 const Container = styled.div`
 
-  background-color: rgba(0,0,0,0.15);
+  // background-color: rgba(0,0,0,0.15);
 
   position: relative;
   display: grid;
@@ -88,12 +88,6 @@ const Gear2 = styled(Gear)`
   bottom: 0;
   left: 44%;
   right: 0;
-
-  // @media (max-width: 768px) {
-  //   width: clamp(70px, 22vw, 120px);
-  //   height: clamp(70px, 22vw, 120px);
-  //   top: clamp(6%, 40vh, 5%);
-  // } ;
 `;
 
 const Gear3 = styled(Gear)`
@@ -103,13 +97,6 @@ const Gear3 = styled(Gear)`
   bottom: 0;
   left: 68%;
   right: 0;
-
-  // @media (max-width: 768px) {
-  //   width: clamp(70px, 32vw, 180px);
-  //   height: clamp(70px, 32vw, 180px);
-  //   top: clamp(6%, 40vh, 5%);
-  //   left: clamp(6%, 15vw, 10%);
-  // } ;
 `;
 
 const Gear4 = styled(Gear)`
@@ -119,12 +106,6 @@ const Gear4 = styled(Gear)`
   bottom: 0;
   left: 51%;
   right: 0;
-  // @media (max-width: 768px) {
-  //   width: clamp(40px, 16vw, 85px);
-  //   height: clamp(40px, 16vh, 85px);
-  //   top: clamp(21%, 80vh, 33%);
-  //   left: clamp(20%, 30vw, 27%);
-  // } ;
 `;
 
 const Gear5 = styled(Gear)`
@@ -134,12 +115,6 @@ const Gear5 = styled(Gear)`
   bottom: 0;
   left: 55%;
   right: 0;
-  // @media (max-width: 768px) {
-  //   width: clamp(33px, 36vw, 90px);
-  //   height: clamp(33px, 36vw, 90px);
-  //   top: clamp(21%, 72vh, 45%);
-  //   left: clamp(26%, 35vw, 50%);
-  // } ;
 `;
 
 const Gear6 = styled(Gear)`
@@ -152,12 +127,6 @@ const Gear6 = styled(Gear)`
   // @media (max-width: 768px) {
   //   display: none;
   // } ;
-  // @media (max-width: 768px) {
-  //   width: clamp(68px, 70vw, 100px);
-  //   height: clamp(68px, 70vw, 100px);
-  //   top: clamp(20%, 100vh, 40%);
-  //   left: clamp(35%, 100vw, 72%);
-  // } ;
 `;
 
 const Gear7 = styled(Gear)`
@@ -169,12 +138,6 @@ const Gear7 = styled(Gear)`
   right: 0;
   // @media (max-width: 768px) {
   //   display: none;
-  // } ;
-  // @media (max-width: 768px) {
-  //   width: clamp(68px, 70vw, 100px);
-  //   height: clamp(68px, 70vw, 100px);
-  //   top: clamp(20%, 100vh, 40%);
-  //   left: clamp(35%, 100vw, 72%);
   // } ;
 `;
 
