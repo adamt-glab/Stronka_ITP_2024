@@ -42,7 +42,7 @@ const TextBox2 = styled(TextBox1)`
 `;
 
 const TextBox3 = styled(TextBox1)`
-  top: 70%;
+  top: 71%;
   left: 56%;
   @media (max-width: 768px) {
     height: 8.4%;
@@ -98,12 +98,13 @@ const TextPage: React.FC = () => {
 
         <TextBox1>
           Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe.
-          Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji.
+          {/* Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji. */}
         </TextBox1>
 
         <TextBox2>
-          Aby to zrealizować, w tym roku zaprosiliśmy X firm, które są wiodącymi markami w swoich branżach.
-          Z naszym wydarzeniem współpracuje także X firm medialnych.
+          {/* Aby to zrealizować, w tym roku zaprosiliśmy X firm, które są wiodącymi markami w swoich branżach.
+          Z naszym wydarzeniem współpracuje także X firm medialnych. */}
+          Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji.
         </TextBox2>
 
         <TextBox3>

@@ -153,10 +153,10 @@ const links: ILink[] = [
   //   name: "Harmonogram",
   //   path: "https://itp.best.krakow.pl/Harmonogram wydarzenia.pdf",
   // },
-  {
-    name: "Regulamin",
-    path: "https://itp.best.krakow.pl/ITP2023-Regulamin.pdf",
-  },
+  // {
+  //   name: "Regulamin",
+  //   path: "https://itp.best.krakow.pl/ITP2023-Regulamin.pdf",
+  // },
 ];
 
 const Navigation: React.FC = () => {
