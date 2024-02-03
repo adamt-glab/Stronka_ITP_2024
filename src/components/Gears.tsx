@@ -29,12 +29,12 @@ import gear_24 from "../images/gears/d24.svg";
 
 const Container = styled.div`
 
-  background-color:black;
+  background-color:rgba(0, 0, 0, 0.5);
   position: relative;
   display: grid;
 
-  width: 60%;
-  height: 100vh;
+  width: 80%;
+  height: 100%;
 
   margin: 0 auto;
   margin-top: 200px;
@@ -53,9 +53,9 @@ const Gear = styled.img`
 const Gear1 = styled(Gear)`
   width: 12vw;
   height: 16vh;
-  top: -6%;
+  top: -3%;
   bottom: 0;
-  left: 69%;
+  left: 65%;
   right: 0;
 `;
 
@@ -64,26 +64,99 @@ const Gear2 = styled(Gear)`
   height: 32vh;
   top: 1.5%;
   bottom: 0;
-  left: 44%;
+  left: 47%;
   right: 0;
 `;
 
 const Gear3 = styled(Gear)`
   width: 36vw;
   height: 44vh;
-  top: 19%;
+  top: 12%;
   bottom: 0;
-  left: 58%;
+  left: 55.5%;
   right: 0;
 `;
 
-// const rotateGearOnScroll = () => {
-//     const gear1 = document.querySelector('#gear1')?.style;
+const Gear4 = styled(Gear)`
+  width: 10vw;
+  height: 14vh;
+  top: 15.75%;
+  bottom: 0;
+  left: 48%;
+  right: 0;
+`;
 
-//     if (gear1) {
-//         gear1.transform = `rotate(${window.scrollY * 0.8}deg)`;
-//     }
-// };
+const Gear5 = styled(Gear)`
+  width: 18vw;
+  height: 24vh;
+  top: 29.5%;
+  bottom: 0;
+  left: 52.25%;
+  right: 0;
+`;
+
+const Gear6 = styled(Gear)`
+  width: 22vw;
+  height: 28vh;
+  top: 34.5%;
+  bottom: 0;
+  left: 64%;
+  right: 0;
+`;
+
+const Gear7 = styled(Gear)`
+  width: 19vw;
+  height: 21vh;
+  top: 34.5%;
+  bottom: 0;
+  left: 38.75%;
+  right: 0;
+`;
+
+const Gear8 = styled(Gear)`
+  width: 10vw;
+  height: 14vh;
+  top: 45%;
+  bottom: 0;
+  left: 48%;
+  right: 0;
+`;
+
+const Gear9 = styled(Gear)`
+  width: 36vw;
+  height: 36vh;
+  top: 39%;
+  bottom: 0;
+  left: 14.25%;
+  right: 0;
+`;
+
+const Gear10 = styled(Gear)`
+  width: 25vw;
+  height: 25vh;
+  top: 39%;
+  bottom: 0;
+  left: 3%;
+  right: 0;
+`;
+
+const Gear11 = styled(Gear)`
+  width: 33vw;
+  height: 33vh;
+  top: 54%;
+  bottom: 0;
+  left: 4%;
+  right: 0;
+`;
+
+const Gear12 = styled(Gear)`
+  width: 20vw;
+  height: 20vh;
+  top: 68.75%;
+  bottom: 0;
+  left: 3.5%;
+  right: 0;
+`;
 
 const gearIds = Array.from({ length: 24 }, (_, index) => `#gear${index + 1}`);
 const rotationDirections = Array.from({ length: 24 }, (_, index) => (index % 2 === 0 ? 1 : -1));
@@ -93,7 +166,7 @@ const rotateGearOnScroll = () => {
     const gear = document.querySelector(gearId)?.style;
 
     if (gear) {
-      const rotationFactor = 0.15;
+      const rotationFactor = 0.12;
       const rotationDirection = rotationDirections[index];
       gear.transform = `rotate(${window.scrollY * rotationFactor * rotationDirection}deg)`;
     }
@@ -111,13 +184,18 @@ const Gears: React.FC = () => {
     return (
         <>
             <Container>
-                {/* <Gear1 id="gear1" /> */}
                 <Gear1 src={gear_1} id="gear1" />
                 <Gear2 src={gear_2} id="gear2" />
                 <Gear3 src={gear_3} id="gear3" />
-
-
-                {/* <Gear2 id="gear2" /> */}
+                <Gear4 src={gear_4} id="gear4" />
+                <Gear5 src={gear_5} id="gear5" />
+                <Gear6 src={gear_6} id="gear6" />
+                <Gear7 src={gear_7} id="gear7" />
+                <Gear8 src={gear_8} id="gear8" />
+                <Gear9 src={gear_9} id="gear9" />
+                <Gear10 src={gear_10} id="gear10" />
+                <Gear11 src={gear_11} id="gear11" />
+                <Gear12 src={gear_12} id="gear12" />
 
             </Container>
         </>
