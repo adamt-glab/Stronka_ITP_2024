@@ -23,11 +23,11 @@ const TextBox1 = styled.div`
   position: absolute;
   top: 18%;
   left: 4%;
-  background-color: #e8d9cb;
+  // background-color: #e8d9cb;
   font-size: 1.3vw;
   color: #d2764a;
-  border: 0.15rem solid;
-  padding: 0.3rem;
+  // border: 0.15rem solid;
+  // padding: 0.3rem;
   display: flexbox;
   text-align: justify;
   align-items: center;
@@ -79,28 +79,31 @@ const TextPage: React.FC = () => {
           <source srcSet={img2_mobile} media="(max-width: 768px)" />
           <Img src={img2_desktop} alt="text page" />
         </picture>
+
         <TextBox1>
-          Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów
-          BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko
-          akademickie i biznesowe. Naszym celem jest zapewnienie wszystkim
-          uczestnikom Targów, jak największej jakości wydarzenia oraz pełnej
-          satysfakcji.
+          Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe.
+          Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji.
         </TextBox1>
+
         <TextBox2>
-          Aby to zrealizować, na wydarzenie zapraszamy firmy, które są
-          wiodącymi markami w swoich branżach.
+          Aby to zrealizować, w tym roku zaprosiliśmy X firm, które są wiodącymi markami w swoich branżach.
+          Z naszym wydarzeniem współpracuje także X firm medialnych.
         </TextBox2>
+
         <TextBox3>
-          W marcu spotkają się pracodawcy szukający idealnych pracowników
-          oraz studenci starający się o wymarzoną pracę lub staż. Na naszej
-          stronie internetowej znajdziecie informacje nie tylko o naszych
-          wystawcach i ich ofertach pracy, ale także o konkursach.
+          W dniu 6 marca spotkają się pracodawcy szukający 
+          przyszłych pracowników oraz studenci starający się 
+          o wymarzoną pracę lub staż.
+          Na naszej stronie internetowej znajdziecie informacje 
+          o naszych wystawcach i ich ofertach pracy.
         </TextBox3>
+
         <TextBox4>
           Istnieje również możliwość przesłania swojego CV do naszej bazy,
-          dzięki której nasi wystawcy poznają Was jeszcze lepiej pod kątem
-          waszego doświadczenia i umiejętności.
+          dzięki której nasi wystawcy poznają Was jeszcze lepiej
+          pod kątem waszego doświadczenia i umiejętności.
         </TextBox4>
+
       </Container>
     </>
   );
