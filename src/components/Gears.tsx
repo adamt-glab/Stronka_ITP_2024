@@ -44,6 +44,7 @@ const Container = styled.div`
 
   position: relative;
   display: grid;
+  top: 1rem;
 
   width: 80%;
 
