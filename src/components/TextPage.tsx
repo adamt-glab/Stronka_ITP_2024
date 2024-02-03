@@ -4,6 +4,7 @@ import img2_desktop from "../images/desktop_backgrounds/2.svg";
 //@ts-ignore
 import img2_mobile from "../images/mobile_backgrounds/2.jpg";
 import styled from "styled-components";
+import Gears from './Gears';
 
 const Img = styled.img`
   width: 100%;
@@ -118,6 +119,8 @@ const TextPage: React.FC = () => {
           Aby to zrealizować, w tym roku zaprosiliśmy X firm, które są wiodącymi markami w swoich branżach.
           Z naszym wydarzeniem współpracuje także X firm medialnych.
         </TextBox2>
+
+        <Gears />
 
         <TextBox3>
           W dniu 6 marca spotkają się pracodawcy szukający
