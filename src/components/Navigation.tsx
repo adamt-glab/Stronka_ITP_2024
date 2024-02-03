@@ -22,6 +22,7 @@ const socialLinks = {
 
 const NavContainer = styled.div`
   position: relative;
+  min-height: 10em;
   height: 60vh;
   @media (max-width: 768px) {
     height: 30vh;
@@ -94,13 +95,13 @@ const SocialsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   
-  top: 50%;
-  width: clamp(3em, 18vw, 8em);
+  top: 55%;
+  width: clamp(4vw, 24vw, 10em);
   left: 6%;
 
   a {
-    min-height: 1rem;
-    height: 6vh;
+    min-height: 2rem;
+    height: 8vh;
   }
 
   img {
