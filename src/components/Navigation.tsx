@@ -22,8 +22,10 @@ const socialLinks = {
 
 const NavContainer = styled.div`
   position: relative;
-  min-height: 10em;
   height: 60vh;
+
+  min-height: 10em;
+
   @media (max-width: 768px) {
     height: 30vh;
   }
@@ -35,14 +37,16 @@ const Nav = styled.nav`
   left: 6%;
   right: 6%;
   bottom: 0%;
+  height: 8vh;
+
+  min-height: 2rem;
 
   background-color: #e5821a;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
-  min-height: 2rem;
-  height: 8vh;
+  
   border-radius: 20vh;
 
   a {
@@ -75,7 +79,6 @@ const ITPLogo = styled.img`
   @media (max-width: 768px) {
     top: 22%;
   }
-
 `;
 
 const BESTLogoContainer = styled.img`
