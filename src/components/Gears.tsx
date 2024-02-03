@@ -38,6 +38,13 @@ const Container = styled.div`
 
   margin: 0 auto;
   margin-top: 200px;
+
+  @media (max-width: 768px) {
+    height: clamp(12em, 90vh, 16em);
+    margin-top: clamp(18em, 60vh, 200px);
+  } ;
+
+  
 `;
 
 const Gear = styled.img`
@@ -45,7 +52,6 @@ const Gear = styled.img`
   object-fit: contain;
   background-position: center;
   background-size: contain;
-//   background-color:yellow;
   background-repeat: no-repeat;
   transition: 0.65s ease-out;
 `;
@@ -57,6 +63,10 @@ const Gear1 = styled(Gear)`
   bottom: 0;
   left: 65%;
   right: 0;
+  @media (max-width: 768px) {
+    width: clamp(1.5em, 50vw, 4em);
+    height: clamp(1.1em, 60vw, 3.5em);
+  } ;
 `;
 
 const Gear2 = styled(Gear)`
@@ -111,6 +121,9 @@ const Gear7 = styled(Gear)`
   bottom: 0;
   left: 38.75%;
   right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
 `;
 
 const Gear8 = styled(Gear)`
@@ -120,6 +133,9 @@ const Gear8 = styled(Gear)`
   bottom: 0;
   left: 48%;
   right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
 `;
 
 const Gear9 = styled(Gear)`
@@ -129,6 +145,9 @@ const Gear9 = styled(Gear)`
   bottom: 0;
   left: 14.25%;
   right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
 `;
 
 const Gear10 = styled(Gear)`
@@ -138,6 +157,9 @@ const Gear10 = styled(Gear)`
   bottom: 0;
   left: 3%;
   right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
 `;
 
 const Gear11 = styled(Gear)`
@@ -147,6 +169,9 @@ const Gear11 = styled(Gear)`
   bottom: 0;
   left: 4%;
   right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
 `;
 
 const Gear12 = styled(Gear)`
@@ -156,6 +181,9 @@ const Gear12 = styled(Gear)`
   bottom: 0;
   left: 3.5%;
   right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
 `;
 
 const gearIds = Array.from({ length: 24 }, (_, index) => `#gear${index + 1}`);

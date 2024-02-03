@@ -6,18 +6,13 @@ import img2_mobile from "../images/mobile_backgrounds/2.jpg";
 import styled from "styled-components";
 import Gears from './Gears';
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`;
-
 const Container = styled.div`
   position: relative;
   display: grid;
   top: 2rem;
-  height: 200vh;
+  height: 125vh;
   @media (max-width: 768px) {
+    min-height: 50em;
     max-height: 80em;
   }
 `;
