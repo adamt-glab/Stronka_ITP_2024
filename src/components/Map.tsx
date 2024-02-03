@@ -1,6 +1,6 @@
 import React from "react";
 //@ts-ignore
-import img3_desktop from "../images/desktop_backgrounds/3.svg";
+import img3_desktop from "../images/desktop_backgrounds/map_bg.svg";
 //@ts-ignore
 import img3_mobile from "../images/mobile_backgrounds/3_fix.png";
 //@ts-ignore
@@ -31,7 +31,7 @@ const MapText = styled.p`
   color: #ffffff;
   font-size: 3vw;
   @media (max-width: 769px) {
-    right: 10%;
+    right: 9%;
   }
 `;
 
@@ -45,13 +45,13 @@ const Container = styled.div`
 const MapImg = styled.img`
   position: absolute;
   left: 7%;
-  height: 86%;
+  height: 92%;
   width: 86%;
   z-index: 2;
   @media (max-width: 769px) {
-    height: 50%;
-    width: 85%;
-    top: 20%;
+    height: 55%;
+    width: 86.75%;
+    top: 18.5%;
   }
 `;
 
@@ -124,15 +124,15 @@ const List4 = styled(List1)`
 const MapLegend = styled(List)`
   position: absolute;
   left: 6%;
-  top: 70%;
+  top: 75%;
   height: 15%;
   width: 33%;
   z-index: 2;
   @media (max-width: 769px) {
-    top: 73%;
+    top: 75%;
     height: 16%;
     width: 50%;
-    left: -1%;
+    left: -3%;
 }
 `;
 
