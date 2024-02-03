@@ -15,13 +15,17 @@ const Container = styled.div`
   position: relative;
   display: grid;
   top: 2rem;
+  height: 200vh;
+  @media (max-width: 768px) {
+    max-height: 80em;
+  }
 `;
 
 const TextBox1 = styled.div`
   width: 38%;
   height: 12%;
   top: 18%;
-  left: 4%;
+  left: 6%;
 
   position: absolute;
   display: flexbox;
@@ -35,18 +39,18 @@ const TextBox1 = styled.div`
   @media (max-width: 768px) {
     width: 80%;
     left: 10%;
-    top: 7%;
-    height: 8%;
+    top: clamp(5em, 50vh, 4rem);
+    height: clamp(7em, 20vh, 6rem);
     font-size: 3vw;
-  } ;
+  };
 `;
 
 const TextBox2 = styled(TextBox1)`
   height: 5%;
   top: 33%;
   @media (max-width: 768px) {
-    height: 4%;
-    top: 19%;
+    top: clamp(9em, 60vh, 8rem);
+    height: clamp(10em, 40vh, 9rem);
   }
 `;
 
@@ -70,58 +74,29 @@ const TextBox4 = styled(TextBox3)`
   }
 `;
 
-const TextBoxTitle = styled(TextBox1)`
-  font-size: 200%;
-  font-weight: 600;
-  top: 5%;
-  height: 6.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @media (max-width: 768px) {
-    height: 6%;
-    top: 5%;
-  }
-`;
-
 const HeroTextContainer = styled.div`
   position: absolute;
-  top: 0;
   left: 50%;
-  // height: 20%;
+  top: 0;
   transform: translateX(-50%);
   width: clamp(6rem, 80vw, 36rem);
   text-align: center;
-
-  @media (max-width: 769px) {
-    width: clamp(6rem, 50vw, 36rem);
-  }
 `;
 
 const H2 = styled.h2`
-  font-size: clamp(0.2rem, 3.5vw, 2.5rem);
+  font-size: clamp(0.8rem, 5vw, 2.5rem);
   line-height: 1.15;
-  @media (max-width: 769px) {
-    font-size: clamp(0.4rem, 3vw, 2rem);
-  }
 `;
 
 const H2_smaller = styled.h2`
-  font-size: clamp(0.15rem, 3vw, 2rem);
+  font-size: clamp(0.8rem, 4.6vw, 2rem);
   line-height: 1.15;
-  @media (max-width: 769px) {
-    font-size: clamp(0.3rem, 2vw, 1.5rem);
-  }
 `;
 
 const TextPage: React.FC = () => {
   return (
     <>
       <Container>
-        <picture>
-          <source srcSet={img2_desktop} media="(min-width: 769px)" />
-          <source srcSet={img2_mobile} media="(max-width: 768px)" />
-          <Img src={img2_desktop} alt="text page" />
-        </picture>
         <HeroTextContainer>
           <H2>
             6 marca 2024
