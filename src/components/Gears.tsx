@@ -2,49 +2,62 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 // @ts-ignore
 import gear_1 from "../images/gears/d1.svg";
+// @ts-ignore
 import gear_2 from "../images/gears/d2.svg";
+// @ts-ignore
 import gear_3 from "../images/gears/d3.svg";
+// @ts-ignore
 import gear_4 from "../images/gears/d4.svg";
+// @ts-ignore
 import gear_5 from "../images/gears/d5.svg";
+// @ts-ignore
 import gear_6 from "../images/gears/d6.svg";
+// @ts-ignore
 import gear_7 from "../images/gears/d7.svg";
+// @ts-ignore
 import gear_8 from "../images/gears/d8.svg";
+// @ts-ignore
 import gear_9 from "../images/gears/d9.svg";
+// @ts-ignore
 import gear_10 from "../images/gears/d10.svg";
+// @ts-ignore
 import gear_11 from "../images/gears/d11.svg";
+// @ts-ignore
 import gear_12 from "../images/gears/d12.svg";
-import gear_13 from "../images/gears/d13.svg";
-import gear_14 from "../images/gears/d14.svg";
-import gear_15 from "../images/gears/d15.svg";
-import gear_16 from "../images/gears/d16.svg";
-import gear_17 from "../images/gears/d17.svg";
-import gear_18 from "../images/gears/d18.svg";
-import gear_19 from "../images/gears/d19.svg";
-import gear_20 from "../images/gears/d20.svg";
-import gear_21 from "../images/gears/d21.svg";
-import gear_22 from "../images/gears/d22.svg";
-import gear_23 from "../images/gears/d23.svg";
-import gear_24 from "../images/gears/d24.svg";
+// import gear_13 from "../images/gears/d13.svg";
+// import gear_14 from "../images/gears/d14.svg";
+// import gear_15 from "../images/gears/d15.svg";
+// import gear_16 from "../images/gears/d16.svg";
+// import gear_17 from "../images/gears/d17.svg";
+// import gear_18 from "../images/gears/d18.svg";
+// import gear_19 from "../images/gears/d19.svg";
+// import gear_20 from "../images/gears/d20.svg";
+// import gear_21 from "../images/gears/d21.svg";
+// import gear_22 from "../images/gears/d22.svg";
+// import gear_23 from "../images/gears/d23.svg";
+// import gear_24 from "../images/gears/d24.svg";
 
 
 const Container = styled.div`
+
+  background-color: rgba(0,0,0,0.15);
+
   position: relative;
   display: grid;
 
   width: 80%;
-  height: 100%;
 
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 8em;
+  margin-bottom: 4em;
 
-  min-height: 30em;
+  aspect-ratio: 1;
 
   @media (max-width: 768px) {
-    height: 20%;
-    margin-top: clamp(18em, 60vh, 200px);
+    margin-top: clamp(16em, 40vh, 200px);
+    margin-bottom: calc(10em);
+    // min-height: 52vh;
   } ;
-
-  
 `;
 
 const Gear = styled.img`
@@ -57,59 +70,55 @@ const Gear = styled.img`
 `;
 
 const Gear1 = styled(Gear)`
-  width: 12vw;
-  height: 16vh;
+  width: 18%;
+  height: 9%;
   top: -4%;
   bottom: 0;
-  left: 64%;
+  left: 63%;
   right: 0;
   @media (max-width: 768px) {
-    width: clamp(35px, 18vw, 70px);
-    height: clamp(35px, 18vh, 70px);
+    display:none;
   } ;
 `;
 
 const Gear2 = styled(Gear)`
-  width: 24vw;
-  height: 32vh;
-  top: 1.5%;
+  width: 33%;
+  height: 23%;
+  top: 0%;
   bottom: 0;
-  left: 47%;
+  left: 44%;
   right: 0;
 
-  @media (max-width: 768px) {
-    width: clamp(70px, 22vw, 120px);
-    height: clamp(70px, 22vw, 120px);
-    top: clamp(6%, 40vh, 5%);
-  } ;
+  // @media (max-width: 768px) {
+  //   width: clamp(70px, 22vw, 120px);
+  //   height: clamp(70px, 22vw, 120px);
+  //   top: clamp(6%, 40vh, 5%);
+  // } ;
 `;
 
 const Gear3 = styled(Gear)`
-  width: 36vw;
-  height: 44vh;
-  top: 12%;
+  width: 35%;
+  height: 35%;
+  top: 10%;
   bottom: 0;
-  left: 55.5%;
+  left: 68%;
   right: 0;
 
-  @media (max-width: 768px) {
-    width: clamp(70px, 32vw, 180px);
-    height: clamp(70px, 32vw, 180px);
-    top: clamp(6%, 40vh, 5%);
-    left: clamp(6%, 15vw, 10%);
-  } ;
+  // @media (max-width: 768px) {
+  //   width: clamp(70px, 32vw, 180px);
+  //   height: clamp(70px, 32vw, 180px);
+  //   top: clamp(6%, 40vh, 5%);
+  //   left: clamp(6%, 15vw, 10%);
+  // } ;
 `;
 
 const Gear4 = styled(Gear)`
-  width: 10vw;
-  height: 14vh;
-  top: 15.75%;
+  width: 10%;
+  height: 14%;
+  top: 20.5%;
   bottom: 0;
-  left: 48%;
+  left: 51%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
   // @media (max-width: 768px) {
   //   width: clamp(40px, 16vw, 85px);
   //   height: clamp(40px, 16vh, 85px);
@@ -119,15 +128,12 @@ const Gear4 = styled(Gear)`
 `;
 
 const Gear5 = styled(Gear)`
-  width: 18vw;
-  height: 24vh;
-  top: 29.5%;
+  width: 19%;
+  height: 19%;
+  top: 36%;
   bottom: 0;
-  left: 52.25%;
+  left: 55%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
   // @media (max-width: 768px) {
   //   width: clamp(33px, 36vw, 90px);
   //   height: clamp(33px, 36vw, 90px);
@@ -137,15 +143,15 @@ const Gear5 = styled(Gear)`
 `;
 
 const Gear6 = styled(Gear)`
-  width: 22vw;
-  height: 28vh;
-  top: 34.5%;
+  width: 24%;
+  height: 25%;
+  top: 45%;
   bottom: 0;
-  left: 64%;
+  left: 71.5%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
+  // @media (max-width: 768px) {
+  //   display: none;
+  // } ;
   // @media (max-width: 768px) {
   //   width: clamp(68px, 70vw, 100px);
   //   height: clamp(68px, 70vw, 100px);
@@ -155,15 +161,15 @@ const Gear6 = styled(Gear)`
 `;
 
 const Gear7 = styled(Gear)`
-  width: 19vw;
-  height: 21vh;
-  top: 34.5%;
+  width: 18%;
+  height: 18%;
+  top: 44%;
   bottom: 0;
-  left: 38.75%;
+  left: 38%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
+  // @media (max-width: 768px) {
+  //   display: none;
+  // } ;
   // @media (max-width: 768px) {
   //   width: clamp(68px, 70vw, 100px);
   //   height: clamp(68px, 70vw, 100px);
@@ -173,45 +179,45 @@ const Gear7 = styled(Gear)`
 `;
 
 const Gear8 = styled(Gear)`
-  width: 10vw;
-  height: 14vh;
-  top: 45%;
+  width: 11%;
+  height: 11%;
+  top: 61.5%;
   bottom: 0;
-  left: 48%;
+  left: 47%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
+  // @media (max-width: 768px) {
+  //   display: none;
+  // } ;
 `;
 
 const Gear9 = styled(Gear)`
-  width: 36vw;
-  height: 36vh;
-  top: 39%;
+  width: 27.5%;
+  height: 27.5%;
+  top: 50%;
   bottom: 0;
-  left: 14.25%;
+  left: 12%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
+  // @media (max-width: 768px) {
+  //   display: none;
+  // } ;
 `;
 
 const Gear10 = styled(Gear)`
-  width: 25vw;
-  height: 25vh;
-  top: 39%;
+  width: 17%;
+  height: 17%;
+  top: 54%;
   bottom: 0;
-  left: 3%;
+  left: -5%;
   right: 0;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
+  // @media (max-width: 768px) {
+  //   display: none;
+  // } ;
 `;
 
 const Gear11 = styled(Gear)`
-  width: 33vw;
-  height: 33vh;
-  top: 54%;
+  width: 20%;
+  height: 20%;
+  top: 75%;
   bottom: 0;
   left: 4%;
   right: 0;
@@ -221,11 +227,11 @@ const Gear11 = styled(Gear)`
 `;
 
 const Gear12 = styled(Gear)`
-  width: 20vw;
-  height: 20vh;
-  top: 68.75%;
+  width: 12%;
+  height: 12%;
+  top: 92%;
   bottom: 0;
-  left: 3.5%;
+  left: -3%;
   right: 0;
   @media (max-width: 768px) {
     display: none;
@@ -247,7 +253,7 @@ const rotateGearOnScroll = () => {
   });
 };
 
-const Gears: React.FC = () => {
+const Gears: React.FC = (props) => {
     useEffect(() => {
         window.addEventListener('scroll', rotateGearOnScroll);
 
@@ -258,6 +264,7 @@ const Gears: React.FC = () => {
     return (
         <>
             <Container>
+              {props.children}
                 <Gear1 src={gear_1} id="gear1" />
                 <Gear2 src={gear_2} id="gear2" />
                 <Gear3 src={gear_3} id="gear3" />
@@ -270,7 +277,6 @@ const Gears: React.FC = () => {
                 <Gear10 src={gear_10} id="gear10" />
                 <Gear11 src={gear_11} id="gear11" />
                 <Gear12 src={gear_12} id="gear12" />
-
             </Container>
         </>
     )
