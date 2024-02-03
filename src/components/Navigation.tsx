@@ -6,13 +6,13 @@ import gear_icon from "../images/gear.svg";
 // @ts-ignore
 import itp_logo from "../images/navbar/itp-01.svg";
 // @ts-ignore
-import BEST_logo from "../images/landing_page/BEST_logo.png";
+import BEST_logo from "../images/navbar/BEST_black.svg";
 // @ts-ignore
-import fb_icon from "../images/navbar/fb-01.svg";
+import fb_icon from "../images/navbar/FB_black.svg";
 // @ts-ignore
-import ig_icon from "../images/navbar/ig-01.svg";
+import ig_icon from "../images/navbar/INSTA_black.svg";
 // @ts-ignore
-import li_icon from "../images/navbar/li-01.svg";
+import li_icon from "../images/navbar/LNKDN_black.svg";
 
 const socialLinks = {
   facebook: "https://www.facebook.com/BEST.itp",
@@ -23,28 +23,34 @@ const socialLinks = {
 const NavContainer = styled.div`
   position: relative;
   height: 60vh;
+  @media (max-width: 768px) {
+    height: 30vh;
+  }
 `;
 
 const Nav = styled.nav`
   position: absolute;
   
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 6%;
+  right: 6%;
+  bottom: 0%;
 
   background-color: #e5821a;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
-  height: 5vh;
-  padding: 0.5em;
+  min-height: 2rem;
+  height: 8vh;
   border-radius: 20vh;
-  margin: 0em 4em;
 
   a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fffffa;
+  }
+
+  @media (max-width: 768px) {
+    height: 4vh;
   }
 `;
 
@@ -61,43 +67,40 @@ const LinkContainer = styled.div`
 //1d1d1b
 const ITPLogo = styled.img`
   position: absolute;
-  width: clamp(12rem, 36vw, 32rem);
-  left: 3vh;
-  margin-top: 4vh;
-  margin-left: 1vw;
+  width: clamp(8rem, 32vw, 24rem);
+  top: 18%;
+  left: 6%;
   user-select: none;
   @media (max-width: 768px) {
-    margin-top: 10vh;
-    margin-left: 5vw;
+    top: 22%;
   }
+
 `;
 
 const BESTLogoContainer = styled.img`
   position: absolute;
-  width: clamp(10rem, 24vw, 22rem);
-  right: 3vh;
-  margin-top: 5vh;
-  margin-right: 4vw;
+  width: clamp(8rem, 24vw, 22rem);
+  right: 6%;
+  top: 6%;
   user-select: none;
   @media (max-width: 768px) {
-    margin-top: 9vh;
-    margin-right: 6vw;
+    top: 14%;
   }
 `;
 
 const SocialsContainer = styled.div`
   position: absolute;
-  
-  top: 35vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
-  width: 14vw;
-  margin: 0em 3.75em;
+  
+  top: 50%;
+  width: clamp(3em, 18vw, 8em);
+  left: 6%;
 
   a {
-    height: 8vh;
+    min-height: 1rem;
+    height: 6vh;
   }
 
   img {
@@ -108,16 +111,10 @@ const SocialsContainer = styled.div`
 
   @media (max-width: 768px) {
     & {
-      height: 8vh;
-      min-width: 30vw;
-      margin: 0em 4em;
-
+      top: 57.5%;
+      width: clamp(20vw, 30vw, 50vw);
       a {
-        max-width: 33%;
-      }
-
-      img {
-        width: 95%;
+        height: 4vh;
       }
     }
   }
@@ -161,8 +158,7 @@ const links: ILink[] = [
 const Navigation: React.FC = () => {
   const linkStyle =
   {
-    fontSize: "clamp(0.8rem, 1.3vw, 1.2rem)",
-    // fontWeight: "bold",
+    fontSize: "clamp(0.5rem, 1.3vw, 1.2rem)",
     flexBasis: "100%",
     alignSelf: "center",
     whiteSpace: "nowrap"
