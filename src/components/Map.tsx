@@ -132,7 +132,7 @@ const MapLegend = styled(List)`
     top: 75%;
     height: 16%;
     width: 50%;
-    left: -3%;
+    left: -1.5%;
 }
 `;
 
