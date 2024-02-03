@@ -83,6 +83,36 @@ const TextBoxTitle = styled(TextBox1)`
   }
 `;
 
+const HeroTextContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  // height: 20%;
+  transform: translateX(-50%);
+  width: clamp(6rem, 80vw, 36rem);
+  text-align: center;
+
+  @media (max-width: 769px) {
+    width: clamp(6rem, 50vw, 36rem);
+  }
+`;
+
+const H2 = styled.h2`
+  font-size: clamp(0.2rem, 3.5vw, 2.5rem);
+  line-height: 1.15;
+  @media (max-width: 769px) {
+    font-size: clamp(0.4rem, 3vw, 2rem);
+  }
+`;
+
+const H2_smaller = styled.h2`
+  font-size: clamp(0.15rem, 3vw, 2rem);
+  line-height: 1.15;
+  @media (max-width: 769px) {
+    font-size: clamp(0.3rem, 2vw, 1.5rem);
+  }
+`;
+
 const TextPage: React.FC = () => {
   return (
     <>
@@ -92,10 +122,17 @@ const TextPage: React.FC = () => {
           <source srcSet={img2_mobile} media="(max-width: 768px)" />
           <Img src={img2_desktop} alt="text page" />
         </picture>
-
-        <TextBoxTitle>
-          6 marca 2024 r.
-        </TextBoxTitle>
+        <HeroTextContainer>
+          <H2>
+            6 marca 2024
+          </H2>
+          <H2>
+            10:00-16:00
+          </H2>
+          <H2_smaller>
+            Stadion Miejski im. Henryka Reymana
+          </H2_smaller>
+        </HeroTextContainer>
 
         <TextBox1>
           Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe.
