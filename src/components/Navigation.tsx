@@ -146,14 +146,10 @@ const links: ILink[] = [
   //   name: "Katalog wystawców",
   //   path: "https://itp.best.krakow.pl/ITP2023-katalog.pdf",
   // },
-  // {
-  //   name: "Wyślij CV",
-  //   path: "https://docs.google.com/forms/d/e/1FAIpQLSc36Pr-ib_wTRvGmZ5Lt8QUBBYu5BdenBO2TvuImyFKWEZxfQ/viewform?usp=sf_link",
-  // },
-  // {
-  //   name: "Zapisz się na warsztaty",
-  //   path: "https://forms.gle/6iHgFDjkCfxJ3n3E8",
-  // },
+  {
+    name: "Wyślij CV",
+    path: "https://forms.gle/fG86afGGonoiqeAV8",
+  },
   { name: "O Beście", path: "https://www.newsite.best.krakow.pl/" },
   // {
   //   name: "Harmonogram",

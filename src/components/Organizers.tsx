@@ -21,7 +21,6 @@ const ContactBoxTitle = styled.h2`
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: clamp(1rem, 2vw, 2.4rem);
-  font-family: "Unica One", sans-serif;
   text-align: center;
   line-height: 1.2;
   @media (max-width: 768px) {
@@ -34,7 +33,7 @@ const TextBox = styled.div`
   position: absolute;
   width: 17%;
   height: 10%;
-  font-size: 1vw;
+  font-size: 1.15vw;
   line-height: 130%;
   color: #d2764a;
   text-align: center;
@@ -49,7 +48,6 @@ const TextBox = styled.div`
 const Picture = styled.picture`
   position: relative;
   top: 1.75rem;
-};
 `;
 
 const NameText = styled.span`
@@ -60,19 +58,19 @@ const NameText = styled.span`
 const TextBoxLG = styled(TextBox)`
   left: 33.33%;
   transform: translate(-50%, -50%);
-  top: 79%;
+  top: clamp(75%, 70vw, 81.25%);
 `;
 
 const TextBoxMO = styled(TextBox)`
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 75%;
+  top: clamp(65%, 70vw, 77.25%);
 `;
 
 const TextBoxFR = styled(TextBox)`
   left: 66.66%;
   transform: translate(-50%, -50%);
-  top: 79%;
+  top: clamp(75%, 70vw, 81.25%);
 `;
 
 const Organizers: React.FC = () => {

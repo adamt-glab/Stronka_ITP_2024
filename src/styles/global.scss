@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400&display=swap);
+$alumni-sans: 'Alumni Sans', sans-serif;
 
 html,
 body,
@@ -89,7 +91,8 @@ video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
-  font-family: "Unica One", sans-serif;
+  // font-family: "Unica One", sans-serif;
+  font-family: $alumni-sans;
   font-size: clamp(1rem, 3vw, 1.4rem);
   color: #cd5d28;
 }

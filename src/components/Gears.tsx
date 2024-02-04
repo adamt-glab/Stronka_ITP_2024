@@ -55,9 +55,8 @@ const Container = styled.div`
   aspect-ratio: 1;
 
   @media (max-width: 768px) {
-    margin-top: clamp(16em, 40vh, 200px);
-    margin-bottom: calc(10em);
-    // min-height: 52vh;
+    margin-top: 38%;
+    margin-bottom: 30%;
   } ;
 `;
 
@@ -77,9 +76,9 @@ const Gear1 = styled(Gear)`
   bottom: 0;
   left: 63%;
   right: 0;
-  @media (max-width: 768px) {
-    display:none;
-  } ;
+  // @media (max-width: 768px) {
+  //   display:none;
+  // } ;
 `;
 
 const Gear2 = styled(Gear)`
@@ -199,6 +198,7 @@ const Gear12 = styled(Gear)`
   right: 0;
   @media (max-width: 768px) {
     display: none;
+    // top:72%;
   } ;
 `;
 

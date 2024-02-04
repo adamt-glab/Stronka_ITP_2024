@@ -11,7 +11,7 @@ const Container = styled.div`
 const TextBox1 = styled.div`
   width: 38%;
   height: 12%;
-  top: 18%;
+  top: 25%;
   left: 6%;
 
   position: absolute;
@@ -20,7 +20,7 @@ const TextBox1 = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-size: 1.3vw;
+  font-size: 2.32vw;
   color: #d2764a;
 
   @media (max-width: 768px) {
@@ -42,7 +42,7 @@ const TextBox2 = styled(TextBox1)`
 `;
 
 const TextBox3 = styled(TextBox1)`
-  top: 71%;
+  top: 80%;
   left: 56%;
   @media (max-width: 768px) {
     height: 8.4%;
@@ -97,29 +97,20 @@ const TextPage: React.FC = () => {
         </HeroTextContainer>
 
         <TextBox1>
-          Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe.
-          {/* Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji. */}
-        </TextBox1>
-
-        <TextBox2>
-          {/* Aby to zrealizować, w tym roku zaprosiliśmy X firm, które są wiodącymi markami w swoich branżach.
-          Z naszym wydarzeniem współpracuje także X firm medialnych. */}
+          Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków to projekt, który już od 26 lat łączy środowisko akademickie i biznesowe. <br />
           Naszym głównym celem jest zapewnienie wszystkim uczestnikom Targów, jak najwyższej jakości wydarzenia oraz pełnej satysfakcji.
-        </TextBox2>
+        </TextBox1>
 
         <TextBox3>
           W dniu 6 marca spotkają się pracodawcy szukający
           przyszłych pracowników oraz studenci starający się
           o wymarzoną pracę lub staż.
           Na naszej stronie internetowej znajdziecie informacje
-          o naszych wystawcach i ich ofertach pracy.
-        </TextBox3>
-
-        <TextBox4>
+          o naszych wystawcach i ich ofertach pracy. <br />
           Istnieje również możliwość przesłania swojego CV do naszej bazy,
           dzięki której nasi wystawcy poznają Was jeszcze lepiej
           pod kątem waszego doświadczenia i umiejętności.
-        </TextBox4>
+        </TextBox3>
 
         <Gears />
       </Container>
