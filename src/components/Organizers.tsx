@@ -78,13 +78,13 @@ const TextBoxFR = styled(TextBox)`
 const Organizers: React.FC = () => {
   return (
     <>
-      <Container>
+      <Container id="organizers">
         <Picture>
           <source srcSet={img8_desktop} media="(min-width: 769px)" />
           <source srcSet={img6_mobile} media="(max-width: 768px)" />
           <Img src={img8_desktop} alt="last page" />
         </Picture>
-        <ContactBoxTitle id="organizers">
+        <ContactBoxTitle>
           Kontakt z organizatorami
         </ContactBoxTitle>
         <TextBoxLG>

@@ -69,26 +69,32 @@ const LinkContainer = styled.div`
   text-transform: none;
 `;
 
-//1d1d1b
 const ITPLogo = styled.img`
   position: absolute;
-  width: clamp(8rem, 32vw, 24rem);
+  // width: 24rem;
+  width: clamp(16rem, 32vw, 24rem);
   top: 18%;
   left: 6%;
   user-select: none;
   @media (max-width: 768px) {
+    width: clamp(8rem, 32vw, 24rem);
     top: 22%;
   }
 `;
 
 const BESTLogoContainer = styled.img`
   position: absolute;
-  width: clamp(8rem, 24vw, 20rem);
+  // width: 20rem;
+  width: clamp(13rem, 24vw, 20rem);
   right: 6%;
   top: 6%;
   user-select: none;
   @media (max-width: 768px) {
+    width: clamp(8rem, 24vw, 20rem);
     top: 14%;
+  }
+  @media (min-width: 769px) {
+    top: calc(5.5% + 0.9vw);
   }
 `;
 
@@ -99,7 +105,7 @@ const SocialsContainer = styled.div`
   justify-content: space-between;
   
   top: 55%;
-  width: clamp(4vw, 24vw, 10em);
+  gap: 1rem;
   left: 6%;
 
   a {
@@ -162,7 +168,7 @@ const links: ILink[] = [
 const Navigation: React.FC = () => {
   const linkStyle =
   {
-    fontSize: "clamp(0.5rem, 1.3vw, 1.2rem)",
+    fontSize: "clamp(0.7rem, 1.9vw, 2rem)",
     flexBasis: "100%",
     alignSelf: "center",
     whiteSpace: "nowrap"
