@@ -15,7 +15,7 @@ import gear_24 from "../images/gears/d24.svg";
 
 const Container = styled.div`
 
-  // background-color: rgba(0,0,0,0.15);
+  background-color: rgba(0,0,0,0.15);
 
   position: sticky;
   display: grid;
@@ -24,14 +24,12 @@ const Container = styled.div`
   width: 80%;
 
   margin: 0 auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
 
   aspect-ratio: 1;
 
   @media (max-width: 768px) {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    top: 2rem;
+    // aspect-ratio:none;
   } ;
 `;
 
@@ -111,7 +109,7 @@ const rotateGearOnScroll = () => {
     const gear = document.querySelector(gearId)?.style;
 
     if (gear) {
-      const rotationFactor = 0.12;
+      const rotationFactor = 0.16;
       const rotationDirection = rotationDirections[index];
       gear.transform = `rotate(${window.scrollY * rotationFactor * rotationDirection}deg)`;
     }

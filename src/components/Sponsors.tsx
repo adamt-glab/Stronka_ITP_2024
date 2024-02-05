@@ -18,7 +18,7 @@ const logos = importAll(
 );
 
 const ParentDiv = styled.div`
-  margin-top: 5rem;
+  margin-top: clamp(3rem, 10vw, 12em);
   width: 100%;
   display: flex;
 `;
@@ -29,9 +29,9 @@ const ChildDiv = styled.div`
 
 const LeftDiv = styled(ChildDiv)`
   border-right: 2px solid #000;
-  // background-color: #f0f0f0; /* Optional: Add some styling for better visibility */
   position: relative;
-  padding: 10px;
+  // padding: 10px;
+  padding: 0 0.5rem 0 0.5rem;
   display:grid;
   grid-template-rows: auto 1fr;
   `;
@@ -41,29 +41,32 @@ const RightDiv = styled(ChildDiv)`
 `;
 
 const Card = styled.div`
-  height:60vh;
+  height: 80vh;
   background: #fffffa;
-  // background-color: rgba(0,0,0,0.15);
+  // background-color: rgba(120,180,230,1);
   display:flex;
-  justify-content:center;
+  // justify-content:center;
   flex-direction: column;
-  align-items:center;
+  // align-items:center;
   position:sticky;
   top:0;
+  border: 2px solid #000;
+
+  @media (max-width: 768px) {
+    height: 40vh;
+  } ;
 `;
 
 const PartnershipText = styled.span`
-  font-size: 120%;
+  font-size: 2.2vw;
   font-weight: 600;
   margin-bottom: 2rem;
   margin-top: 2rem;
-`;
+  position: absolute;
 
-const CompanyContainer = styled.div`
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 25%;
 `;
 
 // --------------------
@@ -105,15 +108,32 @@ const SponsorImg = styled.img`
 
 const Sabre = styled.a`
   background-color: rgba(0,0,0,0.15);
-  width: 20%;
+  width: 30%;
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 70%;
+  top: 50%;
+  // @media (max-width: 768px) {
+  //   right: 32%;
+  //   top: 3.5%;
+  //   width: 38%;
+  // } ;
+`;
+
+
+// ##################################
+// SPONSORS
+// ##################################
+
+const GE = styled.a`
+  width: 15%;
+  position: absolute;
+  right: 74%;
+  top: 65.4%;
   @media (max-width: 768px) {
-    right: 32%;
-    top: 3.5%;
-    width: 38%;
+    right: 71.5%;
+    top: 65.9%;
+    width: 24%;
   } ;
 `;
 
@@ -128,30 +148,11 @@ const Woodward = styled.a`
     width: 30%;
   } ;
 `;
-const Pega = styled.a`
-  width: 9%;
-  position: absolute;
-  left: 45.6%;
-  top: 36%;
-  @media (max-width: 768px) {
-    left: 69%;
-    top: 31%;
-    width: 17%;
-  } ;
-`;
-const Mars = styled.a`
-  width: 11%;
-  position: absolute;
-  right: 13%;
-  top: 36.6%;
-  @media (max-width: 768px) {
-    right: 10.5%;
-    top: 39.4%;
-    width: 23%;
-  } ;
-`;
+
 const Aptiv = styled.a`
-  width: 16%;
+background-color: rgba(0,0,0,0.15);
+
+  width: 20%;
   position: absolute;
   left: 10.5%;
   top: 44%;
@@ -161,6 +162,34 @@ const Aptiv = styled.a`
     width: 27%;
   } ;
 `;
+
+const Pega = styled.a`
+background-color: rgba(0,0,0,0.15);
+
+  width: 12%;
+  position: absolute;
+  left: 44%;
+  top: 40%;
+  @media (max-width: 768px) {
+    left: 69%;
+    top: 31%;
+    width: 17%;
+  } ;
+`;
+const Mars = styled.a`
+background-color: rgba(0,0,0,0.15);
+
+  width: 12%;
+  position: absolute;
+  right: 13%;
+  top: 42%;
+  @media (max-width: 768px) {
+    right: 10.5%;
+    top: 39.4%;
+    width: 23%;
+  } ;
+`;
+
 const Motorola = styled.a`
   width: 9%;
   position: absolute;
@@ -185,17 +214,7 @@ const Autodesk = styled.a`
   } ;
 `;
 
-const GE = styled.a`
-  width: 15%;
-  position: absolute;
-  right: 74%;
-  top: 65.4%;
-  @media (max-width: 768px) {
-    right: 71.5%;
-    top: 65.9%;
-    width: 24%;
-  } ;
-`;
+
 
 const Adecco = styled.a`
   width: 12%;
@@ -310,7 +329,7 @@ const Sponsors: React.FC = () => {
 
   console.log(isMobile);
   return (
-    <Container id="#sponsors">
+    <Container id="sponsors">
       <ParentDiv>
         <LeftDiv>
           <Card>
@@ -321,26 +340,37 @@ const Sponsors: React.FC = () => {
           </Card>
           <Card>
             <PartnershipText>Sponsorzy</PartnershipText>
-            <CompanyContainer>
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-              <p>6</p>
-            </CompanyContainer>
+              <Pega href="https://www.pega.com/" target="_blank">
+                <SponsorImg src={logos[2].default} alt="Pega" />
+              </Pega>
+
+              <Aptiv href="https://www.aptiv.com/" target="_blank">
+                <SponsorImg src={logos[4].default} alt="Aptiv" />
+              </Aptiv>
+
+              <Woodward href="https://www.woodward.com/" target="_blank">
+                <SponsorImg src={logos[1].default} alt="Woodward" />
+              </Woodward>
+
+              <Mars href="https://www.mars.com/" target="_blank">
+                <SponsorImg src={logos[3].default} alt="Mars" />
+              </Mars>
+
+              <GE href="https://www.ge.com/" target="_blank">
+                <SponsorImg src={logos[7].default} alt="GE" />
+              </GE>
           </Card>
           <Card>
             <PartnershipText>Partner Strefy Studenta</PartnershipText>
-              <p>PSS</p>
-            <PartnershipText>Sponsor merytoryczny</PartnershipText>
-              <p>SM</p>
+            <p>PSS</p>
+            {/* <PartnershipText>Sponsor merytoryczny</PartnershipText>
+              <p>SM</p> */}
           </Card>
-          <Card>
+          {/* <Card>
             <PartnershipText>Partner techniczny</PartnershipText>
               <p>PT</p>
-          </Card>
-          <Card>
+          </Card> */}
+          {/* <Card>
             <PartnershipText>Patroni medialni</PartnershipText>
             <CompanyContainer>
               <p>1</p>
@@ -350,10 +380,9 @@ const Sponsors: React.FC = () => {
               <p>5</p>
               <p>6</p>
             </CompanyContainer>
-          </Card>
+          </Card> */}
         </LeftDiv>
         <RightDiv>
-          {/* Content for the right div */}
           <PartnerGears />
         </RightDiv>
       </ParentDiv>
@@ -363,122 +392,102 @@ const Sponsors: React.FC = () => {
 
 export default Sponsors;
 
-    //   <div id="sponsors">
-    //     <Container>
-    //       {!isMobile && (
-    //         <>
-    //           <ImgDesktop src={imagesDesktop[3].default} alt="img4" />
-    //           <ImgDesktop src={imagesDesktop[4].default} alt="img5" />
-    //           <ImgDesktop
-    //             id="partners"
-    //             src={imagesDesktop[5].default}
-    //             alt="img6"
-    //           />
-    //           <ImgDesktop
-    //             id="patrons"
-    //             src={imagesDesktop[6].default}
-    //             alt="img7"
-    //           />
-    //           {/* <Crane src={imagesDesktop[8].default} alt="crane" /> */}
+//   <div id="sponsors">
+//     <Container>
+//       {!isMobile && (
+//         <>
+//           <ImgDesktop src={imagesDesktop[3].default} alt="img4" />
+//           <ImgDesktop src={imagesDesktop[4].default} alt="img5" />
+//           <ImgDesktop
+//             id="partners"
+//             src={imagesDesktop[5].default}
+//             alt="img6"
+//           />
+//           <ImgDesktop
+//             id="patrons"
+//             src={imagesDesktop[6].default}
+//             alt="img7"
+//           />
+//           {/* <Crane src={imagesDesktop[8].default} alt="crane" /> */}
 
-    //           {/* <MovingGears /> */}
+//           {/* <MovingGears /> */}
 
-    //           {/* <MainSponsorTitle>SPONSOR GŁÓWNY</MainSponsorTitle>
-    //           <SponsorsTitle>SPONSORZY</SponsorsTitle>
+//           {/* <MainSponsorTitle>SPONSOR GŁÓWNY</MainSponsorTitle>
+//           <SponsorsTitle>SPONSORZY</SponsorsTitle>
 
-    //           <StudentPartner>
-    //             PARTNER <br /> STREFY <br /> STUDENTA
-    //           </StudentPartner>
-    //           <ContentPartner>
-    //             PARTNER <br /> MERYTORYCZNY{" "}
-    //           </ContentPartner>
-    //           <TechnicalPartner>
-    //             {" "}
-    //             PARTNER <br /> TECHNICZNY{" "}
-    //           </TechnicalPartner>
-    //           <MediaTitle>
-    //             {" "}
-    //             PARTNERZY <br /> MEDIALNI{" "}
-    //           </MediaTitle> */}
-    //         </>
-    //       )}
+//           <StudentPartner>
+//             PARTNER <br /> STREFY <br /> STUDENTA
+//           </StudentPartner>
+//           <ContentPartner>
+//             PARTNER <br /> MERYTORYCZNY{" "}
+//           </ContentPartner>
+//           <TechnicalPartner>
+//             {" "}
+//             PARTNER <br /> TECHNICZNY{" "}
+//           </TechnicalPartner>
+//           <MediaTitle>
+//             {" "}
+//             PARTNERZY <br /> MEDIALNI{" "}
+//           </MediaTitle> */}
+//         </>
+//       )}
 
-    //       {isMobile && (
-    //         <>
-    //           <ImgMobile src={imagesMobile[3].default} alt="img4" />
-    //           <ImgMobile
-    //             id="partners patrons"
-    //             src={imagesMobile[4].default}
-    //             alt="img5"
-    //           />
-    //         </>
-    //       )}
+//       {isMobile && (
+//         <>
+//           <ImgMobile src={imagesMobile[3].default} alt="img4" />
+//           <ImgMobile
+//             id="partners patrons"
+//             src={imagesMobile[4].default}
+//             alt="img5"
+//           />
+//         </>
+//       )}
 
-    //       {/* <Sabre href="https://www.sabre.com/locations/poland/" target="_blank">
-    //         <SponsorImg src={logos[0].default} alt="Sabre" />
-    //       </Sabre>
+//       <Motorola
+//         href="https://www.motorolasolutions.com/en_us/home.html"
+//         target="_blank"
+//       >
+//         <SponsorImg src={logos[5].default} alt="Motorola" />
+//       </Motorola>
 
-    //       <Woodward href="https://www.woodward.com/" target="_blank">
-    //         <SponsorImg src={logos[1].default} alt="Woodward" />
-    //       </Woodward>
+//       <Autodesk href="https://www.autodesk.com/" target="_blank">
+//         <SponsorImg src={logos[6].default} alt="Autodesk" />
+//       </Autodesk>
 
-    //       <Pega href="https://www.pega.com/" target="_blank">
-    //         <SponsorImg src={logos[2].default} alt="Pega" />
-    //       </Pega>
+//       <GE href="https://www.ge.com/" target="_blank">
+//         <SponsorImg src={logos[7].default} alt="GE" />
+//       </GE>
 
-    //       <Mars href="https://www.mars.com/" target="_blank">
-    //         <SponsorImg src={logos[3].default} alt="Mars" />
-    //       </Mars>
+//       <Adecco href="https://www.adecco.pl/" target="_blank">
+//         <SponsorImg src={logos[8].default} alt="Adecco" />
+//       </Adecco>
 
-    //       <Aptiv href="https://www.aptiv.com/" target="_blank">
-    //         <SponsorImg src={logos[4].default} alt="Aptiv" />
-    //       </Aptiv>
+//       <Fujijama href="https://www.fujijama.pl/" target="_blank">
+//         <SponsorImg src={logos[15].default} alt="Fujijama" />
+//       </Fujijama>
 
-    //       <Motorola
-    //         href="https://www.motorolasolutions.com/en_us/home.html"
-    //         target="_blank"
-    //       >
-    //         <SponsorImg src={logos[5].default} alt="Motorola" />
-    //       </Motorola>
+//       <Eska href="https://www.eska.pl/" target="_blank">
+//         <SponsorImg src={logos[9].default} alt="Eska" />
+//       </Eska>
 
-    //       <Autodesk href="https://www.autodesk.com/" target="_blank">
-    //         <SponsorImg src={logos[6].default} alt="Autodesk" />
-    //       </Autodesk>
+//       <PodajDalej href="http://www.podajdalej.info.pl/" target="_blank">
+//         <SponsorImg src={logos[10].default} alt="Podaj Dalej" />
+//       </PodajDalej>
 
-    //       <GE href="https://www.ge.com/" target="_blank">
-    //         <SponsorImg src={logos[7].default} alt="GE" />
-    //       </GE>
+//       <DlaStudenta href="https://www.dlastudenta.pl/" target="_blank">
+//         <SponsorImg src={logos[11].default} alt="Dla Studenta" />
+//       </DlaStudenta>
 
-    //       <Adecco href="https://www.adecco.pl/" target="_blank">
-    //         <SponsorImg src={logos[8].default} alt="Adecco" />
-    //       </Adecco>
+//       <Eurostudent href="https://eurostudent.pl/" target="_blank">
+//         <SponsorImg src={logos[12].default} alt="Eurostudent" />
+//       </Eurostudent>
 
-    //       <Fujijama href="https://www.fujijama.pl/" target="_blank">
-    //         <SponsorImg src={logos[15].default} alt="Fujijama" />
-    //       </Fujijama>
+//       <KMS href="https://kms.org.pl/" target="_blank">
+//         <SponsorImg src={logos[13].default} alt="KMS" />
+//       </KMS>
 
-    //       <Eska href="https://www.eska.pl/" target="_blank">
-    //         <SponsorImg src={logos[9].default} alt="Eska" />
-    //       </Eska>
-
-    //       <PodajDalej href="http://www.podajdalej.info.pl/" target="_blank">
-    //         <SponsorImg src={logos[10].default} alt="Podaj Dalej" />
-    //       </PodajDalej>
-
-    //       <DlaStudenta href="https://www.dlastudenta.pl/" target="_blank">
-    //         <SponsorImg src={logos[11].default} alt="Dla Studenta" />
-    //       </DlaStudenta>
-
-    //       <Eurostudent href="https://eurostudent.pl/" target="_blank">
-    //         <SponsorImg src={logos[12].default} alt="Eurostudent" />
-    //       </Eurostudent>
-
-    //       <KMS href="https://kms.org.pl/" target="_blank">
-    //         <SponsorImg src={logos[13].default} alt="KMS" />
-    //       </KMS>
-
-    //       <FXMAG href="https://fxmag.pl/" target="_blank">
-    //         <SponsorImg src={logos[14].default} alt="FXMAG" />
-    //       </FXMAG> */}
-    //     </Container>
-    //   </div>
+//       <FXMAG href="https://fxmag.pl/" target="_blank">
+//         <SponsorImg src={logos[14].default} alt="FXMAG" />
+//       </FXMAG> */}
+//     </Container>
+//   </div>
