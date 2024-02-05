@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import useMediaQuery from "../utils/UseMediaQuery";
 import PartnerGears from "./PartnerGears";
-// import IBM from ;
 
 function importAll(r: any) {
   return r.keys().map(r);
@@ -29,7 +28,6 @@ const ChildDiv = styled.div`
 `;
 
 const LeftDiv = styled(ChildDiv)`
-  border-right: 2px solid #000;
   position: relative;
   padding: 0 0.5rem 0 0.5rem;
   display:grid;
@@ -41,17 +39,12 @@ const RightDiv = styled(ChildDiv)`
 `;
 
 const Card = styled.div`
-  border: 2px solid black;
   height: 80vh;
   background: #fffffa;
-  // background-color: rgba(120,180,230,1);
   display:flex;
-  // justify-content:center;
   flex-direction: column;
-  // align-items:center;
   position:sticky;
   top:0;
-  border: 2px solid #000;
 
   @media (max-width: 768px) {
     height: 40vh;
@@ -59,15 +52,6 @@ const Card = styled.div`
 `;
 
 const PartnershipText = styled.span`
-  // font-size: 2.2vw;
-  // font-weight: 600;
-  // margin-bottom: 2rem;
-  // margin-top: 2rem;
-  // position: absolute;
-
-  // transform: translate(-50%, -50%);
-  // left: 50%;
-  // top: 25%;
   font-size: 2.2vw;
   font-weight: 600;
   grid-column: span 3;
@@ -88,7 +72,6 @@ const Container = styled.div`
 const SponsorImg = styled.img`
   width: 100%;
   display: block;
-  background-color: rgba(0,0,0,0.15);
   
   aspect-raito: 1;
   aspect-ratio: 3/2;
@@ -115,13 +98,18 @@ top: 25%;
 `;
 
 const SabreImg = styled.img`
+  // background-color: rgba(0,0,0,0.15);
   width: 50%;
   display: block;
-  background-color: rgba(0,0,0,0.15);
+  // background-color: rgba(0,0,0,0.15);
   aspect-raito: 1;
   height: 100%;
   margin: 0 auto;
 `;
+
+const PMIImg = styled(SabreImg)``;
+
+const PMIText = styled(SabreText)``;
 
 const Sabre = styled.a`
   width: 100%;
@@ -137,6 +125,11 @@ const Sabre = styled.a`
   // } ;
 `;
 
+const PMI = styled(Sabre)`
+  width: 50%;
+  top: 55%;
+`;
+
 const SponsorsPanel = styled.div`
   height:100%;
   box-sizing: border-box;
@@ -144,7 +137,7 @@ const SponsorsPanel = styled.div`
   display: grid;
   grid-template-columns: repeat(3, calc(1/3 * 100%));
   align-content: center;
-  background: #bb25de44;
+  // background: #bb25de44;
   justify-content: space-around;
   gap: 2.5%;
   @media (max-width: 768px) {
@@ -355,8 +348,10 @@ const Sponsors: React.FC = () => {
             </SponsorsPanel>
           </Card>
           <Card>
-            <PartnershipText>Partner Strefy Studenta</PartnershipText>
-            <p>PSS</p>
+            <PMIText>Partner Strefy Studenta</PMIText>
+            <PMI href="https://www.pmi.com/markets/poland/pl/about-us/overview" target="_blank">
+              <PMIImg src={logos[17].default} alt="PMI" />
+            </PMI>
             {/* <PartnershipText>Sponsor merytoryczny</PartnershipText>
               <p>SM</p> */}
           </Card>

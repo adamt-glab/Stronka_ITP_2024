@@ -15,7 +15,7 @@ import gear_24 from "../images/gears/d24.svg";
 
 const Container = styled.div`
 
-  background-color: rgba(0,0,0,0.15);
+  // background-color: rgba(0,0,0,0.15);
 
   position: sticky;
   display: grid;
@@ -29,7 +29,6 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     top: 2rem;
-    // aspect-ratio:none;
   } ;
 `;
 
