@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import useMediaQuery from "../utils/UseMediaQuery";
 import PartnerGears from "./PartnerGears";
+// import IBM from ;
 
 function importAll(r: any) {
   return r.keys().map(r);
@@ -30,7 +31,6 @@ const ChildDiv = styled.div`
 const LeftDiv = styled(ChildDiv)`
   border-right: 2px solid #000;
   position: relative;
-  // padding: 10px;
   padding: 0 0.5rem 0 0.5rem;
   display:grid;
   grid-template-rows: auto 1fr;
@@ -41,6 +41,7 @@ const RightDiv = styled(ChildDiv)`
 `;
 
 const Card = styled.div`
+  border: 2px solid black;
   height: 80vh;
   background: #fffffa;
   // background-color: rgba(120,180,230,1);
@@ -58,15 +59,22 @@ const Card = styled.div`
 `;
 
 const PartnershipText = styled.span`
+  // font-size: 2.2vw;
+  // font-weight: 600;
+  // margin-bottom: 2rem;
+  // margin-top: 2rem;
+  // position: absolute;
+
+  // transform: translate(-50%, -50%);
+  // left: 50%;
+  // top: 25%;
   font-size: 2.2vw;
   font-weight: 600;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  position: absolute;
-
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 25%;
+  grid-column: span 3;
+  justify-self: center;
+  @media (max-width: 768px) {
+    grid-column: span 2;
+  } ;
 `;
 
 // --------------------
@@ -77,39 +85,48 @@ const Container = styled.div`
   aspect-ratio:1;
 `;
 
-const ImgDesktop = styled.img`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  @media (max-width: 768px) {
-    display: none;
-  } ;
-`;
-
-const ImgMobile = styled.img`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  @media (min-width: 769px) {
-    display: none;
-  } ;
-`;
-
 const SponsorImg = styled.img`
   width: 100%;
+  display: block;
+  background-color: rgba(0,0,0,0.15);
+  
+  aspect-raito: 1;
+  aspect-ratio: 3/2;
+
+  // height: 100%;
+  // padding: 0.5rem;
+  // transform: translate(-0.5rem, -0.5rem);
+  // @media (max-width: 768px) {
+  //   aspect-ratio: 3/2;
+  // } ;
+`;
+
+
+const SabreText = styled.span`
+font-size: 2.2vw;
+font-weight: 600;
+margin-bottom: 2rem;
+margin-top: 2rem;
+position: absolute;
+
+transform: translate(-50%, -50%);
+left: 50%;
+top: 25%;
+`;
+
+const SabreImg = styled.img`
+  width: 50%;
+  display: block;
+  background-color: rgba(0,0,0,0.15);
+  aspect-raito: 1;
   height: 100%;
-  padding: 0.5rem;
-  transform: translate(-0.5rem, -0.5rem);
-  @media (min-width: 768px) {
-    padding: 1.5rem;
-    transform: translate(-1.5rem, -1.5rem);
-  } ;
+  margin: 0 auto;
 `;
 
 const Sabre = styled.a`
-  background-color: rgba(0,0,0,0.15);
-  width: 30%;
+  width: 100%;
   position: absolute;
+  align-self: center;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
@@ -120,74 +137,45 @@ const Sabre = styled.a`
   // } ;
 `;
 
+const SponsorsPanel = styled.div`
+  height:100%;
+  box-sizing: border-box;
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, calc(1/3 * 100%));
+  align-content: center;
+  background: #bb25de44;
+  justify-content: space-around;
+  gap: 2.5%;
+  @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 50%);
+  };
+`;
 
 // ##################################
 // SPONSORS
 // ##################################
 
-const GE = styled.a`
-  width: 15%;
-  position: absolute;
-  right: 74%;
-  top: 65.4%;
-  @media (max-width: 768px) {
-    right: 71.5%;
-    top: 65.9%;
-    width: 24%;
-  } ;
+const ParentLink = styled.a`
+  align-self: center;
+  width: 100%;
 `;
 
-const Woodward = styled.a`
-  width: 20%;
-  position: absolute;
-  left: 40%;
-  top: 65.4%;
-  @media (max-width: 768px) {
-    top: 32%;
-    left: 7%;
-    width: 30%;
-  } ;
+const GE = styled(ParentLink)`
 `;
 
-const Aptiv = styled.a`
-background-color: rgba(0,0,0,0.15);
-
-  width: 20%;
-  position: absolute;
-  left: 10.5%;
-  top: 44%;
-  @media (max-width: 768px) {
-    left: 8.4%;
-    top: 48.4%;
-    width: 27%;
-  } ;
+const Woodward = styled(ParentLink)`
 `;
 
-const Pega = styled.a`
-background-color: rgba(0,0,0,0.15);
-
-  width: 12%;
-  position: absolute;
-  left: 44%;
-  top: 40%;
-  @media (max-width: 768px) {
-    left: 69%;
-    top: 31%;
-    width: 17%;
-  } ;
+const IBM = styled(ParentLink)`
 `;
-const Mars = styled.a`
-background-color: rgba(0,0,0,0.15);
 
-  width: 12%;
-  position: absolute;
-  right: 13%;
-  top: 42%;
-  @media (max-width: 768px) {
-    right: 10.5%;
-    top: 39.4%;
-    width: 23%;
-  } ;
+const Aptiv = styled(ParentLink)`
+`;
+
+const Pega = styled(ParentLink)`
+`;
+const Mars = styled(ParentLink)`
 `;
 
 const Motorola = styled.a`
@@ -333,13 +321,14 @@ const Sponsors: React.FC = () => {
       <ParentDiv>
         <LeftDiv>
           <Card>
-            <PartnershipText>Sponsor główny</PartnershipText>
+            <SabreText>Sponsor główny</SabreText>
             <Sabre href="https://www.sabre.com/locations/poland/" target="_blank">
-              <SponsorImg src={logos[0].default} alt="Sabre" />
+              <SabreImg src={logos[0].default} alt="Sabre" />
             </Sabre>
           </Card>
           <Card>
-            <PartnershipText>Sponsorzy</PartnershipText>
+            <SponsorsPanel>
+              <PartnershipText>Sponsorzy</PartnershipText>
               <Pega href="https://www.pega.com/" target="_blank">
                 <SponsorImg src={logos[2].default} alt="Pega" />
               </Pega>
@@ -359,6 +348,11 @@ const Sponsors: React.FC = () => {
               <GE href="https://www.ge.com/" target="_blank">
                 <SponsorImg src={logos[7].default} alt="GE" />
               </GE>
+
+              <IBM href="https://www.ibm.com/blogs/ibm-poland/" target="_blank">
+                <SponsorImg src={logos[16].default} alt="IBM" />
+              </IBM>
+            </SponsorsPanel>
           </Card>
           <Card>
             <PartnershipText>Partner Strefy Studenta</PartnershipText>
@@ -372,14 +366,6 @@ const Sponsors: React.FC = () => {
           </Card> */}
           {/* <Card>
             <PartnershipText>Patroni medialni</PartnershipText>
-            <CompanyContainer>
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-              <p>6</p>
-            </CompanyContainer>
           </Card> */}
         </LeftDiv>
         <RightDiv>
