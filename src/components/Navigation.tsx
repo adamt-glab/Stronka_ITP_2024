@@ -138,8 +138,8 @@ interface ILink {
 const links: ILink[] = [
   { name: "Home", path: "/" },
   { name: "Mapa Stoisk", path: "/#map" },
+  { name: "Sponsorzy", path: "/#sponsors" },
   { name: "Organizatorzy", path: "/#organizers" },
-  // { name: "Sponsorzy", path: "/#sponsors" },
   // { name: "Patroni", path: "/#patrons" },
   // { name: "Partnerzy", path: "/#partners" },
   // {

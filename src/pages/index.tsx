@@ -14,7 +14,7 @@ const MainPage: React.FC<PageProps> = () => {
     <Layout>
       <TextPage />
       <Map />
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Organizers />
     </Layout>
   );
