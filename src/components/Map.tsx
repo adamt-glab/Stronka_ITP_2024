@@ -1,6 +1,6 @@
 import React from "react";
 //@ts-ignore
-import img3_desktop from "../images/desktop_backgrounds/map_bg.svg";
+import img3_desktop from "../images/desktop_backgrounds/map_gears.svg";
 //@ts-ignore
 import img3_mobile from "../images/mobile_backgrounds/3_fix.png";
 //@ts-ignore
@@ -27,11 +27,12 @@ const Img = styled.img`
 const MapText = styled.p`
   position: absolute;
   top: 10%;
-  right: 9%;
-  color: #ffffff;
-  font-size: 3vw;
+  right: 12%;
+  color: #fffffa;
+  font-size: 5vw;
   @media (max-width: 769px) {
-    right: 9%;
+    font-size:4.25vw;
+    right: 7.5%;
   }
 `;
 
@@ -44,95 +45,24 @@ const Container = styled.div`
 
 const MapImg = styled.img`
   position: absolute;
-  left: 7%;
-  height: 92%;
-  width: 86%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    height: 55%;
-    width: 86.75%;
-    top: 18.5%;
-  }
-`;
-
-const List = styled.img`
-  position: absolute;
-  top: 74%;
-  width: 18%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    top: 40%;
-    width: 25%;
-  }
-`;
-
-const List1 = styled(List)`
-  left: 8%;
-  top: 70%;
-  height: 15%;
-  width: 22%;
-  z-index: 2;
-  background-color: #e8d9cb;
-  padding-inline: 1.5em;
-  padding-block: 1.5em;
-  border: 0.25rem solid;
-  border-radius: 2rem;
-  @media (max-width: 769px) {
-    top: 60%;
-    height: 12%;
-    width: 33%;
-    left: 7%;
-    padding-inline: 1em;
-    padding-block: 1em;
-    border: 0.1rem solid;
-    border-radius: 2rem;
-  }
-`;
-
-const List2 = styled(List)`
-  left: 30.4%;
-  top: 74%;
-  width: 18%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    left: 25%;
-    top: 48%;
-    width: 25%;
-  }
-`;
-
-const List3 = styled(List2)`
   left: 50%;
-  top: 72.25%;
-  width: 19%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 80%;
   z-index: 2;
   @media (max-width: 769px) {
-    left: 70%;
-    width: 28%;
-    top: 47%;
-  }
+    width: 90%;
+}
 `;
 
-const List4 = styled(List1)`
-  left: 72.5%;
-  z-index: 2;
-  @media (max-width: 769px) {
-    left: 48%;
-  }
-`;
-
-const MapLegend = styled(List)`
+const MapLegend = styled.img`
   position: absolute;
-  left: 6%;
-  top: 75%;
-  height: 15%;
-  width: 33%;
+  left: 12%;
+  top: 77.5%;
+  width: 25%;
   z-index: 2;
   @media (max-width: 769px) {
-    top: 75%;
-    height: 16%;
-    width: 50%;
-    left: -1.5%;
+    left: 7.5%;
 }
 `;
 
@@ -142,15 +72,11 @@ const Map: React.FC = () => {
       <Container id="map">
         <picture>
           <source srcSet={img3_desktop} media="(min-width: 769px)" />
-          {/* <source srcSet={img3_mobile} media="(max-width: 768px)" /> */}
           <Img src={img3_desktop} alt="last page" />
         </picture>
         <MapText>Mapa wydarzenia</MapText>
         <MapImg src={map_24} alt="map" />
         <MapLegend src={legend_24} alt="list1" />
-        {/* <List2 src={mapImages[2].default} alt="list2" />
-        <List3 src={mapImages[4].default} alt="list3" />
-        <List4 src={mapImages[3].default} alt="list4" /> */}
       </Container>
     </>
   );

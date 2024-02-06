@@ -2,7 +2,7 @@ import React from "react";
 //@ts-ignore
 import img8_desktop from "../images/desktop_backgrounds/CT_bg.jpg";
 //@ts-ignore
-import img6_mobile from "../images/mobile_backgrounds/CT_mobile.png";
+import img6_mobile from "../images/mobile_backgrounds/CT_mobile_fix.png";
 import styled from "styled-components";
 const Img = styled.img`
   width: 100%;

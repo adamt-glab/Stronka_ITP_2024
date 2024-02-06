@@ -46,9 +46,10 @@ const Card = styled.div`
   flex-direction: column;
   position:sticky;
   top:0;
+  // border: solid 2px black;
 
   @media (max-width: 768px) {
-    height: 40vh;
+    height:clamp(18em, 50vw, 60vh);
   } ;
 `;
 
@@ -83,6 +84,7 @@ const PartnershipText = styled.span`
   justify-self: center;
   @media (max-width: 768px) {
     grid-column: span 2;
+    font-size: clamp(0.8rem, 5vw, 1.2rem);
   } ;
 `;
 
@@ -106,6 +108,11 @@ const SabreText = styled.span`
   transform: translate(-50%, -50%);
   left: 50%;
   top: 25%;
+  @media (max-width: 768px) {
+    // grid-column: span 2;
+    font-size: clamp(0.8rem, 5vw, 1.2rem);
+    text-align:center;
+  } ;
 `;
 
 const SabreImg = styled.img`
