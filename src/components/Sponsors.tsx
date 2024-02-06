@@ -72,16 +72,11 @@ const Container = styled.div`
 const SponsorImg = styled.img`
   width: 100%;
   display: block;
+  // background-color: rgba(0,0,0,0.15);
   
   aspect-raito: 1;
   aspect-ratio: 3/2;
-
-  // height: 100%;
-  // padding: 0.5rem;
-  // transform: translate(-0.5rem, -0.5rem);
-  // @media (max-width: 768px) {
-  //   aspect-ratio: 3/2;
-  // } ;
+  object-fit: contain;
 `;
 
 
@@ -131,9 +126,9 @@ const PMI = styled(Sabre)`
 `;
 
 const SponsorsPanel = styled.div`
-  height:100%;
+  height: 100%;
   box-sizing: border-box;
-  padding: 5%;
+  padding: 10%;
   display: grid;
   grid-template-columns: repeat(3, calc(1/3 * 100%));
   align-content: center;
@@ -171,144 +166,7 @@ const Pega = styled(ParentLink)`
 const Mars = styled(ParentLink)`
 `;
 
-const Motorola = styled.a`
-  width: 9%;
-  position: absolute;
-  left: 45.8%;
-  top: 43%;
-  @media (max-width: 768px) {
-    left: 14.5%;
-    top: 38.5%;
-    width: 16%;
-  } ;
-`;
-
-const Autodesk = styled.a`
-  width: 18.8%;
-  position: absolute;
-  right: 9.4%;
-  top: 44.1%;
-  @media (max-width: 768px) {
-    right: 6.2%;
-    top: 48.5%;
-    width: 32%;
-  } ;
-`;
-
-
-
-const Adecco = styled.a`
-  width: 12%;
-  position: absolute;
-  right: 43.7%;
-  top: 65.3%;
-  @media (max-width: 768px) {
-    right: 38.8%;
-    top: 65.6%;
-    width: 22%;
-  } ;
-`;
-
-const Fujijama = styled(Adecco)`
-  right: 12.5%;
-  top: 65.5%;
-  @media (max-width: 768px) {
-    right: 7.1%;
-    top: 66%;
-    width: 19%;
-  } ;
-`;
-
-const Eska = styled.a`
-  width: 12%;
-  position: absolute;
-  left: 13%;
-  top: 86.2%;
-  @media (max-width: 768px) {
-    left: 8.8%;
-    top: 80.5%;
-    width: 28%;
-  } ;
-`;
-
-const PodajDalej = styled.a`
-  width: 10%;
-  position: absolute;
-  right: 45.2%;
-  top: 86.2%;
-  @media (max-width: 768px) {
-    right: 12%;
-    top: 96.2%;
-    width: 20%;
-  } ;
-`;
-
-const DlaStudenta = styled.a`
-  width: 11%;
-  position: absolute;
-  right: 13%;
-  top: 86.4%;
-  @media (max-width: 768px) {
-    right: 10.7%;
-    top: 80.8%;
-    width: 22%;
-  } ;
-`;
-
-const Eurostudent = styled.a`
-  width: 14%;
-  position: absolute;
-  left: 11.7%;
-  top: 93.2%;
-  @media (max-width: 768px) {
-    left: 7.5%;
-    top: 88.5%;
-    width: 30%;
-  } ;
-`;
-
-const KMS = styled.a`
-  width: 13%;
-  position: absolute;
-  right: 44%;
-  top: 93.4%;
-  @media (max-width: 768px) {
-    right: 66%;
-    top: 96.3%;
-    width: 25%;
-  } ;
-`;
-
-const FXMAG = styled.a`
-  width: 5%;
-  position: absolute;
-  right: 15.6%;
-  top: 93.4%;
-  @media (max-width: 768px) {
-    right: 16%;
-    top: 88.6%;
-    width: 11%;
-  } ;
-`;
-
-
 const Sponsors: React.FC = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  console.log(isMobile);
   return (
     <Container id="sponsors">
       <ParentDiv>
@@ -472,3 +330,123 @@ export default Sponsors;
 //       </FXMAG> */}
 //     </Container>
 //   </div>
+
+// const Motorola = styled.a`
+//   width: 9%;
+//   position: absolute;
+//   left: 45.8%;
+//   top: 43%;
+//   @media (max-width: 768px) {
+//     left: 14.5%;
+//     top: 38.5%;
+//     width: 16%;
+//   } ;
+// `;
+
+// const Autodesk = styled.a`
+//   width: 18.8%;
+//   position: absolute;
+//   right: 9.4%;
+//   top: 44.1%;
+//   @media (max-width: 768px) {
+//     right: 6.2%;
+//     top: 48.5%;
+//     width: 32%;
+//   } ;
+// `;
+
+
+
+// const Adecco = styled.a`
+//   width: 12%;
+//   position: absolute;
+//   right: 43.7%;
+//   top: 65.3%;
+//   @media (max-width: 768px) {
+//     right: 38.8%;
+//     top: 65.6%;
+//     width: 22%;
+//   } ;
+// `;
+
+// const Fujijama = styled(Adecco)`
+//   right: 12.5%;
+//   top: 65.5%;
+//   @media (max-width: 768px) {
+//     right: 7.1%;
+//     top: 66%;
+//     width: 19%;
+//   } ;
+// `;
+
+// const Eska = styled.a`
+//   width: 12%;
+//   position: absolute;
+//   left: 13%;
+//   top: 86.2%;
+//   @media (max-width: 768px) {
+//     left: 8.8%;
+//     top: 80.5%;
+//     width: 28%;
+//   } ;
+// `;
+
+// const PodajDalej = styled.a`
+//   width: 10%;
+//   position: absolute;
+//   right: 45.2%;
+//   top: 86.2%;
+//   @media (max-width: 768px) {
+//     right: 12%;
+//     top: 96.2%;
+//     width: 20%;
+//   } ;
+// `;
+
+// const DlaStudenta = styled.a`
+//   width: 11%;
+//   position: absolute;
+//   right: 13%;
+//   top: 86.4%;
+//   @media (max-width: 768px) {
+//     right: 10.7%;
+//     top: 80.8%;
+//     width: 22%;
+//   } ;
+// `;
+
+// const Eurostudent = styled.a`
+//   width: 14%;
+//   position: absolute;
+//   left: 11.7%;
+//   top: 93.2%;
+//   @media (max-width: 768px) {
+//     left: 7.5%;
+//     top: 88.5%;
+//     width: 30%;
+//   } ;
+// `;
+
+// const KMS = styled.a`
+//   width: 13%;
+//   position: absolute;
+//   right: 44%;
+//   top: 93.4%;
+//   @media (max-width: 768px) {
+//     right: 66%;
+//     top: 96.3%;
+//     width: 25%;
+//   } ;
+// `;
+
+// const FXMAG = styled.a`
+//   width: 5%;
+//   position: absolute;
+//   right: 15.6%;
+//   top: 93.4%;
+//   @media (max-width: 768px) {
+//     right: 16%;
+//     top: 88.6%;
+//     width: 11%;
+//   } ;
+// `;
