@@ -109,7 +109,6 @@ const SabreText = styled.span`
 `;
 
 const SabreImg = styled.img`
-  // background-color: rgba(0,0,0,0.15);
   width: 50%;
   display: block;
   // background-color: rgba(0,0,0,0.15);
@@ -119,8 +118,13 @@ const SabreImg = styled.img`
 `;
 
 const PMIImg = styled(SabreImg)``;
-
 const PMIText = styled(SabreText)``;
+
+const KMSImg = styled(SabreImg)``;
+const KMSText = styled(SabreText)``;
+
+const DKMSImg = styled(SabreImg)``;
+const DKMSText = styled(SabreText)``;
 
 // ##################################
 // SPONSORS
@@ -138,6 +142,8 @@ const Sabre = styled.a`
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  // background-color: rgba(0,0,0,0.15);
+
 `;
 
 const PMI = styled(Sabre)`
@@ -145,22 +151,19 @@ const PMI = styled(Sabre)`
   top: 55%;
 `;
 
-const GE = styled(ParentLink)`
+const KMS = styled(Sabre)`
+
+`;
+const DKMS = styled(Sabre)`
 `;
 
-const Woodward = styled(ParentLink)`
-`;
+const GE = styled(ParentLink)``;
+const Woodward = styled(ParentLink)``;
+const IBM = styled(ParentLink)``;
+const Aptiv = styled(ParentLink)``;
+const Pega = styled(ParentLink)``;
+const Mars = styled(ParentLink)``;
 
-const IBM = styled(ParentLink)`
-`;
-
-const Aptiv = styled(ParentLink)`
-`;
-
-const Pega = styled(ParentLink)`
-`;
-const Mars = styled(ParentLink)`
-`;
 
 const Sponsors: React.FC = () => {
   return (
@@ -206,8 +209,18 @@ const Sponsors: React.FC = () => {
             <PMI href="https://www.pmi.com/markets/poland/pl/about-us/overview" target="_blank">
               <PMIImg src={logos[17].default} alt="PMI" />
             </PMI>
-            {/* <PartnershipText>Sponsor merytoryczny</PartnershipText>
-              <p>SM</p> */}
+          </Card>
+          <Card>
+            <KMSText>Partner merytoryczny</KMSText>
+            <KMS href="https://kms.org.pl/" target="_blank">
+              <KMSImg src={logos[13].default} alt="KMS" />
+            </KMS>
+          </Card>
+          <Card>
+            <DKMSText>Fundacja charytatywna</DKMSText>
+            <DKMS href="https://www.dkms.pl/" target="_blank">
+              <DKMSImg src={logos[18].default} alt="DKMS" />
+            </DKMS>
           </Card>
           {/* <Card>
             <PartnershipText>Partner techniczny</PartnershipText>
