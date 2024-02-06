@@ -17,6 +17,8 @@ const logos = importAll(
   require.context("../images/logos", false, /\.(png|jpe?g|svg)$/)
 );
 
+// PANELS
+
 const ParentDiv = styled.div`
   margin-top: clamp(3rem, 10vw, 12em);
   width: 100%;
@@ -35,7 +37,6 @@ const LeftDiv = styled(ChildDiv)`
   `;
 
 const RightDiv = styled(ChildDiv)`
-  // background-color: #e0e0e0; /* Optional: Add some styling for better visibility */
 `;
 
 const Card = styled.div`
@@ -51,78 +52,11 @@ const Card = styled.div`
   } ;
 `;
 
-const PartnershipText = styled.span`
-  font-size: 2.2vw;
-  font-weight: 600;
-  grid-column: span 3;
-  justify-self: center;
-  @media (max-width: 768px) {
-    grid-column: span 2;
-  } ;
-`;
-
-// --------------------
 const Container = styled.div`
   position: relative;
   display: grid;
   top: 1.75rem;
   aspect-ratio:1;
-`;
-
-const SponsorImg = styled.img`
-  width: 100%;
-  display: block;
-  // background-color: rgba(0,0,0,0.15);
-  
-  aspect-raito: 1;
-  aspect-ratio: 3/2;
-  object-fit: contain;
-`;
-
-
-const SabreText = styled.span`
-font-size: 2.2vw;
-font-weight: 600;
-margin-bottom: 2rem;
-margin-top: 2rem;
-position: absolute;
-
-transform: translate(-50%, -50%);
-left: 50%;
-top: 25%;
-`;
-
-const SabreImg = styled.img`
-  // background-color: rgba(0,0,0,0.15);
-  width: 50%;
-  display: block;
-  // background-color: rgba(0,0,0,0.15);
-  aspect-raito: 1;
-  height: 100%;
-  margin: 0 auto;
-`;
-
-const PMIImg = styled(SabreImg)``;
-
-const PMIText = styled(SabreText)``;
-
-const Sabre = styled.a`
-  width: 100%;
-  position: absolute;
-  align-self: center;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  // @media (max-width: 768px) {
-  //   right: 32%;
-  //   top: 3.5%;
-  //   width: 38%;
-  // } ;
-`;
-
-const PMI = styled(Sabre)`
-  width: 50%;
-  top: 55%;
 `;
 
 const SponsorsPanel = styled.div`
@@ -140,6 +74,54 @@ const SponsorsPanel = styled.div`
   };
 `;
 
+// ELEMENTS
+
+const PartnershipText = styled.span`
+  font-size: 2.2vw;
+  font-weight: 600;
+  grid-column: span 3;
+  justify-self: center;
+  @media (max-width: 768px) {
+    grid-column: span 2;
+  } ;
+`;
+
+const SponsorImg = styled.img`
+  width: 100%;
+  display: block;
+  // background-color: rgba(0,0,0,0.15);
+  
+  aspect-raito: 1;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+`;
+
+const SabreText = styled.span`
+  font-size: 2.2vw;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 25%;
+`;
+
+const SabreImg = styled.img`
+  // background-color: rgba(0,0,0,0.15);
+  width: 50%;
+  display: block;
+  // background-color: rgba(0,0,0,0.15);
+  aspect-raito: 1;
+  height: 100%;
+  margin: 0 auto;
+`;
+
+const PMIImg = styled(SabreImg)``;
+
+const PMIText = styled(SabreText)``;
+
 // ##################################
 // SPONSORS
 // ##################################
@@ -147,6 +129,20 @@ const SponsorsPanel = styled.div`
 const ParentLink = styled.a`
   align-self: center;
   width: 100%;
+`;
+
+const Sabre = styled.a`
+  width: 100%;
+  position: absolute;
+  align-self: center;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+`;
+
+const PMI = styled(Sabre)`
+  width: 50%;
+  top: 55%;
 `;
 
 const GE = styled(ParentLink)`
