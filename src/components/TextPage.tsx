@@ -6,6 +6,7 @@ const Container = styled.div`
   position: relative;
   display: grid;
   top: 2rem;
+  aspect-ratio:1;
 `;
 
 const TextBox1 = styled.div`
