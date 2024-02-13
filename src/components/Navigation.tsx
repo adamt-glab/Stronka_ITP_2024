@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 // @ts-ignore
-import gear_icon from "../images/gear.svg";
-// @ts-ignore
 import itp_logo from "../images/navbar/itp-01.svg";
 // @ts-ignore
 import BEST_logo from "../images/navbar/BEST_black.svg";
@@ -140,31 +138,63 @@ const links: ILink[] = [
   { name: "Mapa Stoisk", path: "/#map" },
   { name: "Sponsorzy", path: "/#sponsors" },
   { name: "Organizatorzy", path: "/#organizers" },
-  // { name: "Patroni", path: "/#patrons" },
-  // { name: "Partnerzy", path: "/#partners" },
-  // {
-  //   name: "Katalog wystawców",
-  //   path: "https://itp.best.krakow.pl/ITP2023-katalog.pdf",
-  // },
-  {
-    name: "Wyślij CV",
-    path: "https://forms.gle/fG86afGGonoiqeAV8",
-  },
+  { name: "Wyślij CV", path: "https://forms.gle/fG86afGGonoiqeAV8" },
   { name: "O Beście", path: "https://www.newsite.best.krakow.pl/" },
-  // {
-  //   name: "Harmonogram",
-  //   path: "https://itp.best.krakow.pl/Harmonogram wydarzenia.pdf",
-  // },
-  // {
-  //   name: "Regulamin",
-  //   path: "https://itp.best.krakow.pl/ITP2023-Regulamin.pdf",
-  // },
 ];
 
+const popUpLinks: ILink[] = [
+  { name: "Regulamin wydarzenia", path: "https://itp.best.krakow.pl/[ITP2024] Regulamin wydarzenia.pdf" },
+  { name: "Regulamin konkursu", path: "https://itp.best.krakow.pl/[ITP2024] Regulamin konkursu.pdf" },
+  { name: "RODO", path: "https://itp.best.krakow.pl/[ITP2024] Regulamin konkursu i RODO.pdf" },
+];
+
+const PopUpContainer = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5rem;
+  background-color: #fff;
+  border-radius: 1vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure pop-up is above other content */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items horizontally */
+
+  .closeButton {
+    position: absolute;
+    top: 3.5%;
+    right: 3.5%;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #888;
+    border: none;
+    background: none;
+    padding: 0.33em;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 0.33em;
+    font-size: clamp(1.33rem, 1.9vw, 2rem);
+    flex-basis: 100%;
+    align-self: center;
+    white-space: nowrap;
+  }
+`;
+
 const Navigation: React.FC = () => {
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  const togglePopUp = () => {
+    setShowPopUp(!showPopUp);
+  };
   const linkStyle =
   {
-    fontSize: "clamp(0.7rem, 1.9vw, 2rem)",
+    fontSize: "clamp(0.7rem, 1.9vw, 1.9rem)",
     flexBasis: "100%",
     alignSelf: "center",
     whiteSpace: "nowrap"
@@ -172,6 +202,18 @@ const Navigation: React.FC = () => {
 
   return (
     <>
+      {showPopUp && (
+        <PopUpContainer>
+          <button className="closeButton" onClick={togglePopUp}>
+            &times; {/* This is a close icon (X) */}
+          </button>
+          {popUpLinks.map((link, i) => (
+            <Link key={i} to={link.path}>
+              {link.name}
+            </Link>
+          ))}
+        </PopUpContainer>
+      )}
       <NavContainer>
         <ITPLogo src={itp_logo} alt="XXVI ITP" />
         <BESTLogoContainer src={BEST_logo} alt="BEST" />
@@ -197,6 +239,12 @@ const Navigation: React.FC = () => {
                 {link.name}
               </Link>
             ))}
+            <Link
+              style={linkStyle}
+              to={"#"}
+              onClick={togglePopUp}>
+              Regulaminy
+            </Link>
           </LinkContainer>
         </Nav>
       </NavContainer>

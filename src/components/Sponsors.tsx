@@ -133,6 +133,9 @@ const KMSText = styled(SabreText)``;
 const DKMSImg = styled(SabreImg)``;
 const DKMSText = styled(SabreText)``;
 
+const SatrentImg = styled(SabreImg)``;
+const SatrentText = styled(SabreText)``;
+
 // ##################################
 // SPONSORS
 // ##################################
@@ -158,11 +161,9 @@ const PMI = styled(Sabre)`
   top: 55%;
 `;
 
-const KMS = styled(Sabre)`
-
-`;
-const DKMS = styled(Sabre)`
-`;
+const KMS = styled(Sabre)``;
+const DKMS = styled(Sabre)``;
+const Satrent = styled(Sabre)``;
 
 const GE = styled(ParentLink)``;
 const Woodward = styled(ParentLink)``;
@@ -170,6 +171,18 @@ const IBM = styled(ParentLink)``;
 const Aptiv = styled(ParentLink)``;
 const Pega = styled(ParentLink)``;
 const Mars = styled(ParentLink)``;
+const Motorola = styled(ParentLink)`
+  grid-column:2;
+  @media (max-width: 768px) {
+    grid-column:1;
+  }
+`;
+const FXMAG = styled(ParentLink)`
+  grid-column:2;
+  @media (max-width: 768px) {
+    grid-column:1;
+  }
+`;
 
 
 const Sponsors: React.FC = () => {
@@ -209,6 +222,11 @@ const Sponsors: React.FC = () => {
               <IBM href="https://www.ibm.com/blogs/ibm-poland/" target="_blank">
                 <SponsorImg src={logos[16].default} alt="IBM" />
               </IBM>
+
+              <Motorola href="https://www.motorolasolutions.com/pl_pl.html" target="_blank">
+                <SponsorImg src={logos[19].default} alt="Motorola" />
+              </Motorola>
+
             </SponsorsPanel>
           </Card>
           <Card>
@@ -224,18 +242,43 @@ const Sponsors: React.FC = () => {
             </KMS>
           </Card>
           <Card>
+            <SatrentText>Partner techniczny</SatrentText>
+            <Satrent href="https://satrent.pl/" target="_blank">
+              <SatrentImg src={logos[20].default} alt="Satrent" />
+            </Satrent>
+          </Card>
+          <Card>
             <DKMSText>Fundacja charytatywna</DKMSText>
             <DKMS href="https://www.dkms.pl/" target="_blank">
               <DKMSImg src={logos[18].default} alt="DKMS" />
             </DKMS>
           </Card>
-          {/* <Card>
-            <PartnershipText>Partner techniczny</PartnershipText>
-              <p>PT</p>
-          </Card> */}
-          {/* <Card>
-            <PartnershipText>Patroni medialni</PartnershipText>
-          </Card> */}
+          <Card>
+            <SponsorsPanel>
+              <PartnershipText>Patroni medialni</PartnershipText>
+              <ParentLink href="http://www.podajdalej.info.pl/" target="_blank">
+                <SponsorImg src={logos[10].default} alt="Podaj Dalej" />
+              </ParentLink>
+              <ParentLink href="https://www.eska.pl/" target="_blank">
+                <SponsorImg src={logos[9].default} alt="ESKA" />
+              </ParentLink>
+              <ParentLink href="https://www.dlastudenta.pl/" target="_blank">
+                <SponsorImg src={logos[11].default} alt="Dla Studenta" />
+              </ParentLink>
+              <ParentLink href="https://eurostudent.pl/" target="_blank">
+                <SponsorImg src={logos[12].default} alt="Eurostudent" />
+              </ParentLink>
+              <ParentLink href="https://radio17.pl/" target="_blank">
+                <SponsorImg src={logos[6].default} alt="Radio 1.7" />
+              </ParentLink>
+              <ParentLink href="https://dziennikpolski24.pl/" target="_blank">
+                <SponsorImg src={logos[21].default} alt="Dziennik Polski" />
+              </ParentLink>
+              {/* <FXMAG href="https://fxmag.pl/" target="_blank">
+                <SponsorImg src={logos[14].default} alt="FXMAG" />
+              </FXMAG> */}
+            </SponsorsPanel>
+          </Card>
         </LeftDiv>
         <RightDiv>
           <PartnerGears />
@@ -247,222 +290,6 @@ const Sponsors: React.FC = () => {
 
 export default Sponsors;
 
-//   <div id="sponsors">
-//     <Container>
-//       {!isMobile && (
-//         <>
-//           <ImgDesktop src={imagesDesktop[3].default} alt="img4" />
-//           <ImgDesktop src={imagesDesktop[4].default} alt="img5" />
-//           <ImgDesktop
-//             id="partners"
-//             src={imagesDesktop[5].default}
-//             alt="img6"
-//           />
-//           <ImgDesktop
-//             id="patrons"
-//             src={imagesDesktop[6].default}
-//             alt="img7"
-//           />
-//           {/* <Crane src={imagesDesktop[8].default} alt="crane" /> */}
-
-//           {/* <MovingGears /> */}
-
-//           {/* <MainSponsorTitle>SPONSOR GŁÓWNY</MainSponsorTitle>
-//           <SponsorsTitle>SPONSORZY</SponsorsTitle>
-
-//           <StudentPartner>
-//             PARTNER <br /> STREFY <br /> STUDENTA
-//           </StudentPartner>
-//           <ContentPartner>
-//             PARTNER <br /> MERYTORYCZNY{" "}
-//           </ContentPartner>
-//           <TechnicalPartner>
-//             {" "}
-//             PARTNER <br /> TECHNICZNY{" "}
-//           </TechnicalPartner>
-//           <MediaTitle>
-//             {" "}
-//             PARTNERZY <br /> MEDIALNI{" "}
-//           </MediaTitle> */}
-//         </>
-//       )}
-
-//       {isMobile && (
-//         <>
-//           <ImgMobile src={imagesMobile[3].default} alt="img4" />
-//           <ImgMobile
-//             id="partners patrons"
-//             src={imagesMobile[4].default}
-//             alt="img5"
-//           />
-//         </>
-//       )}
-
-//       <Motorola
-//         href="https://www.motorolasolutions.com/en_us/home.html"
-//         target="_blank"
-//       >
-//         <SponsorImg src={logos[5].default} alt="Motorola" />
-//       </Motorola>
-
-//       <Autodesk href="https://www.autodesk.com/" target="_blank">
-//         <SponsorImg src={logos[6].default} alt="Autodesk" />
-//       </Autodesk>
-
-//       <GE href="https://www.ge.com/" target="_blank">
-//         <SponsorImg src={logos[7].default} alt="GE" />
-//       </GE>
-
-//       <Adecco href="https://www.adecco.pl/" target="_blank">
-//         <SponsorImg src={logos[8].default} alt="Adecco" />
-//       </Adecco>
-
-//       <Fujijama href="https://www.fujijama.pl/" target="_blank">
-//         <SponsorImg src={logos[15].default} alt="Fujijama" />
-//       </Fujijama>
-
-//       <Eska href="https://www.eska.pl/" target="_blank">
-//         <SponsorImg src={logos[9].default} alt="Eska" />
-//       </Eska>
-
-//       <PodajDalej href="http://www.podajdalej.info.pl/" target="_blank">
-//         <SponsorImg src={logos[10].default} alt="Podaj Dalej" />
-//       </PodajDalej>
-
-//       <DlaStudenta href="https://www.dlastudenta.pl/" target="_blank">
-//         <SponsorImg src={logos[11].default} alt="Dla Studenta" />
-//       </DlaStudenta>
-
-//       <Eurostudent href="https://eurostudent.pl/" target="_blank">
-//         <SponsorImg src={logos[12].default} alt="Eurostudent" />
-//       </Eurostudent>
-
-//       <KMS href="https://kms.org.pl/" target="_blank">
-//         <SponsorImg src={logos[13].default} alt="KMS" />
-//       </KMS>
-
 //       <FXMAG href="https://fxmag.pl/" target="_blank">
 //         <SponsorImg src={logos[14].default} alt="FXMAG" />
-//       </FXMAG> */}
-//     </Container>
-//   </div>
-
-// const Motorola = styled.a`
-//   width: 9%;
-//   position: absolute;
-//   left: 45.8%;
-//   top: 43%;
-//   @media (max-width: 768px) {
-//     left: 14.5%;
-//     top: 38.5%;
-//     width: 16%;
-//   } ;
-// `;
-
-// const Autodesk = styled.a`
-//   width: 18.8%;
-//   position: absolute;
-//   right: 9.4%;
-//   top: 44.1%;
-//   @media (max-width: 768px) {
-//     right: 6.2%;
-//     top: 48.5%;
-//     width: 32%;
-//   } ;
-// `;
-
-
-
-// const Adecco = styled.a`
-//   width: 12%;
-//   position: absolute;
-//   right: 43.7%;
-//   top: 65.3%;
-//   @media (max-width: 768px) {
-//     right: 38.8%;
-//     top: 65.6%;
-//     width: 22%;
-//   } ;
-// `;
-
-// const Fujijama = styled(Adecco)`
-//   right: 12.5%;
-//   top: 65.5%;
-//   @media (max-width: 768px) {
-//     right: 7.1%;
-//     top: 66%;
-//     width: 19%;
-//   } ;
-// `;
-
-// const Eska = styled.a`
-//   width: 12%;
-//   position: absolute;
-//   left: 13%;
-//   top: 86.2%;
-//   @media (max-width: 768px) {
-//     left: 8.8%;
-//     top: 80.5%;
-//     width: 28%;
-//   } ;
-// `;
-
-// const PodajDalej = styled.a`
-//   width: 10%;
-//   position: absolute;
-//   right: 45.2%;
-//   top: 86.2%;
-//   @media (max-width: 768px) {
-//     right: 12%;
-//     top: 96.2%;
-//     width: 20%;
-//   } ;
-// `;
-
-// const DlaStudenta = styled.a`
-//   width: 11%;
-//   position: absolute;
-//   right: 13%;
-//   top: 86.4%;
-//   @media (max-width: 768px) {
-//     right: 10.7%;
-//     top: 80.8%;
-//     width: 22%;
-//   } ;
-// `;
-
-// const Eurostudent = styled.a`
-//   width: 14%;
-//   position: absolute;
-//   left: 11.7%;
-//   top: 93.2%;
-//   @media (max-width: 768px) {
-//     left: 7.5%;
-//     top: 88.5%;
-//     width: 30%;
-//   } ;
-// `;
-
-// const KMS = styled.a`
-//   width: 13%;
-//   position: absolute;
-//   right: 44%;
-//   top: 93.4%;
-//   @media (max-width: 768px) {
-//     right: 66%;
-//     top: 96.3%;
-//     width: 25%;
-//   } ;
-// `;
-
-// const FXMAG = styled.a`
-//   width: 5%;
-//   position: absolute;
-//   right: 15.6%;
-//   top: 93.4%;
-//   @media (max-width: 768px) {
-//     right: 16%;
-//     top: 88.6%;
-//     width: 11%;
-//   } ;
-// `;
+//       </FXMAG>
