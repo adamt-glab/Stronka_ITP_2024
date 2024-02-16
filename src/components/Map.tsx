@@ -4,7 +4,7 @@ import img3_desktop from "../images/desktop_backgrounds/map_gears.svg";
 //@ts-ignore
 import img3_mobile from "../images/mobile_backgrounds/3_fix.png";
 //@ts-ignore
-import map_24 from "../images/map/map-24_new.svg";
+import map_24 from "../images/map/map-24_final.svg";
 //@ts-ignore
 import legend_24 from "../images/map/legend-24_new.svg";
 //@ts-ignore
