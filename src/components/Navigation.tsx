@@ -137,6 +137,7 @@ const links: ILink[] = [
   { name: "Home", path: "/" },
   { name: "Mapa Stoisk", path: "/#map" },
   { name: "Sponsorzy", path: "/#sponsors" },
+  { name: "Oferty", path: "/offers" },
   { name: "Organizatorzy", path: "/#organizers" },
   { name: "Wyślij CV", path: "https://forms.gle/fG86afGGonoiqeAV8" },
   { name: "O Beście", path: "https://www.newsite.best.krakow.pl/" },
