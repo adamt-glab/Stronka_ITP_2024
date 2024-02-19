@@ -27,9 +27,36 @@ const sponsorsData = [
 
 const OffersPage: React.FC<PageProps> = () => {
     const [selectedSponsor, setSelectedSponsor] = useState(null);
+    const [selectedOfferIndex, setSelectedOfferIndex] = useState(0);
 
     const handleSponsorClick = (sponsorId) => {
         setSelectedSponsor(sponsorId);
+        setSelectedOfferIndex(0); // Reset to first offer when changing sponsor
+    };
+
+    // const handlePrevOffer = () => {
+    //     setSelectedOfferIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : 0));
+    // };
+
+    // const handleNextOffer = () => {
+    //     setSelectedOfferIndex(prevIndex => {
+    //         const maxIndex = sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers.length - 1;
+    //         return prevIndex < maxIndex ? prevIndex + 1 : maxIndex;
+    //     });
+    // };
+
+    const handlePrevOffer = () => {
+        setSelectedOfferIndex(prevIndex => {
+            const maxIndex = sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers.length - 1;
+            return prevIndex === 0 ? maxIndex : prevIndex - 1;
+        });
+    };
+
+    const handleNextOffer = () => {
+        setSelectedOfferIndex(prevIndex => {
+            const maxIndex = sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers.length - 1;
+            return prevIndex === maxIndex ? 0 : prevIndex + 1;
+        });
     };
     return (
         <Layout>
@@ -47,14 +74,14 @@ const OffersPage: React.FC<PageProps> = () => {
             <div className="job-offers-panel">
                 <h2>Job Offers</h2>
                 {selectedSponsor && (
-                    <ul>
-                        {sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers.map(jobOffer => (
-                            <li key={jobOffer.id}>
-                                <h3>{jobOffer.title}</h3>
-                                <p>{jobOffer.description}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    <div>
+                        <button onClick={handlePrevOffer}>{'<'}</button>
+                        <div>
+                            <h3>{sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers[selectedOfferIndex].title}</h3>
+                            <p>{sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers[selectedOfferIndex].description}</p>
+                        </div>
+                        <button onClick={handleNextOffer}>{'>'}</button>
+                    </div>
                 )}
                 {!selectedSponsor && <p>Please select a sponsor to see job offers</p>}
             </div>
