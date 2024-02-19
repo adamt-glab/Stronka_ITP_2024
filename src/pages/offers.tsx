@@ -34,17 +34,6 @@ const OffersPage: React.FC<PageProps> = () => {
         setSelectedOfferIndex(0); // Reset to first offer when changing sponsor
     };
 
-    // const handlePrevOffer = () => {
-    //     setSelectedOfferIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : 0));
-    // };
-
-    // const handleNextOffer = () => {
-    //     setSelectedOfferIndex(prevIndex => {
-    //         const maxIndex = sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers.length - 1;
-    //         return prevIndex < maxIndex ? prevIndex + 1 : maxIndex;
-    //     });
-    // };
-
     const handlePrevOffer = () => {
         setSelectedOfferIndex(prevIndex => {
             const maxIndex = sponsorsData.find(sponsor => sponsor.id === selectedSponsor).jobOffers.length - 1;
