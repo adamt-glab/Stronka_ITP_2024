@@ -183,6 +183,12 @@ const FXMAG = styled(ParentLink)`
     grid-column:1;
   }
 `;
+const PodPrad = styled(ParentLink)`
+  grid-column:2;
+  @media (max-width: 768px) {
+    grid-column:1;
+  }
+`;
 
 
 const Sponsors: React.FC = () => {
@@ -253,6 +259,7 @@ const Sponsors: React.FC = () => {
               <DKMSImg src={logos[18].default} alt="DKMS" />
             </DKMS>
           </Card>
+
           <Card>
             <SponsorsPanel>
               <PartnershipText>Patroni medialni</PartnershipText>
@@ -279,6 +286,33 @@ const Sponsors: React.FC = () => {
               </FXMAG> */}
             </SponsorsPanel>
           </Card>
+          
+          <Card>
+            <SponsorsPanel>
+              <PartnershipText>Partnerzy medialni</PartnershipText>
+              <ParentLink href="https://www.facebook.com/AllInUJ/" target="_blank">
+                <SponsorImg src={logos[22].default} alt="All In UJ" />
+              </ParentLink>
+              <ParentLink href="https://inzynieria.com/" target="_blank">
+                <SponsorImg src={logos[23].default} alt="Inzynieria" />
+              </ParentLink>
+              <ParentLink href="https://krakow.dlawas.info/" target="_blank">
+                <SponsorImg src={logos[24].default} alt="Krakow DlaWas" />
+              </ParentLink>
+              <ParentLink href="https://www.otouczelnie.pl/" target="_blank">
+                <SponsorImg src={logos[25].default} alt="Otouczelnie" />
+              </ParentLink>
+              <ParentLink href="https://www.infopraca.pl/" target="_blank">
+                <SponsorImg src={logos[26].default} alt="infopraca" />
+              </ParentLink>
+              <ParentLink href="https://perspektywy.pl/portal/" target="_blank">
+                <SponsorImg src={logos[27].default} alt="Perspektywy" />
+              </ParentLink>
+              <PodPrad href="https://podprad.pl/" target="_blank">
+                <SponsorImg src={logos[28].default} alt="Plyn Pod Prad" />
+              </PodPrad>
+            </SponsorsPanel>
+          </Card>
         </LeftDiv>
         <RightDiv>
           <PartnerGears />
@@ -289,7 +323,3 @@ const Sponsors: React.FC = () => {
 };
 
 export default Sponsors;
-
-//       <FXMAG href="https://fxmag.pl/" target="_blank">
-//         <SponsorImg src={logos[14].default} alt="FXMAG" />
-//       </FXMAG>

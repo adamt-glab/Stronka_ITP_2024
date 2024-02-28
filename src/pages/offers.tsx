@@ -7,21 +7,18 @@ const sponsorsData = [
         id: 1,
         name: 'Sponsor 1',
         jobOffers: [
-            { id: 1, title: 'Job 1', description: 'Description for Job 1' },
-            { id: 2, title: 'Job 2', description: 'Description for Job 2' },
-            // Add more job offers for Sponsor 1
+            { id: 1, title: 'Oferta 1', description: 'Opis oferty 1' },
+            { id: 2, title: 'Oferta 2', description: 'Opis oferty 2' },
         ]
     },
     {
         id: 2,
         name: 'Sponsor 2',
         jobOffers: [
-            { id: 3, title: 'Job 3', description: 'Description for Job 3' },
-            { id: 4, title: 'Job 4', description: 'Description for Job 4' },
-            // Add more job offers for Sponsor 2
+            { id: 3, title: 'Oferta 3', description: 'Opis oferty 3' },
+            { id: 4, title: 'Oferta 4', description: 'Opis oferty 4' },
         ]
     },
-    // Add more sponsors
 ];
 
 
@@ -31,7 +28,7 @@ const OffersPage: React.FC<PageProps> = () => {
 
     const handleSponsorClick = (sponsorId) => {
         setSelectedSponsor(sponsorId);
-        setSelectedOfferIndex(0); // Reset to first offer when changing sponsor
+        setSelectedOfferIndex(0);
     };
 
     const handlePrevOffer = () => {
@@ -61,7 +58,7 @@ const OffersPage: React.FC<PageProps> = () => {
                 </ul>
             </div>
             <div className="job-offers-panel">
-                <h2>Job Offers</h2>
+                <h2>Oferty pracy</h2>
                 {selectedSponsor && (
                     <div>
                         <button onClick={handlePrevOffer}>{'<'}</button>
@@ -72,7 +69,7 @@ const OffersPage: React.FC<PageProps> = () => {
                         <button onClick={handleNextOffer}>{'>'}</button>
                     </div>
                 )}
-                {!selectedSponsor && <p>Please select a sponsor to see job offers</p>}
+                {!selectedSponsor && <p>Wybierz Sponsora</p>}
             </div>
         </Layout>
     );
