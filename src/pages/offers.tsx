@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { PageProps } from "gatsby";
 import Layout from "../components/Layout";
+import "../styles/global.scss";
 
 const sponsorsData = [
     {

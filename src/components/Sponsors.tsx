@@ -171,12 +171,7 @@ const IBM = styled(ParentLink)``;
 const Aptiv = styled(ParentLink)``;
 const Pega = styled(ParentLink)``;
 const Mars = styled(ParentLink)``;
-const Motorola = styled(ParentLink)`
-  grid-column:2;
-  @media (max-width: 768px) {
-    grid-column:1;
-  }
-`;
+const Motorola = styled(ParentLink)``;
 const FXMAG = styled(ParentLink)`
   grid-column:2;
   @media (max-width: 768px) {
@@ -208,10 +203,6 @@ const Sponsors: React.FC = () => {
               <Pega href="https://www.pega.com/" target="_blank">
                 <SponsorImg src={logos[2].default} alt="Pega" />
               </Pega>
-
-              <Aptiv href="https://www.aptiv.com/" target="_blank">
-                <SponsorImg src={logos[4].default} alt="Aptiv" />
-              </Aptiv>
 
               <Woodward href="https://www.woodward.com/" target="_blank">
                 <SponsorImg src={logos[1].default} alt="Woodward" />
@@ -281,9 +272,9 @@ const Sponsors: React.FC = () => {
               <ParentLink href="https://dziennikpolski24.pl/" target="_blank">
                 <SponsorImg src={logos[21].default} alt="Dziennik Polski" />
               </ParentLink>
-              {/* <FXMAG href="https://fxmag.pl/" target="_blank">
+              <FXMAG href="https://fxmag.pl/" target="_blank">
                 <SponsorImg src={logos[14].default} alt="FXMAG" />
-              </FXMAG> */}
+              </FXMAG>
             </SponsorsPanel>
           </Card>
           

@@ -140,14 +140,15 @@ const links: ILink[] = [
   { name: "Mapa Stoisk", path: "/#map" },
   { name: "Sponsorzy", path: "/#sponsors" },
   { name: "Organizatorzy", path: "/#organizers" },
+  { name: "Katalog", path: "https://itp.best.krakow.pl/Katalog.pdf" },
   { name: "Wyślij CV", path: "https://forms.gle/fG86afGGonoiqeAV8" },
   { name: "O Beście", path: "https://www.newsite.best.krakow.pl/" },
 ];
 
 const popUpLinks: ILink[] = [
   { name: "Regulamin wydarzenia", path: "https://itp.best.krakow.pl/[ITP2024] Regulamin wydarzenia.pdf" },
-  { name: "Regulamin konkursu", path: "https://itp.best.krakow.pl/[ITP2024] Regulamin konkursu.pdf" },
-  { name: "RODO", path: "https://itp.best.krakow.pl/[ITP2024] Regulamin konkursu i RODO.pdf" },
+  { name: "Regulaminy konkursów", path: "https://itp.best.krakow.pl/[ITP2024] Regulaminy konkursow.pdf" },
+  { name: "RODO", path: "https://itp.best.krakow.pl/[ITP2024] RODO.pdf" },
 ];
 
 const PopUpContainer = styled.div`
@@ -207,7 +208,7 @@ const Navigation: React.FC = () => {
       {showPopUp && (
         <PopUpContainer>
           <button className="closeButton" onClick={togglePopUp}>
-            &times; {/* This is a close icon (X) */}
+            &times;
           </button>
           {popUpLinks.map((link, i) => (
             <Link key={i} to={link.path}>
