@@ -141,6 +141,7 @@ const links: ILink[] = [
   { name: "Sponsorzy", path: "/#sponsors" },
   { name: "Organizatorzy", path: "/#organizers" },
   { name: "Katalog", path: "https://itp.best.krakow.pl/Katalog.pdf" },
+  { name: "Oferty", path: "/offers" },
   { name: "Wyślij CV", path: "https://forms.gle/fG86afGGonoiqeAV8" },
   { name: "O Beście", path: "https://www.newsite.best.krakow.pl/" },
 ];
@@ -160,11 +161,11 @@ const PopUpContainer = styled.div`
   background-color: #fff;
   border-radius: 1vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000; /* Ensure pop-up is above other content */
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Align items horizontally */
+  align-items: center;
 
   .closeButton {
     position: absolute;
@@ -176,6 +177,7 @@ const PopUpContainer = styled.div`
     border: none;
     background: none;
     padding: 0.33em;
+    z-index: 1001;
   }
 
   a {
@@ -186,8 +188,9 @@ const PopUpContainer = styled.div`
     flex-basis: 100%;
     align-self: center;
     white-space: nowrap;
-  }
-`;
+    margin-bottom: 1rem;
+    z-index: 1000;
+  }`;
 
 const Navigation: React.FC = () => {
   const [showPopUp, setShowPopUp] = useState(false);
