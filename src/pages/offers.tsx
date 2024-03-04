@@ -287,6 +287,7 @@ const LeftDiv = styled.div`
   min-width: auto; /* Reset min-width */
   display: inline-block;
   width: 20%;
+  height: 66%;
 `;
 
 const RightDiv = styled.div`
@@ -294,6 +295,10 @@ const RightDiv = styled.div`
   margin-left: 3%;
   width: 80%;
   display:flex;
+  height: 66%;
+  background-color: #ada;
+//   overflow: hidden;
+  position: relative;
 `;
 
 const Picture = styled.picture`
@@ -316,12 +321,12 @@ const BtnImg = styled.img`
 `;
 
 const JobOffersPanel = styled.div`
-  top: 4%;
-  left: 40%;
+  top: 6%;
+  bottom: 6%;
+  left: 18%;
   right: 18%;
-  padding: 20px;
   overflow: auto; /* Allow the panel to become scrollable */
-  max-height: 85vw;
+  max-height: 90%;
   position: absolute;
 `;
 
@@ -356,7 +361,7 @@ const Content = styled.div`
 
 const ButtonContainer = styled.div`
   position: absolute;
-  top: 50%;
+  top: 37.33%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -372,7 +377,6 @@ const PrevButton = styled.button`
   background:none;
   border: none;
   box-shadow: none;
-
 `;
 
 const NextButton = styled.button`
