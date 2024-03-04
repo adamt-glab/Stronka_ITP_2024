@@ -270,12 +270,16 @@ const SImage = styled.img`
 `;
 
 const ParentDiv = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top:3rem;
-    aspect-ratio: 1;
-    position:relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 3rem;
+  aspect-ratio: 1;
+  position: relative;
+  @media screen and (max-width: 769px) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
 `;
 
 const LeftDiv = styled.div`
@@ -288,6 +292,13 @@ const LeftDiv = styled.div`
   display: inline-block;
   width: 20%;
   height: 66%;
+  @media screen and (max-width: 769px) {
+    width: 94%;
+    height: 20%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+  }
 `;
 
 const RightDiv = styled.div`
@@ -296,9 +307,13 @@ const RightDiv = styled.div`
   width: 80%;
   display:flex;
   height: 66%;
-  background-color: #ada;
-//   overflow: hidden;
   position: relative;
+  @media screen and (max-width: 769px) {
+    margin-left: 9%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 88%;
+  }
 `;
 
 const Picture = styled.picture`
@@ -321,8 +336,8 @@ const BtnImg = styled.img`
 `;
 
 const JobOffersPanel = styled.div`
-  top: 6%;
-  bottom: 6%;
+  top: 7%;
+  bottom: 7%;
   left: 18%;
   right: 18%;
   overflow: auto; /* Allow the panel to become scrollable */
@@ -333,7 +348,6 @@ const JobOffersPanel = styled.div`
 const JobOfferCard = styled.div`
   display: flex;
   align-items: center;
-  border: 4px solid #ccc;
   padding: 20px;
 `;
 
@@ -352,31 +366,40 @@ const Field = styled.div`
 const Title = styled.div`
   font-weight: bold;
   flex: 1; /* Ensure title takes minimum space */
+  @media screen and (max-width: 769px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const Content = styled.div`
   color: #110B11;
   flex: 2; /* Ensure content takes more space */
+  @media screen and (max-width: 769px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
   position: absolute;
-  top: 37.33%;
+  top: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 63.5%;
+  width: 100%;
 `;
 
 const PrevButton = styled.button`
   position: absolute;
   cursor: pointer;
   left: 0%;
-  transform: translateY(-50%);
   width: 10%;
   background:none;
   border: none;
   box-shadow: none;
+  @media screen and (max-width: 769px) {
+    width: 18%;
+    left: -9%;
+  }
 `;
 
 const NextButton = styled.button`
@@ -384,10 +407,13 @@ const NextButton = styled.button`
   background:none;
   cursor: pointer;
   right: 0%;
-  transform: translateY(-50%);
   width: 10%;
   border: none;
   box-shadow: none;
+  @media screen and (max-width: 769px) {
+    width: 18%;
+    right: -9%;
+  }
 `;
 
 export default OffersPage;
