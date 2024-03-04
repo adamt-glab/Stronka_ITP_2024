@@ -54,6 +54,9 @@ const Nav = styled.nav`
 
   @media (max-width: 768px) {
     height: 4vh;
+    border-radius: 0;
+    left: 0;
+    right: 0;
   }
 `;
 
@@ -65,11 +68,15 @@ const LinkContainer = styled.div`
   flex-direction: inherit;
   text-align: center;
   text-transform: none;
+  @media (max-width: 768px) {
+    gap: 0.2em;
+    width: 95%;
+    height: 100%;
+  }
 `;
 
 const ITPLogo = styled.img`
   position: absolute;
-  // width: 24rem;
   width: clamp(16rem, 32vw, 24rem);
   top: 18%;
   left: 6%;
@@ -82,7 +89,6 @@ const ITPLogo = styled.img`
 
 const BESTLogoContainer = styled.img`
   position: absolute;
-  // width: 20rem;
   width: clamp(13rem, 24vw, 20rem);
   right: 6%;
   top: 6%;
@@ -133,11 +139,9 @@ interface ILink {
   path: string;
 }
 
-// { name: "Oferty", path: "/offers" },
-
 const links: ILink[] = [
-  { name: "Home", path: "/" },
-  { name: "Mapa Stoisk", path: "/#map" },
+  { name: "Strona główna", path: "/" },
+  { name: "Mapa", path: "/#map" },
   { name: "Sponsorzy", path: "/#sponsors" },
   { name: "Organizatorzy", path: "/#organizers" },
   { name: "Katalog", path: "https://itp.best.krakow.pl/Katalog.pdf" },
@@ -192,18 +196,25 @@ const PopUpContainer = styled.div`
     z-index: 1000;
   }`;
 
+const LinkStyled = styled(Link)`
+  font-size: clamp(0.7rem, 1.9vw, 1.9rem);
+  flex-basis: auto;
+  align-self: center;
+  white-space: nowrap;
+
+  @media (max-width: 769px) {
+    font-size: 0.8rem;
+    height: 100%;
+    align-items: center;
+    display: flex;
+  }
+`;
+
 const Navigation: React.FC = () => {
   const [showPopUp, setShowPopUp] = useState(false);
 
   const togglePopUp = () => {
     setShowPopUp(!showPopUp);
-  };
-  const linkStyle =
-  {
-    fontSize: "clamp(0.7rem, 1.9vw, 1.9rem)",
-    flexBasis: "100%",
-    alignSelf: "center",
-    whiteSpace: "nowrap"
   };
 
   return (
@@ -238,19 +249,17 @@ const Navigation: React.FC = () => {
         <Nav>
           <LinkContainer className="links">
             {links.map((link, i) => (
-              <Link
-                style={linkStyle}
+              <LinkStyled
                 to={link.path}
                 key={i}>
                 {link.name}
-              </Link>
+              </LinkStyled>
             ))}
-            <Link
-              style={linkStyle}
+            <LinkStyled
               to={"#"}
               onClick={togglePopUp}>
               Regulaminy
-            </Link>
+            </LinkStyled>
           </LinkContainer>
         </Nav>
       </NavContainer>
