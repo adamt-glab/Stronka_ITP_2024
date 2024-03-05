@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PageProps } from "gatsby";
+import type { HeadFC, PageProps } from "gatsby";
 import Layout from "../components/Layout";
 import "../styles/global.scss";
 import styled, { keyframes } from "styled-components";
@@ -507,3 +507,10 @@ const NextButton = styled.button`
 `;
 
 export default OffersPage;
+
+export const Head: HeadFC = () => (
+    <>
+      <title>Inżynierskie Targi Pracy BEST AGH KRAKÓW</title>
+      <link rel="icon" href="/favicon.ico" />
+    </>
+  );
