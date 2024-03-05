@@ -310,22 +310,30 @@ const OffersPage: React.FC<PageProps> = () => {
     );
 };
 
-// Styled components
-
 const GridContainer = styled.div`
-  margin-top:1rem;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px; /* Adjust gap between grid items */
+  gap: 10px;
+  @media screen and (max-width: 769px) {
+    // background-color: #ada;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    gap: 0;
+  }
 `;
 
 const GridItem = styled.div`
+@media screen and (max-width: 769px) {
+    // background-color: #aba;
+    width: fit-content;
+  }
 `;
 
 const SImage = styled.img`
   cursor: pointer;
   display: block;
-  align-self:center;
+  align-self: center;
   width: 20vw;
   height: 15vh;
   aspect-ratio: 3/2;
@@ -336,6 +344,13 @@ const SImage = styled.img`
   border-color: #e5821a;
   background-color: #fffffa;
   padding: 0.12em;
+  @media screen and (max-width: 769px) {
+    // background-color: #afa;
+    height: 100%;
+    width: 100%;
+    border: 0.15rem solid;
+    border-color: #e5821a;
+  }
 `;
 
 const ParentDiv = styled.div`
@@ -348,6 +363,7 @@ const ParentDiv = styled.div`
   @media screen and (max-width: 769px) {
     flex-direction: column;
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -366,7 +382,12 @@ const LeftDiv = styled.div`
     height: 20%;
     margin-left: 0;
     margin-right: 0;
+    padding: 0;
+    margin: 0 auto;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 `;
 
