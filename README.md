@@ -1,6 +1,6 @@
 <p>
   <h1 align="center">
-  Strona internetowa XXV Inżynierskich Targów Pracy
+  Strona internetowa XXVI Inżynierskich Targów Pracy
   </h1>
 </p>
 
@@ -8,7 +8,7 @@
   <h2>
   Informacje ogólne
   </h2>
-  Projekt ten to strona internetowa stworzona na potrzeby XXV Inżynierskich Targów Pracy organizowanych przez BEST AGH Kraków. 
+  Projekt ten to strona internetowa stworzona na potrzeby XXVI Inżynierskich Targów Pracy organizowanych przez BEST AGH Kraków. 
 </p>
 
 <p> 
@@ -20,7 +20,7 @@
     <li>Typescript</li>
     <li>Gatsby</li>
     <li>Sass</li>
-    <li>styled components</li>
+    <li>Styled Components</li>
   </ul>
 </p>
 
@@ -38,14 +38,22 @@
  <h2>
   Autorzy
  </h2>
- Designer:<br>
+ Designer (XXVI edycja):<br>
+ <ul>
+  <li>Marta Dzięgielewska</li>
+ </ul>
+ Deweloperzy (XXVI edycja):
+ <ul>
+  <li>Adam Głąb</li>
+ </ul>
+ Designer (XXV edycja):<br>
  <ul>
   <li>Piotr Baran</li>
  </ul>
- Deweloperzy:
+ Deweloperzy (XXV edycja):
  <ul>
   <li>Maciej Piotrowski</li>
   <li>Paweł Zaręba</li>
   <li>Konrad Krzemiński</li>
- <ul>
+ </ul>
 </p>
